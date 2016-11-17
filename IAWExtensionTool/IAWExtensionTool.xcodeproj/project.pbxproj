@@ -23,8 +23,8 @@
 		44EC56551DDE0F0C00DAAFF8 /* IAWScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC56461DDE0F0C00DAAFF8 /* IAWScreen.swift */; };
 		44EC56561DDE0F0C00DAAFF8 /* IAWTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC56471DDE0F0C00DAAFF8 /* IAWTextField.swift */; };
 		44EC56571DDE0F0C00DAAFF8 /* IAWWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC56481DDE0F0C00DAAFF8 /* IAWWebView.swift */; };
-		44EC565B1DDE0F1800DAAFF8 /* IAWXcassetsTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC56581DDE0F1800DAAFF8 /* IAWXcassetsTool.swift */; };
 		44EC565C1DDE0F1800DAAFF8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44EC565A1DDE0F1800DAAFF8 /* Images.xcassets */; };
+		44EC565E1DDE18B500DAAFF8 /* IAWXcassetsTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC565D1DDE18B500DAAFF8 /* IAWXcassetsTool.swift */; };
 		AD8E5370726069281113256F /* Pods_IAWExtensionTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD248E7BAF6A2C34F8CA11D9 /* Pods_IAWExtensionTool.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,8 +48,8 @@
 		44EC56461DDE0F0C00DAAFF8 /* IAWScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAWScreen.swift; sourceTree = "<group>"; };
 		44EC56471DDE0F0C00DAAFF8 /* IAWTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAWTextField.swift; sourceTree = "<group>"; };
 		44EC56481DDE0F0C00DAAFF8 /* IAWWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAWWebView.swift; sourceTree = "<group>"; };
-		44EC56581DDE0F1800DAAFF8 /* IAWXcassetsTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAWXcassetsTool.swift; sourceTree = "<group>"; };
 		44EC565A1DDE0F1800DAAFF8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		44EC565D1DDE18B500DAAFF8 /* IAWXcassetsTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IAWXcassetsTool.swift; path = Classes/Tool/IAWXcassetsTool.swift; sourceTree = "<group>"; };
 		5A11D36588B35B00253E8477 /* Pods-IAWExtensionTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IAWExtensionTool.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-IAWExtensionTool/Pods-IAWExtensionTool.debug.xcconfig"; sourceTree = "<group>"; };
 		FD248E7BAF6A2C34F8CA11D9 /* Pods_IAWExtensionTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IAWExtensionTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -89,8 +89,8 @@
 			children = (
 				44EC56361DDE0F0C00DAAFF8 /* Classes */,
 				44EC56591DDE0F1800DAAFF8 /* Resources */,
-				44EC56581DDE0F1800DAAFF8 /* IAWXcassetsTool.swift */,
 				441C6EC21DDE0BEC0080D0F0 /* IAWExtensionTool.h */,
+				44EC565D1DDE18B500DAAFF8 /* IAWXcassetsTool.swift */,
 				441C6EC31DDE0BEC0080D0F0 /* Info.plist */,
 			);
 			path = IAWExtensionTool;
@@ -289,7 +289,6 @@
 				44EC564A1DDE0F0C00DAAFF8 /* IAWBundle.swift in Sources */,
 				44EC56501DDE0F0C00DAAFF8 /* IAWTextFieldTool.swift in Sources */,
 				44EC564B1DDE0F0C00DAAFF8 /* IAWString.swift in Sources */,
-				44EC565B1DDE0F1800DAAFF8 /* IAWXcassetsTool.swift in Sources */,
 				44EC564E1DDE0F0C00DAAFF8 /* IAWProgressHUDTool.swift in Sources */,
 				44EC564F1DDE0F0C00DAAFF8 /* IAWRNCryptorTool.swift in Sources */,
 				44EC56511DDE0F0C00DAAFF8 /* IAWApplication.swift in Sources */,
@@ -297,6 +296,7 @@
 				44EC56531DDE0F0C00DAAFF8 /* IAWColor.swift in Sources */,
 				44EC56541DDE0F0C00DAAFF8 /* IAWImageView.swift in Sources */,
 				44EC564D1DDE0F0C00DAAFF8 /* IAWJsonTool.swift in Sources */,
+				44EC565E1DDE18B500DAAFF8 /* IAWXcassetsTool.swift in Sources */,
 				44EC56551DDE0F0C00DAAFF8 /* IAWScreen.swift in Sources */,
 				44EC56491DDE0F0C00DAAFF8 /* IAWArray.swift in Sources */,
 			);
