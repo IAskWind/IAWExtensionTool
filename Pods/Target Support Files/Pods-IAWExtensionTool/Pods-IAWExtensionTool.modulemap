@@ -1,0 +1,6 @@
+framework module Pods_IAWExtensionTool {
+  umbrella header "Pods-IAWExtensionTool-umbrella.h"
+
+  export *
+  module * { export * }
+}

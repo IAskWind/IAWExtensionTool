@@ -1,0 +1,52 @@
+PODS:
+  - Alamofire (4.0.1)
+  - AlamofireObjectMapper (4.0.0):
+    - Alamofire (~> 4.0)
+    - ObjectMapper (~> 2.0)
+  - FDFullscreenPopGesture (1.1)
+  - Kingfisher (3.2.1)
+  - MJRefresh (3.1.12)
+  - ObjectMapper (2.2.1)
+  - OMExtension (2.0)
+  - RNCryptor (5.0.1)
+  - SnapKit (3.0.2)
+  - SVProgressHUD (2.0.4)
+  - SwiftyJSON (3.0.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.0.1)
+  - AlamofireObjectMapper (~> 4.0)
+  - FDFullscreenPopGesture (~> 1.1)
+  - Kingfisher
+  - MJRefresh (~> 3.1.12)
+  - OMExtension
+  - RNCryptor
+  - SnapKit (~> 3.0.2)
+  - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
+  - SwiftyJSON (~> 3.0.0)
+
+EXTERNAL SOURCES:
+  SVProgressHUD:
+    :git: https://github.com/SVProgressHUD/SVProgressHUD.git
+
+CHECKOUT OPTIONS:
+  SVProgressHUD:
+    :commit: 059503342c1da90d613072c4adb3c088ae636182
+    :git: https://github.com/SVProgressHUD/SVProgressHUD.git
+
+SPEC CHECKSUMS:
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  AlamofireObjectMapper: 9faa3ce5a240efda1b209009a2d6e1e949227abc
+  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  Kingfisher: 64ef28c6d3d6f344e3ae2d7f5c9da80439505d99
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  ObjectMapper: 41e43e1a89f8060ef5ea5d04ba852e269a621d68
+  OMExtension: 300d45811631a40a133554bde260955b2e5429f5
+  RNCryptor: 2e352a488779d1a9184ab629be22a7c5bc84acb5
+  SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
+  SVProgressHUD: bfde85ed6c573ea802b9cb37894ed9b629034f1b
+  SwiftyJSON: f57b2b44bc166617372d1c70773591fe9f0f5fd4
+
+PODFILE CHECKSUM: 10240c711060e773e03145fcf38ec76aeb89cb92
+
+COCOAPODS: 1.1.0.rc.2
