@@ -1,6 +1,6 @@
 # IAWExtensionTool
 
-[![CI Status](http://img.shields.io/travis/徐文兵/IAWExtensionTool.svg?style=flat)](https://travis-ci.org/徐文兵/IAWExtensionTool)
+[![CI Status](http://img.shields.io/travis/IAsk风/IAWExtensionTool.svg?style=flat)](https://travis-ci.org/IAsk风/IAWExtensionTool)
 [![Version](https://img.shields.io/cocoapods/v/IAWExtensionTool.svg?style=flat)](http://cocoapods.org/pods/IAWExtensionTool)
 [![License](https://img.shields.io/cocoapods/l/IAWExtensionTool.svg?style=flat)](http://cocoapods.org/pods/IAWExtensionTool)
 [![Platform](https://img.shields.io/cocoapods/p/IAWExtensionTool.svg?style=flat)](http://cocoapods.org/pods/IAWExtensionTool)
@@ -22,7 +22,7 @@ pod "IAWExtensionTool"
 
 ## Author
 
-徐文兵, 330262107@qq.com
+IAskWind, iaskwind@foxmail.com
 
 ## License
 
