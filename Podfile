@@ -29,6 +29,7 @@ target 'IAWExtensionTool' do
   pod 'RNCryptor'
   pod 'AlamofireObjectMapper', '~> 4.0'
   pod 'Kingfisher'
+  pod 'CryptoSwift'
 end
 
 

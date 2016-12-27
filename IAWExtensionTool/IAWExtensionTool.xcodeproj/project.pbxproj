@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		441C6EC41DDE0BEC0080D0F0 /* IAWExtensionTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 441C6EC21DDE0BEC0080D0F0 /* IAWExtensionTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		44AD44F11E1264C000E19542 /* IAW_SignMd5Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AD44F01E1264C000E19542 /* IAW_SignMd5Tool.swift */; };
 		44EC56491DDE0F0C00DAAFF8 /* IAWArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC56381DDE0F0C00DAAFF8 /* IAWArray.swift */; };
 		44EC564A1DDE0F0C00DAAFF8 /* IAWBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC56391DDE0F0C00DAAFF8 /* IAWBundle.swift */; };
 		44EC564B1DDE0F0C00DAAFF8 /* IAWString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC563A1DDE0F0C00DAAFF8 /* IAWString.swift */; };
@@ -33,6 +34,7 @@
 		441C6EBF1DDE0BEC0080D0F0 /* IAWExtensionTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IAWExtensionTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		441C6EC21DDE0BEC0080D0F0 /* IAWExtensionTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IAWExtensionTool.h; sourceTree = "<group>"; };
 		441C6EC31DDE0BEC0080D0F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44AD44F01E1264C000E19542 /* IAW_SignMd5Tool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_SignMd5Tool.swift; sourceTree = "<group>"; };
 		44EC56381DDE0F0C00DAAFF8 /* IAWArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAWArray.swift; sourceTree = "<group>"; };
 		44EC56391DDE0F0C00DAAFF8 /* IAWBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAWBundle.swift; sourceTree = "<group>"; };
 		44EC563A1DDE0F0C00DAAFF8 /* IAWString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAWString.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				44EC563E1DDE0F0C00DAAFF8 /* IAWProgressHUDTool.swift */,
 				44EC563F1DDE0F0C00DAAFF8 /* IAWRNCryptorTool.swift */,
 				44EC56401DDE0F0C00DAAFF8 /* IAWTextFieldTool.swift */,
+				44AD44F01E1264C000E19542 /* IAW_SignMd5Tool.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				44EC56521DDE0F0C00DAAFF8 /* IAWBaseViewController.swift in Sources */,
 				44EC564C1DDE0F0C00DAAFF8 /* IAWAppTool.swift in Sources */,
 				44EC56561DDE0F0C00DAAFF8 /* IAWTextField.swift in Sources */,
+				44AD44F11E1264C000E19542 /* IAW_SignMd5Tool.swift in Sources */,
 				44EC564A1DDE0F0C00DAAFF8 /* IAWBundle.swift in Sources */,
 				44EC56501DDE0F0C00DAAFF8 /* IAWTextFieldTool.swift in Sources */,
 				44EC564B1DDE0F0C00DAAFF8 /* IAWString.swift in Sources */,
