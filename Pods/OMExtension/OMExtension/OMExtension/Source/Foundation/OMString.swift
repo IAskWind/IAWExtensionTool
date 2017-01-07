@@ -25,7 +25,10 @@
 //  SOFTWARE.
 
 import Foundation
-import UIKit
+
+#if !os(macOS)
+    import UIKit
+#endif
 
 fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
   switch (lhs, rhs) {
@@ -61,6 +64,11 @@ public extension String {
         return nil
     }
     
+    var omToFloatValue: Float {
+        
+        return omToFloat ?? 0
+    }
+    
     var omToDouble: Double? {
         
         if let num = NumberFormatter().number(from: self) {
@@ -71,6 +79,11 @@ public extension String {
         return nil
     }
     
+    var omToDoubleValue: Double {
+        
+        return omToDouble ?? 0.0
+    }
+    
     var omToInt: Int? {
         
         if let num = NumberFormatter().number(from: self) {
@@ -79,6 +92,11 @@ public extension String {
         }
         
         return nil
+    }
+    
+    var omToIntValue: Int {
+        
+        return omToInt ?? 0
     }
     
     var omToBool: Bool? {
@@ -96,7 +114,52 @@ public extension String {
         
         return nil
     }
+    
+    var omToBoolValue: Bool {
+        
+        return omToBool ?? false
+    }
+    
+    /// Date object from "yyyy-MM-dd" formatted string
+    var omToDate: Date? {
+        
+        let selfLowercased = self.omTrimming.lowercased()
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.current
+        formatter.dateFormat = "yyyy-MM-dd"
+        
+        return formatter.date(from: selfLowercased)
+    }
+    
+    /// Date object from "yyyy-MM-dd HH:mm:ss" formatted string.
+    var omToDateTime: Date? {
+        
+        let selfLowercased = self.omTrimming.lowercased()
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.current
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        return formatter.date(from: selfLowercased)
+    }
 
+}
+
+// MARK: - base64
+
+// https://github.com/Reza-Rg/Base64-Swift-Extension/blob/master/Base64.swift
+public extension String {
+    
+    var omBase64Decoded: String? {
+        guard let decodedData = Data(base64Encoded: self) else {
+            return nil
+        }
+        return String(data: decodedData, encoding: .utf8)
+    }
+    
+    var omBase64Encoded: String? {
+        let plainData = self.data(using: .utf8)
+        return plainData?.base64EncodedString()
+    }
 }
 
 // MARK: - valid
@@ -123,7 +186,21 @@ public extension String {
     var omIsPhoneTelephone: Bool { return omIsRegex("([\\d]{7,25}(?!\\d))|((\\d{3,4})-(\\d{7,8}))|((\\d{3,4})-(\\d{7,8})-(\\d{1,4}))") }
     
     /// URL网址验证
-    var omIsURL: Bool { return omExtractURL.count > 0 }
+    var omIsURL: Bool { return URL(string: self) != nil }
+    
+    var omIsHttpsUrl: Bool {
+        guard lowercased().hasPrefix("https://") else {
+            return false
+        }
+        return URL(string: self) != nil
+    }
+    
+    var omIsHttpUrl: Bool {
+        guard lowercased().hasPrefix("http://") else {
+            return false
+        }
+        return URL(string: self) != nil
+    }
     
     /// IP地址验证
     var omIsIP: Bool {
@@ -229,6 +306,8 @@ public extension String {
         return urls
     }
     
+    #if os(iOS)
+    
     func omCopyToPasteboard() {
         
         UIPasteboard.general.string = self
@@ -250,6 +329,8 @@ public extension String {
         return ceil((self as NSString).boundingRect(with: size, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes:attrib, context: nil).height)
     }
     
+    #endif
+    
     mutating func omTrim() {
         
         self = omTrimming
@@ -258,6 +339,21 @@ public extension String {
     var omTrimming: String {
         
         return trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+    }
+    
+    var omTrimmingWithoutSpacesAndNewLines: String {
+        
+        return replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "\n", with: "")
+    }
+    
+    mutating func omReverse() {
+        
+        self = omReversed
+    }
+    
+    var omReversed: String {
+        
+        return String(characters.reversed())
     }
     
     var omIsContainEmoji: Bool {
@@ -285,6 +381,47 @@ public extension String {
         })
     }
     
+    func omContain(_ subStirng: String, caseSensitive: Bool = true) -> Bool {
+        
+        if !caseSensitive {
+            
+            return range(of: subStirng, options: .caseInsensitive) != nil
+        }
+        
+        return range(of: subStirng) != nil
+    }
+    
+    func omCount(of subString: String, caseSensitive: Bool = true) -> Int {
+        
+        if !caseSensitive {
+            
+            return lowercased().components(separatedBy: subString).count - 1
+        }
+        
+        return components(separatedBy: subString).count - 1
+    }
+    
+    func omHasPrefix(_ prefix: String, caseSensitive: Bool = true) -> Bool {
+        
+        if !caseSensitive {
+            
+            return lowercased().hasPrefix(prefix.lowercased())
+        }
+        
+        return hasPrefix(prefix)
+    }
+    
+    func omHasSuffix(_ suffix: String, caseSensitive: Bool = true) -> Bool {
+        
+        if !caseSensitive {
+            
+            return lowercased().hasSuffix(suffix.lowercased())
+        }
+        
+        return hasSuffix(suffix)
+    }
+    
+    @available(*, deprecated, message: "Extensions directly deprecated. Use `omContain` instead.", renamed: "omContain")
     func omContains(_ subStirng: String, options: NSString.CompareOptions? = nil) -> Bool {
         
         if let options = options {
@@ -293,6 +430,16 @@ public extension String {
         }
         
         return range(of: subStirng) != nil
+    }
+    
+    func omJoinSeparator(_ separator: String) -> String {
+        
+        return characters.map({ "\($0)" }).joined(separator: separator)
+    }
+    
+    mutating func omJoinedSeparatored(_ separator: String) {
+        
+        self = omJoinSeparator(separator)
     }
     
     func omGetRanges(_ searchString: String) -> [NSRange] {
@@ -318,7 +465,9 @@ public extension String {
         return ranges
     }
     
-    func omGetAttributes(color: [(color: UIColor, subString: String?)]? = nil, font: [(font: UIFont, subString: String?)]? = nil, underlineStyle: [String]? = nil, strikethroughStyle: [String]? = nil) -> NSMutableAttributedString {
+    #if !os(macOS)
+    
+    func omGetAttributes(color: [(color: UIColor, subString: String?)]? = nil, font: [(font: UIFont, subString: String?)]? = nil, underlineStyle: [String]? = nil, strikethroughStyle: [String]? = nil, lineSpacing: CGFloat? = nil) -> NSMutableAttributedString {
         
         let mutableAttributedString = NSMutableAttributedString(string: self)
         
@@ -374,8 +523,18 @@ public extension String {
             }
         }
         
+        if let lineSpacing = lineSpacing {
+            
+            let style = NSMutableParagraphStyle()
+            style.lineSpacing = lineSpacing
+            
+            mutableAttributedString.addAttribute(NSParagraphStyleAttributeName, value: style, range: NSRange(location: 0, length: characters.count))
+        }
+        
         return mutableAttributedString
     }
+    
+    #endif
 
 }
 

@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 //利用objectMapper处理josn和model互相转换
-open class IAWJsonTool<T:Mappable>{
+open class IAW_JsonTool<T:Mappable>{
     
     open class func json2Model(jsonStr:String)->T?{
         let model = Mapper<T>().map(JSONString: jsonStr)

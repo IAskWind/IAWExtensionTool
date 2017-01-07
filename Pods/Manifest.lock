@@ -1,55 +1,76 @@
 PODS:
-  - Alamofire (4.0.1)
-  - AlamofireObjectMapper (4.0.0):
-    - Alamofire (~> 4.0)
+  - Alamofire (4.2.0)
+  - AlamofireObjectMapper (4.0.1):
+    - Alamofire (~> 4.1)
     - ObjectMapper (~> 2.0)
   - CryptoSwift (0.6.7)
   - FDFullscreenPopGesture (1.1)
-  - Kingfisher (3.2.1)
+  - Kingfisher (3.2.4)
   - MJRefresh (3.1.12)
-  - ObjectMapper (2.2.1)
-  - OMExtension (2.0)
+  - ObjectMapper (2.2.2)
+  - OMExtension (2.1.5)
   - RNCryptor (5.0.1)
+  - SKPhotoBrowser (3.1.4)
   - SnapKit (3.0.2)
-  - SVProgressHUD (2.0.4)
+  - SVProgressHUD (2.1.2)
   - SwiftyJSON (3.0.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.0.1)
+  - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `master`)
   - AlamofireObjectMapper (~> 4.0)
-  - CryptoSwift
+  - CryptoSwift (from `https://github.com/krzyzanowskim/CryptoSwift`, branch `master`)
   - FDFullscreenPopGesture (~> 1.1)
   - Kingfisher
-  - MJRefresh (~> 3.1.12)
+  - MJRefresh
   - OMExtension
   - RNCryptor
+  - SKPhotoBrowser (from `https://github.com/suzuki-0000/SKPhotoBrowser.git`, branch `swift3`)
   - SnapKit (~> 3.0.2)
   - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
   - SwiftyJSON (~> 3.0.0)
 
 EXTERNAL SOURCES:
+  Alamofire:
+    :branch: master
+    :git: https://github.com/Alamofire/Alamofire.git
+  CryptoSwift:
+    :branch: master
+    :git: https://github.com/krzyzanowskim/CryptoSwift
+  SKPhotoBrowser:
+    :branch: swift3
+    :git: https://github.com/suzuki-0000/SKPhotoBrowser.git
   SVProgressHUD:
     :git: https://github.com/SVProgressHUD/SVProgressHUD.git
 
 CHECKOUT OPTIONS:
+  Alamofire:
+    :commit: 779930c399307caa3d1afb01fd628754e323ea34
+    :git: https://github.com/Alamofire/Alamofire.git
+  CryptoSwift:
+    :commit: 0b48673bf67753d796743e5177bb6dbdbf2fd74f
+    :git: https://github.com/krzyzanowskim/CryptoSwift
+  SKPhotoBrowser:
+    :commit: c575b55599976b86646a08c7e9aa8569e66ff72c
+    :git: https://github.com/suzuki-0000/SKPhotoBrowser.git
   SVProgressHUD:
-    :commit: 059503342c1da90d613072c4adb3c088ae636182
+    :commit: cbf9eea80216823fd6df83370162d9857e59c1ca
     :git: https://github.com/SVProgressHUD/SVProgressHUD.git
 
 SPEC CHECKSUMS:
-  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
-  AlamofireObjectMapper: 9faa3ce5a240efda1b209009a2d6e1e949227abc
-  CryptoSwift: 685ae257941e5447474348a2b545583e1a16b573
+  Alamofire: 26d8877ec03b4e6e6cbfbf7c03924b4844a2d453
+  AlamofireObjectMapper: 842d2eed43a4d0593ff0110d54ac86a170c4519c
+  CryptoSwift: 8f7b936cfd910257631f30d26e7188fa64e91e97
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
-  Kingfisher: 64ef28c6d3d6f344e3ae2d7f5c9da80439505d99
+  Kingfisher: 8d80f39da403cd9c9ee11984e1655f4d6a566cdb
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
-  ObjectMapper: 41e43e1a89f8060ef5ea5d04ba852e269a621d68
-  OMExtension: 300d45811631a40a133554bde260955b2e5429f5
+  ObjectMapper: 9e385c2295bcc4e16eabbcfc85db801442bba545
+  OMExtension: 2527dba7e48c012b58a4f1d96ce7a539360c2149
   RNCryptor: 2e352a488779d1a9184ab629be22a7c5bc84acb5
+  SKPhotoBrowser: 14b08bef65c1720f6edc728ab7f2b1f8ca76f453
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
-  SVProgressHUD: bfde85ed6c573ea802b9cb37894ed9b629034f1b
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   SwiftyJSON: f57b2b44bc166617372d1c70773591fe9f0f5fd4
 
-PODFILE CHECKSUM: 8afb7f8dc66ad7268c41f9b0b8db71f7bed3e048
+PODFILE CHECKSUM: 63bc6269eed9e54b326c6e1938c386c81146de67
 
-COCOAPODS: 1.1.0.rc.2
+COCOAPODS: 1.2.0.beta.3

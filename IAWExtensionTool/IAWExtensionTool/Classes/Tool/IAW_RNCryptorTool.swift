@@ -1,5 +1,5 @@
 //
-//  IAWRNCryptorTool.swift
+//  IAW_RNCryptorTool.swift
 //  IAWExtensionTool
 //  https://github.com/RNCryptor/RNCryptor
 //  Created by winston on 16/11/16.
@@ -8,7 +8,7 @@
 
 import Foundation
 import RNCryptor
-open class IAWRNCryptorTool{
+open class IAW_RNCryptorTool{
 
     //加密
     open class func Encrypt(data:String,key:String)->String{

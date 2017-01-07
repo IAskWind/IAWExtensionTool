@@ -7,9 +7,12 @@
 //
 
 import Foundation
-import UIKit
 
-protocol OMCompatible {
+#if !os(macOS)
+    import UIKit
+#endif
+
+public protocol OMCompatible {
     
     associatedtype CompatableType
     var om: CompatableType { get }

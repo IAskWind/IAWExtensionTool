@@ -101,15 +101,16 @@ public extension Date {
         return OMDateInfo(year: (calendar as NSCalendar).components(.year, from: self).year!, month: (calendar as NSCalendar).components(.month, from: self).month!, day: (calendar as NSCalendar).components(.day, from: self).day!, weekday: (calendar as NSCalendar).components(.weekdayOrdinal, from: self).weekdayOrdinal!, hour: (calendar as NSCalendar).components(.hour, from: self).hour!, minute: (calendar as NSCalendar).components(.minute, from: self).minute!, second: (calendar as NSCalendar).components(.second, from: self).second!, nanosecond: (calendar as NSCalendar).components(.nanosecond, from: self).nanosecond!)
     }
     
+    @available(*, deprecated, message: "Extensions directly deprecated. Use `timeInterval.omToDate` instead.")
     static func omWithTimeStamp(_ timeStamp: TimeInterval) -> Date {
         
-        return Date(timeIntervalSince1970: timeStamp / 1000)
+        return timeStamp.omToDate
     }
 }
 
 public extension OMDateInfo {
     
-    func omString(dateSeparator: String = "-", dateNormal: Bool = true, nanosecond: Bool = false) -> String {
+    func string(dateSeparator: String = "-", dateNormal: Bool = true, nanosecond: Bool = false) -> String {
         
         var description: String
         

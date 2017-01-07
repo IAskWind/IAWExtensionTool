@@ -7,7 +7,7 @@
 //
 
 import Foundation
-open class IAWAppTool{
+open class IAW_AppTool{
     
     /**
      *注意：用在AppDelegate的rootVC //并且返回的UIWindow要赋值给AppDelegate声明的

@@ -10,8 +10,11 @@ import Foundation
 import UIKit
 public extension UIColor {
     
-    static var iawGlobalColor:UIColor {
-        return UIColor(red: 240 / 255.0, green: 240 / 255.0, blue: 240 / 255.0, alpha: 1)
+    /// RGBA的颜色设置
+    static func iaw_Color(_ r:CGFloat, g:CGFloat, b:CGFloat, a:CGFloat) -> UIColor {
+        return UIColor(red: r / 255.0, green: g / 255.0, blue: b / 255.0, alpha: a)
     }
-  
+    
+   
+
 }

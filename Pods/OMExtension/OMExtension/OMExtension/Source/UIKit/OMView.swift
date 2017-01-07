@@ -25,7 +25,12 @@
 //  SOFTWARE.
 
 import Foundation
+
+#if !os(macOS) && !os(watchOS)
+
 import UIKit
+    
+#if !os(tvOS)
 
 // MARK: - GestureHandler
 
@@ -318,6 +323,8 @@ public extension UIView {
     }
 
 }
+    
+#endif
 
 // MARK: - frame
 
@@ -568,18 +575,25 @@ public extension UIView {
 
 }
 
-// MARK: - border
+// MARK: - layer
 
 fileprivate let lineColor = UIColor(omHex: 0xCCCCCC)
 fileprivate let lineSize: CGFloat = 0.3
 
 public extension OMExtension where OMBase: UIView {
     
-    func addRoundedCorners() {
+    func addRoundedCorners(cornerRadius: CGFloat? = nil) {
         
         base.clipsToBounds = true
         
-        base.layer.cornerRadius = min(self.base.frame.size.height, self.base.frame.size.width) * 0.5
+        if let cornerRadius = cornerRadius {
+            
+            base.layer.cornerRadius = cornerRadius
+            
+        } else {
+            
+            base.layer.cornerRadius = min(self.base.frame.size.height, self.base.frame.size.width) * 0.5
+        }
     }
     
     func addRoundedCorners(byRoundingCorners corners: UIRectCorner, cornerRadii: CGFloat) {
@@ -591,15 +605,6 @@ public extension OMExtension where OMBase: UIView {
         base.layer.mask = mask
     }
     
-    func addBorder(x: CGFloat, y: CGFloat, width: CGFloat = 0.3, height: CGFloat = 0.3, color: UIColor = UIColor(omHex: 0xCCCCCC)) {
-        
-        let borderLayer = CALayer()
-        borderLayer.frame = CGRect(x: x, y: y, width: width, height: height)
-        borderLayer.backgroundColor = color.cgColor
-        
-        base.layer.addSublayer(borderLayer)
-    }
-    
     func addBorder(size: CGFloat = lineSize, color: UIColor = lineColor) {
         
         base.layer.borderWidth = size
@@ -607,24 +612,55 @@ public extension OMExtension where OMBase: UIView {
         base.layer.masksToBounds = true
     }
     
-    func addBorderTop(size: CGFloat = lineSize, color: UIColor = lineColor, padding: (left: CGFloat , right: CGFloat) = (0, 0)) {
+    @discardableResult
+    func addBorder(x: CGFloat, y: CGFloat, width: CGFloat = 0.3, height: CGFloat = 0.3, color: UIColor = UIColor(omHex: 0xCCCCCC)) -> CALayer {
         
-        addBorder(x: padding.0 + padding.1, y: 0, width: base.frame.width - padding.0 - padding.1, height: size, color: color)
+        let borderLayer = CALayer()
+        borderLayer.frame = CGRect(x: x, y: y, width: width, height: height)
+        borderLayer.backgroundColor = color.cgColor
+        
+        base.layer.addSublayer(borderLayer)
+        
+        return borderLayer
     }
     
-    func addBorderLeft(size: CGFloat = lineSize, color: UIColor = lineColor) {
+    @discardableResult
+    func addBorderTop(size: CGFloat = lineSize, color: UIColor = lineColor, padding: (left: CGFloat , right: CGFloat) = (0, 0)) -> CALayer {
         
-        addBorder(x: 0, y: 0, width: size, height: base.frame.height, color: color)
+        return addBorder(x: padding.0 + padding.1, y: 0, width: base.frame.width - padding.0 - padding.1, height: size, color: color)
     }
     
-    func addBorderBottom(size: CGFloat = lineSize, color: UIColor = lineColor, padding: (left: CGFloat , right: CGFloat) = (0, 0)) {
+    @discardableResult
+    func addBorderLeft(size: CGFloat = lineSize, color: UIColor = lineColor) -> CALayer {
         
-        addBorder(x: padding.0 + padding.1, y: base.frame.height - size, width: base.frame.width - padding.0 - padding.1, height: size, color: color)
+        return addBorder(x: 0, y: 0, width: size, height: base.frame.height, color: color)
     }
     
-    func addBorderRight(size: CGFloat = lineSize, color: UIColor = lineColor) {
+    @discardableResult
+    func addBorderBottom(size: CGFloat = lineSize, color: UIColor = lineColor, padding: (left: CGFloat , right: CGFloat) = (0, 0)) -> CALayer {
         
-        addBorder(x: base.frame.width - size, y: 0, width: size, height: base.frame.height, color: color)
+        return addBorder(x: padding.0 + padding.1, y: base.frame.height - size, width: base.frame.width - padding.0 - padding.1, height: size, color: color)
+    }
+    
+    @discardableResult
+    func addBorderRight(size: CGFloat = lineSize, color: UIColor = lineColor) -> CALayer {
+        
+        return addBorder(x: base.frame.width - size, y: 0, width: size, height: base.frame.height, color: color)
+    }
+    
+    func addShadow(offset: CGSize = CGSize(width: 5, height: 5), opacity: Float = 0.7, radius: CGFloat = 5, color: UIColor = lineColor) {
+        
+        base.layer.shadowOffset = offset
+        base.layer.shadowOpacity = opacity
+        base.layer.shadowRadius = radius
+        base.layer.shadowColor = color.cgColor
+    }
+    
+    func addContentsImage(_ image: UIImage?, contentsGravity: String = kCAGravityResize) {
+        
+        base.layer.contents = image?.cgImage
+        base.layer.contentsGravity = contentsGravity
+        base.layer.masksToBounds = true
     }
 }
 
@@ -913,6 +949,8 @@ public extension OMExtension where OMBase: UIView {
         return image
     }
     
+    #if !os(tvOS)
+    
     /**
      截图并保存到相册
      
@@ -926,6 +964,8 @@ public extension OMExtension where OMBase: UIView {
         
         return image
     }
+    
+    #endif
 }
 
 public extension UIView {
@@ -940,7 +980,7 @@ public extension UIView {
         
         return om.getScreenshot()
     }
-    
+    #if !os(tvOS)
     /**
      截图并保存到相册
      
@@ -952,5 +992,114 @@ public extension UIView {
         
         return om.savedScreenshotPhotosAlbum()
     }
+    #endif
 
 }
+
+public enum OMGradientColorDirection: String {
+    
+    case topToBottom = "0001"
+    case leftToRight = "0010"
+    case bottomToTop = "0100"
+    case rightToLeft = "1000"
+    
+    case leftTopToRightBottom = "0011"
+    case rightTopToLeftBottom = "1001"
+    case leftBottomToRightTop = "0110"
+    case rightBottomToLeftTop = "1100"
+}
+
+// MARK: - gradient color
+
+public extension OMExtension where OMBase: UIView {
+    
+    /// 计算起点与终点
+    ///
+    /// - Parameters:
+    ///   - gradientLayer: 图层
+    ///   - direction: 方向
+    fileprivate func startAndEndPoint(gradientLayer: CAGradientLayer, direction: OMGradientColorDirection) {
+        
+        let str = direction.rawValue
+        
+        gradientLayer.startPoint = CGPoint(x: Int(str[str.index(str.startIndex, offsetBy: 0)..<str.index(str.endIndex, offsetBy: -3)]) ?? 0, y: Int(str[str.index(str.startIndex, offsetBy: 1)..<str.index(str.endIndex, offsetBy: -2)]) ?? 0)
+        gradientLayer.endPoint = CGPoint(x: Int(str[str.index(str.startIndex, offsetBy: 2)..<str.index(str.endIndex, offsetBy: -1)]) ?? 0, y: Int(str[str.index(str.endIndex, offsetBy: -1)..<str.index(str.endIndex, offsetBy: 0)]) ?? 0)
+    }
+    
+    /// 透明度渐变
+    ///
+    /// - Parameters:
+    ///   - color: 颜色
+    ///   - fromAlpha: 开始透明度 [default = 0
+    ///   - toAlpha: 结束透明度 [defualt = 1]
+    ///   - direction: 方向 [default = .topToBottom]
+    func addGradientColor(_ color: UIColor, fromAlpha: CGFloat = 0, toAlpha: CGFloat = 1, direction: OMGradientColorDirection = .topToBottom) {
+        
+        var fromAlpha = fromAlpha
+        fromAlpha = max(0, fromAlpha)
+        
+        var toAlpha = toAlpha
+        toAlpha = min(1, toAlpha)
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [color.withAlphaComponent(fromAlpha).cgColor, color.withAlphaComponent(toAlpha).cgColor]
+        base.layoutIfNeeded()
+        
+        gradientLayer.frame = CGRect(x: 0, y: 0, width: base.bounds.width, height: base.bounds.height)
+        startAndEndPoint(gradientLayer: gradientLayer, direction: direction)
+        base.layer.addSublayer(gradientLayer)
+    }
+    
+    /// 颜色渐变
+    ///
+    /// - Parameters:
+    ///   - colors: 颜色
+    ///   - direction: 方向 [default = .topToBottom]
+    func addGradientColors(_ colors: [UIColor], direction: OMGradientColorDirection = .topToBottom) {
+        
+        addGradientColors(colors.map({ ($0, 1) }), direction: direction)
+    }
+    
+    /// 颜色渐变
+    ///
+    /// - Parameters:
+    ///   - colors: (颜色, 透明度)
+    ///   - direction: 方向 [default = .topToBottom]
+    func addGradientColors(_ colors: [(color: UIColor, alpha: CGFloat)], direction: OMGradientColorDirection = .topToBottom) {
+        
+        let gradientLayer = CAGradientLayer()
+        
+        gradientLayer.colors = colors.map({ $0.color.withAlphaComponent($0.alpha).cgColor })
+        base.layoutIfNeeded()
+        
+        gradientLayer.frame = CGRect(x: 0, y: 0, width: base.bounds.width, height: base.bounds.height)
+        startAndEndPoint(gradientLayer: gradientLayer, direction: direction)
+        base.layer.addSublayer(gradientLayer)
+    }
+}
+
+// MARK: - Class
+
+public extension UIView {
+    
+    
+    /// 快速实例化一个xib e.g.let test = TestView.omInstantiateFromNib() as! TestView
+    ///
+    /// - Returns: view
+    static func omInstantiateFromNib() -> UIView {
+        
+        guard let nib = Bundle.main.loadNibNamed(omClassName, owner: nil, options: nil) else {
+            
+            return UIView()
+        }
+        
+        guard let instantiate = nib.first as? UIView else {
+            
+            return UIView()
+        }
+        
+        return instantiate
+    }
+}
+
+#endif

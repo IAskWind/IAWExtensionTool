@@ -25,7 +25,31 @@
 //  SOFTWARE.
 
 import Foundation
-import UIKit
+
+#if !os(macOS)
+    import UIKit
+#endif
+
+public extension Int {
+    
+    struct OM {
+        
+        public static func random(_ range: Range<Int>) -> Int {
+            
+            return random(range.lowerBound, range.upperBound - 1)
+        }
+        
+        public static func random(_ range: ClosedRange<Int>) -> Int {
+            
+            return random(range.lowerBound, range.upperBound)
+        }
+        
+        public static func random(_ lower: Int = 0, _ upper: Int = 9) -> Int {
+            
+            return lower + Int(arc4random_uniform(UInt32(upper - lower + 1)))
+        }
+    }
+}
 
 public extension Int {
     
@@ -57,5 +81,19 @@ public extension Int {
     var omIsOdd: Bool {
         
         return !omIsEven
+    }
+    
+    var omAbs: Int {
+        
+        return abs(self)
+    }
+    
+    var omLocaleCurrency: String {
+        
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.locale = Locale.current
+        
+        return formatter.string(from: self as NSNumber)!
     }
 }

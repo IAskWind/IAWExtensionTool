@@ -14,6 +14,9 @@ public enum IAWXcassetsTool: String {
     case errorInfo = "errorInfo"
     case successInfo = "successInfo"
     case headerPhoto = "headerPhoto"
+    case v2_refreshWhite = "v2_refreshWhite"
+    case back_9x15 = "back_9x15"
+    case not_network_loading_226x119 = "not_network_loading_226x119"
       
     /// Returns the associated image.
     public var image: UIImage {

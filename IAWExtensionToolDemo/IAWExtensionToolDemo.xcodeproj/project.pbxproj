@@ -10,7 +10,8 @@
 		441C6ED71DDE0C090080D0F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441C6ED61DDE0C090080D0F0 /* AppDelegate.swift */; };
 		441C6ED91DDE0C090080D0F0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441C6ED81DDE0C090080D0F0 /* MainViewController.swift */; };
 		441C6EDE1DDE0C090080D0F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 441C6EDD1DDE0C090080D0F0 /* Assets.xcassets */; };
-		B3D834EB5114AD2B2BF760E0 /* Pods_IAWExtensionToolDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7491EFE7F29DDB7F5CA35563 /* Pods_IAWExtensionToolDemo.framework */; };
+		442E536F1E1F9CCC001FCBD8 /* UserVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E536E1E1F9CCC001FCBD8 /* UserVo.swift */; };
+		B3D834EB5114AD2B2BF760E0 /* Pods_IAWExtensionToolDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7491EFE7F29DDB7F5CA35563 /* Pods_IAWExtensionToolDemo.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		441C6ED81DDE0C090080D0F0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		441C6EDD1DDE0C090080D0F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		441C6EE21DDE0C090080D0F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		442E536E1E1F9CCC001FCBD8 /* UserVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserVo.swift; sourceTree = "<group>"; };
 		4D511B703F5241F7627EDB17 /* Pods-IAWExtensionToolDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IAWExtensionToolDemo.release.xcconfig"; path = "../Pods/Target Support Files/Pods-IAWExtensionToolDemo/Pods-IAWExtensionToolDemo.release.xcconfig"; sourceTree = "<group>"; };
 		7491EFE7F29DDB7F5CA35563 /* Pods_IAWExtensionToolDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IAWExtensionToolDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF9070D9D28AEDF46D3ADEEE /* Pods-IAWExtensionToolDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IAWExtensionToolDemo.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-IAWExtensionToolDemo/Pods-IAWExtensionToolDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 		441C6ED51DDE0C090080D0F0 /* IAWExtensionToolDemo */ = {
 			isa = PBXGroup;
 			children = (
+				442E536E1E1F9CCC001FCBD8 /* UserVo.swift */,
 				441C6ED61DDE0C090080D0F0 /* AppDelegate.swift */,
 				441C6ED81DDE0C090080D0F0 /* MainViewController.swift */,
 				441C6EDD1DDE0C090080D0F0 /* Assets.xcassets */,
@@ -205,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				441C6ED91DDE0C090080D0F0 /* MainViewController.swift in Sources */,
+				442E536F1E1F9CCC001FCBD8 /* UserVo.swift in Sources */,
 				441C6ED71DDE0C090080D0F0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,17 +8,55 @@
 
 /* Begin PBXBuildFile section */
 		441C6EC41DDE0BEC0080D0F0 /* IAWExtensionTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 441C6EC21DDE0BEC0080D0F0 /* IAWExtensionTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		442E53321E1D0C33001FCBD8 /* LoadProgressAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E53311E1D0C33001FCBD8 /* LoadProgressAnimationView.swift */; };
+		442E53351E1D1057001FCBD8 /* IAW_Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E53341E1D1057001FCBD8 /* IAW_Constant.swift */; };
+		442E533B1E1DE494001FCBD8 /* IAW_EditTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E53371E1DE494001FCBD8 /* IAW_EditTextViewController.swift */; };
+		442E533E1E1DE494001FCBD8 /* IAW_WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E533A1E1DE494001FCBD8 /* IAW_WebViewController.swift */; };
+		442E534B1E1DE575001FCBD8 /* IAW_BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E53411E1DE575001FCBD8 /* IAW_BaseViewController.swift */; };
+		442E534C1E1DE575001FCBD8 /* IAW_NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E53421E1DE575001FCBD8 /* IAW_NavigationController.swift */; };
+		442E534D1E1DE575001FCBD8 /* IAW_TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E53431E1DE575001FCBD8 /* IAW_TabBarController.swift */; };
+		442E53511E1DE575001FCBD8 /* IAW_ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E53481E1DE575001FCBD8 /* IAW_ResponseModel.swift */; };
+		442E53521E1DE575001FCBD8 /* IAW_ResponseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E53491E1DE575001FCBD8 /* IAW_ResponseModels.swift */; };
+		442E53531E1DE575001FCBD8 /* IAW_ResponseMsgModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E534A1E1DE575001FCBD8 /* IAW_ResponseMsgModel.swift */; };
+		442E53581E1E23C6001FCBD8 /* IAWUITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E53561E1E23C6001FCBD8 /* IAWUITableView+Extension.swift */; };
+		442E53591E1E23C6001FCBD8 /* IAWUIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E53571E1E23C6001FCBD8 /* IAWUIView+Extension.swift */; };
+		442E535B1E1E3876001FCBD8 /* IAW_PhotoTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E535A1E1E3876001FCBD8 /* IAW_PhotoTool.swift */; };
+		442E535D1E1F313C001FCBD8 /* IAW_MsgTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E535C1E1F313C001FCBD8 /* IAW_MsgTip.swift */; };
+		442E535F1E1F384D001FCBD8 /* IAW_TextViewTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E535E1E1F384D001FCBD8 /* IAW_TextViewTool.swift */; };
+		442E53611E1F388D001FCBD8 /* IAW_TextFieldTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E53601E1F388D001FCBD8 /* IAW_TextFieldTool.swift */; };
+		442E53631E1F38AD001FCBD8 /* IAW_LabelTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E53621E1F38AD001FCBD8 /* IAW_LabelTool.swift */; };
+		442E53651E1F756A001FCBD8 /* IAW_UITool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E53641E1F756A001FCBD8 /* IAW_UITool.swift */; };
+		442E53671E1F75F5001FCBD8 /* IAW_TabelViewTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E53661E1F75F5001FCBD8 /* IAW_TabelViewTool.swift */; };
+		442E53691E1F7646001FCBD8 /* IAW_WebViewTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E53681E1F7646001FCBD8 /* IAW_WebViewTool.swift */; };
+		442E536B1E1F76BE001FCBD8 /* IAW_TokenTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E536A1E1F76BE001FCBD8 /* IAW_TokenTool.swift */; };
+		442E536D1E1F8C2D001FCBD8 /* IAW_NetTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E536C1E1F8C2D001FCBD8 /* IAW_NetTool.swift */; };
+		44A43A731E1CF66A005BB1FE /* WHC_AutoCellHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A43A6F1E1CF66A005BB1FE /* WHC_AutoCellHeight.swift */; };
+		44A43A741E1CF66A005BB1FE /* WHC_AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A43A701E1CF66A005BB1FE /* WHC_AutoLayout.swift */; };
+		44A43A751E1CF66A005BB1FE /* WHC_Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A43A711E1CF66A005BB1FE /* WHC_Frame.swift */; };
+		44A43A761E1CF66A005BB1FE /* WHC_StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A43A721E1CF66A005BB1FE /* WHC_StackView.swift */; };
+		44A43A7C1E1CF699005BB1FE /* RatingBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A43A781E1CF699005BB1FE /* RatingBar.swift */; };
+		44A43A7D1E1CF699005BB1FE /* star_big1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A43A791E1CF699005BB1FE /* star_big1@3x.png */; };
+		44A43A7E1E1CF699005BB1FE /* star_big2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A43A7A1E1CF699005BB1FE /* star_big2@3x.png */; };
+		44A43A7F1E1CF699005BB1FE /* star_big3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A43A7B1E1CF699005BB1FE /* star_big3@3x.png */; };
+		44A43A8B1E1CF6D8005BB1FE /* CropRectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A43A811E1CF6D8005BB1FE /* CropRectView.swift */; };
+		44A43A8C1E1CF6D8005BB1FE /* CropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A43A821E1CF6D8005BB1FE /* CropView.swift */; };
+		44A43A8D1E1CF6D8005BB1FE /* CropViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 44A43A831E1CF6D8005BB1FE /* CropViewController.h */; };
+		44A43A8E1E1CF6D8005BB1FE /* CropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A43A841E1CF6D8005BB1FE /* CropViewController.swift */; };
+		44A43A8F1E1CF6D8005BB1FE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44A43A851E1CF6D8005BB1FE /* Info.plist */; };
+		44A43A901E1CF6D8005BB1FE /* PhotoCropEditorBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A43A861E1CF6D8005BB1FE /* PhotoCropEditorBorder.png */; };
+		44A43A911E1CF6D8005BB1FE /* PhotoCropEditorBorder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A43A871E1CF6D8005BB1FE /* PhotoCropEditorBorder@2x.png */; };
+		44A43A921E1CF6D8005BB1FE /* PhotoCropEditorBorder@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A43A881E1CF6D8005BB1FE /* PhotoCropEditorBorder@3x.png */; };
+		44A43A931E1CF6D8005BB1FE /* ResizeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A43A891E1CF6D8005BB1FE /* ResizeControl.swift */; };
+		44A43A941E1CF6D8005BB1FE /* UIImage+Crop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A43A8A1E1CF6D8005BB1FE /* UIImage+Crop.swift */; };
 		44AD44F11E1264C000E19542 /* IAW_SignMd5Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AD44F01E1264C000E19542 /* IAW_SignMd5Tool.swift */; };
 		44EC56491DDE0F0C00DAAFF8 /* IAWArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC56381DDE0F0C00DAAFF8 /* IAWArray.swift */; };
 		44EC564A1DDE0F0C00DAAFF8 /* IAWBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC56391DDE0F0C00DAAFF8 /* IAWBundle.swift */; };
 		44EC564B1DDE0F0C00DAAFF8 /* IAWString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC563A1DDE0F0C00DAAFF8 /* IAWString.swift */; };
-		44EC564C1DDE0F0C00DAAFF8 /* IAWAppTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC563C1DDE0F0C00DAAFF8 /* IAWAppTool.swift */; };
-		44EC564D1DDE0F0C00DAAFF8 /* IAWJsonTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC563D1DDE0F0C00DAAFF8 /* IAWJsonTool.swift */; };
-		44EC564E1DDE0F0C00DAAFF8 /* IAWProgressHUDTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC563E1DDE0F0C00DAAFF8 /* IAWProgressHUDTool.swift */; };
-		44EC564F1DDE0F0C00DAAFF8 /* IAWRNCryptorTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC563F1DDE0F0C00DAAFF8 /* IAWRNCryptorTool.swift */; };
-		44EC56501DDE0F0C00DAAFF8 /* IAWTextFieldTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC56401DDE0F0C00DAAFF8 /* IAWTextFieldTool.swift */; };
+		44EC564C1DDE0F0C00DAAFF8 /* IAW_AppTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC563C1DDE0F0C00DAAFF8 /* IAW_AppTool.swift */; };
+		44EC564D1DDE0F0C00DAAFF8 /* IAW_JsonTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC563D1DDE0F0C00DAAFF8 /* IAW_JsonTool.swift */; };
+		44EC564E1DDE0F0C00DAAFF8 /* IAW_ProgressHUDTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC563E1DDE0F0C00DAAFF8 /* IAW_ProgressHUDTool.swift */; };
+		44EC564F1DDE0F0C00DAAFF8 /* IAW_RNCryptorTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC563F1DDE0F0C00DAAFF8 /* IAW_RNCryptorTool.swift */; };
 		44EC56511DDE0F0C00DAAFF8 /* IAWApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC56421DDE0F0C00DAAFF8 /* IAWApplication.swift */; };
-		44EC56521DDE0F0C00DAAFF8 /* IAWBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC56431DDE0F0C00DAAFF8 /* IAWBaseViewController.swift */; };
 		44EC56531DDE0F0C00DAAFF8 /* IAWColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC56441DDE0F0C00DAAFF8 /* IAWColor.swift */; };
 		44EC56541DDE0F0C00DAAFF8 /* IAWImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC56451DDE0F0C00DAAFF8 /* IAWImageView.swift */; };
 		44EC56551DDE0F0C00DAAFF8 /* IAWScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC56461DDE0F0C00DAAFF8 /* IAWScreen.swift */; };
@@ -26,7 +64,7 @@
 		44EC56571DDE0F0C00DAAFF8 /* IAWWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC56481DDE0F0C00DAAFF8 /* IAWWebView.swift */; };
 		44EC565C1DDE0F1800DAAFF8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44EC565A1DDE0F1800DAAFF8 /* Images.xcassets */; };
 		44EC565E1DDE18B500DAAFF8 /* IAWXcassetsTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC565D1DDE18B500DAAFF8 /* IAWXcassetsTool.swift */; };
-		AD8E5370726069281113256F /* Pods_IAWExtensionTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD248E7BAF6A2C34F8CA11D9 /* Pods_IAWExtensionTool.framework */; };
+		AD8E5370726069281113256F /* Pods_IAWExtensionTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD248E7BAF6A2C34F8CA11D9 /* Pods_IAWExtensionTool.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,17 +72,57 @@
 		441C6EBF1DDE0BEC0080D0F0 /* IAWExtensionTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IAWExtensionTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		441C6EC21DDE0BEC0080D0F0 /* IAWExtensionTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IAWExtensionTool.h; sourceTree = "<group>"; };
 		441C6EC31DDE0BEC0080D0F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		442E53311E1D0C33001FCBD8 /* LoadProgressAnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadProgressAnimationView.swift; sourceTree = "<group>"; };
+		442E53341E1D1057001FCBD8 /* IAW_Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_Constant.swift; sourceTree = "<group>"; };
+		442E53371E1DE494001FCBD8 /* IAW_EditTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_EditTextViewController.swift; sourceTree = "<group>"; };
+		442E533A1E1DE494001FCBD8 /* IAW_WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_WebViewController.swift; sourceTree = "<group>"; };
+		442E53411E1DE575001FCBD8 /* IAW_BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_BaseViewController.swift; sourceTree = "<group>"; };
+		442E53421E1DE575001FCBD8 /* IAW_NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_NavigationController.swift; sourceTree = "<group>"; };
+		442E53431E1DE575001FCBD8 /* IAW_TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_TabBarController.swift; sourceTree = "<group>"; };
+		442E53481E1DE575001FCBD8 /* IAW_ResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_ResponseModel.swift; sourceTree = "<group>"; };
+		442E53491E1DE575001FCBD8 /* IAW_ResponseModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_ResponseModels.swift; sourceTree = "<group>"; };
+		442E534A1E1DE575001FCBD8 /* IAW_ResponseMsgModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_ResponseMsgModel.swift; sourceTree = "<group>"; };
+		442E53561E1E23C6001FCBD8 /* IAWUITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IAWUITableView+Extension.swift"; sourceTree = "<group>"; };
+		442E53571E1E23C6001FCBD8 /* IAWUIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IAWUIView+Extension.swift"; sourceTree = "<group>"; };
+		442E535A1E1E3876001FCBD8 /* IAW_PhotoTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_PhotoTool.swift; sourceTree = "<group>"; };
+		442E535C1E1F313C001FCBD8 /* IAW_MsgTip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_MsgTip.swift; sourceTree = "<group>"; };
+		442E535E1E1F384D001FCBD8 /* IAW_TextViewTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_TextViewTool.swift; sourceTree = "<group>"; };
+		442E53601E1F388D001FCBD8 /* IAW_TextFieldTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_TextFieldTool.swift; sourceTree = "<group>"; };
+		442E53621E1F38AD001FCBD8 /* IAW_LabelTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_LabelTool.swift; sourceTree = "<group>"; };
+		442E53641E1F756A001FCBD8 /* IAW_UITool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_UITool.swift; sourceTree = "<group>"; };
+		442E53661E1F75F5001FCBD8 /* IAW_TabelViewTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_TabelViewTool.swift; sourceTree = "<group>"; };
+		442E53681E1F7646001FCBD8 /* IAW_WebViewTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_WebViewTool.swift; sourceTree = "<group>"; };
+		442E536A1E1F76BE001FCBD8 /* IAW_TokenTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_TokenTool.swift; sourceTree = "<group>"; };
+		442E536C1E1F8C2D001FCBD8 /* IAW_NetTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_NetTool.swift; sourceTree = "<group>"; };
+		442E53701E1FABDB001FCBD8 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = "/Users/winston/App/IOS/IAWExtensionTool/Pods/../build/Debug-iphoneos/CryptoSwift/CryptoSwift.framework"; sourceTree = "<absolute>"; };
+		442E53721E1FB08A001FCBD8 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = "/Users/winston/App/IOS/IAWExtensionTool/Pods/../build/Debug-iphoneos/CryptoSwift/CryptoSwift.framework"; sourceTree = "<absolute>"; };
+		44A43A6F1E1CF66A005BB1FE /* WHC_AutoCellHeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHC_AutoCellHeight.swift; sourceTree = "<group>"; };
+		44A43A701E1CF66A005BB1FE /* WHC_AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHC_AutoLayout.swift; sourceTree = "<group>"; };
+		44A43A711E1CF66A005BB1FE /* WHC_Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHC_Frame.swift; sourceTree = "<group>"; };
+		44A43A721E1CF66A005BB1FE /* WHC_StackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHC_StackView.swift; sourceTree = "<group>"; };
+		44A43A781E1CF699005BB1FE /* RatingBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingBar.swift; sourceTree = "<group>"; };
+		44A43A791E1CF699005BB1FE /* star_big1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_big1@3x.png"; sourceTree = "<group>"; };
+		44A43A7A1E1CF699005BB1FE /* star_big2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_big2@3x.png"; sourceTree = "<group>"; };
+		44A43A7B1E1CF699005BB1FE /* star_big3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_big3@3x.png"; sourceTree = "<group>"; };
+		44A43A811E1CF6D8005BB1FE /* CropRectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropRectView.swift; sourceTree = "<group>"; };
+		44A43A821E1CF6D8005BB1FE /* CropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropView.swift; sourceTree = "<group>"; };
+		44A43A831E1CF6D8005BB1FE /* CropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CropViewController.h; sourceTree = "<group>"; };
+		44A43A841E1CF6D8005BB1FE /* CropViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropViewController.swift; sourceTree = "<group>"; };
+		44A43A851E1CF6D8005BB1FE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44A43A861E1CF6D8005BB1FE /* PhotoCropEditorBorder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PhotoCropEditorBorder.png; sourceTree = "<group>"; };
+		44A43A871E1CF6D8005BB1FE /* PhotoCropEditorBorder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PhotoCropEditorBorder@2x.png"; sourceTree = "<group>"; };
+		44A43A881E1CF6D8005BB1FE /* PhotoCropEditorBorder@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PhotoCropEditorBorder@3x.png"; sourceTree = "<group>"; };
+		44A43A891E1CF6D8005BB1FE /* ResizeControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResizeControl.swift; sourceTree = "<group>"; };
+		44A43A8A1E1CF6D8005BB1FE /* UIImage+Crop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Crop.swift"; sourceTree = "<group>"; };
 		44AD44F01E1264C000E19542 /* IAW_SignMd5Tool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_SignMd5Tool.swift; sourceTree = "<group>"; };
 		44EC56381DDE0F0C00DAAFF8 /* IAWArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAWArray.swift; sourceTree = "<group>"; };
 		44EC56391DDE0F0C00DAAFF8 /* IAWBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAWBundle.swift; sourceTree = "<group>"; };
 		44EC563A1DDE0F0C00DAAFF8 /* IAWString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAWString.swift; sourceTree = "<group>"; };
-		44EC563C1DDE0F0C00DAAFF8 /* IAWAppTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAWAppTool.swift; sourceTree = "<group>"; };
-		44EC563D1DDE0F0C00DAAFF8 /* IAWJsonTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAWJsonTool.swift; sourceTree = "<group>"; };
-		44EC563E1DDE0F0C00DAAFF8 /* IAWProgressHUDTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAWProgressHUDTool.swift; sourceTree = "<group>"; };
-		44EC563F1DDE0F0C00DAAFF8 /* IAWRNCryptorTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAWRNCryptorTool.swift; sourceTree = "<group>"; };
-		44EC56401DDE0F0C00DAAFF8 /* IAWTextFieldTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAWTextFieldTool.swift; sourceTree = "<group>"; };
+		44EC563C1DDE0F0C00DAAFF8 /* IAW_AppTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_AppTool.swift; sourceTree = "<group>"; };
+		44EC563D1DDE0F0C00DAAFF8 /* IAW_JsonTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_JsonTool.swift; sourceTree = "<group>"; };
+		44EC563E1DDE0F0C00DAAFF8 /* IAW_ProgressHUDTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_ProgressHUDTool.swift; sourceTree = "<group>"; };
+		44EC563F1DDE0F0C00DAAFF8 /* IAW_RNCryptorTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_RNCryptorTool.swift; sourceTree = "<group>"; };
 		44EC56421DDE0F0C00DAAFF8 /* IAWApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAWApplication.swift; sourceTree = "<group>"; };
-		44EC56431DDE0F0C00DAAFF8 /* IAWBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAWBaseViewController.swift; sourceTree = "<group>"; };
 		44EC56441DDE0F0C00DAAFF8 /* IAWColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAWColor.swift; sourceTree = "<group>"; };
 		44EC56451DDE0F0C00DAAFF8 /* IAWImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAWImageView.swift; sourceTree = "<group>"; };
 		44EC56461DDE0F0C00DAAFF8 /* IAWScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAWScreen.swift; sourceTree = "<group>"; };
@@ -98,9 +176,110 @@
 			path = IAWExtensionTool;
 			sourceTree = "<group>";
 		};
+		442E53301E1D0C33001FCBD8 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				442E53311E1D0C33001FCBD8 /* LoadProgressAnimationView.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		442E53331E1D1057001FCBD8 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				442E53341E1D1057001FCBD8 /* IAW_Constant.swift */,
+				442E535C1E1F313C001FCBD8 /* IAW_MsgTip.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		442E53361E1DE494001FCBD8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				442E53371E1DE494001FCBD8 /* IAW_EditTextViewController.swift */,
+				442E533A1E1DE494001FCBD8 /* IAW_WebViewController.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		442E533F1E1DE575001FCBD8 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				442E53401E1DE575001FCBD8 /* Controller */,
+				442E53441E1DE575001FCBD8 /* Model */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		442E53401E1DE575001FCBD8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				442E53411E1DE575001FCBD8 /* IAW_BaseViewController.swift */,
+				442E53421E1DE575001FCBD8 /* IAW_NavigationController.swift */,
+				442E53431E1DE575001FCBD8 /* IAW_TabBarController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		442E53441E1DE575001FCBD8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				442E53481E1DE575001FCBD8 /* IAW_ResponseModel.swift */,
+				442E53491E1DE575001FCBD8 /* IAW_ResponseModels.swift */,
+				442E534A1E1DE575001FCBD8 /* IAW_ResponseMsgModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		44A43A6E1E1CF66A005BB1FE /* WHCStackView */ = {
+			isa = PBXGroup;
+			children = (
+				44A43A6F1E1CF66A005BB1FE /* WHC_AutoCellHeight.swift */,
+				44A43A701E1CF66A005BB1FE /* WHC_AutoLayout.swift */,
+				44A43A711E1CF66A005BB1FE /* WHC_Frame.swift */,
+				44A43A721E1CF66A005BB1FE /* WHC_StackView.swift */,
+			);
+			path = WHCStackView;
+			sourceTree = "<group>";
+		};
+		44A43A771E1CF699005BB1FE /* RatingBar */ = {
+			isa = PBXGroup;
+			children = (
+				44A43A781E1CF699005BB1FE /* RatingBar.swift */,
+				44A43A791E1CF699005BB1FE /* star_big1@3x.png */,
+				44A43A7A1E1CF699005BB1FE /* star_big2@3x.png */,
+				44A43A7B1E1CF699005BB1FE /* star_big3@3x.png */,
+			);
+			path = RatingBar;
+			sourceTree = "<group>";
+		};
+		44A43A801E1CF6D8005BB1FE /* CropViewController */ = {
+			isa = PBXGroup;
+			children = (
+				44A43A811E1CF6D8005BB1FE /* CropRectView.swift */,
+				44A43A821E1CF6D8005BB1FE /* CropView.swift */,
+				44A43A831E1CF6D8005BB1FE /* CropViewController.h */,
+				44A43A841E1CF6D8005BB1FE /* CropViewController.swift */,
+				44A43A851E1CF6D8005BB1FE /* Info.plist */,
+				44A43A861E1CF6D8005BB1FE /* PhotoCropEditorBorder.png */,
+				44A43A871E1CF6D8005BB1FE /* PhotoCropEditorBorder@2x.png */,
+				44A43A881E1CF6D8005BB1FE /* PhotoCropEditorBorder@3x.png */,
+				44A43A891E1CF6D8005BB1FE /* ResizeControl.swift */,
+				44A43A8A1E1CF6D8005BB1FE /* UIImage+Crop.swift */,
+			);
+			path = CropViewController;
+			sourceTree = "<group>";
+		};
 		44EC56361DDE0F0C00DAAFF8 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				442E533F1E1DE575001FCBD8 /* Base */,
+				442E53361E1DE494001FCBD8 /* Common */,
+				442E53331E1D1057001FCBD8 /* Constant */,
+				442E53301E1D0C33001FCBD8 /* CustomView */,
+				44A43A801E1CF6D8005BB1FE /* CropViewController */,
+				44A43A771E1CF699005BB1FE /* RatingBar */,
+				44A43A6E1E1CF66A005BB1FE /* WHCStackView */,
 				44EC56371DDE0F0C00DAAFF8 /* Foundation */,
 				44EC563B1DDE0F0C00DAAFF8 /* Tool */,
 				44EC56411DDE0F0C00DAAFF8 /* UIKit */,
@@ -121,12 +300,20 @@
 		44EC563B1DDE0F0C00DAAFF8 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				44EC563C1DDE0F0C00DAAFF8 /* IAWAppTool.swift */,
-				44EC563D1DDE0F0C00DAAFF8 /* IAWJsonTool.swift */,
-				44EC563E1DDE0F0C00DAAFF8 /* IAWProgressHUDTool.swift */,
-				44EC563F1DDE0F0C00DAAFF8 /* IAWRNCryptorTool.swift */,
-				44EC56401DDE0F0C00DAAFF8 /* IAWTextFieldTool.swift */,
+				44EC563C1DDE0F0C00DAAFF8 /* IAW_AppTool.swift */,
+				44EC563D1DDE0F0C00DAAFF8 /* IAW_JsonTool.swift */,
+				44EC563E1DDE0F0C00DAAFF8 /* IAW_ProgressHUDTool.swift */,
+				44EC563F1DDE0F0C00DAAFF8 /* IAW_RNCryptorTool.swift */,
 				44AD44F01E1264C000E19542 /* IAW_SignMd5Tool.swift */,
+				442E535A1E1E3876001FCBD8 /* IAW_PhotoTool.swift */,
+				442E535E1E1F384D001FCBD8 /* IAW_TextViewTool.swift */,
+				442E53601E1F388D001FCBD8 /* IAW_TextFieldTool.swift */,
+				442E53621E1F38AD001FCBD8 /* IAW_LabelTool.swift */,
+				442E53641E1F756A001FCBD8 /* IAW_UITool.swift */,
+				442E53661E1F75F5001FCBD8 /* IAW_TabelViewTool.swift */,
+				442E53681E1F7646001FCBD8 /* IAW_WebViewTool.swift */,
+				442E536A1E1F76BE001FCBD8 /* IAW_TokenTool.swift */,
+				442E536C1E1F8C2D001FCBD8 /* IAW_NetTool.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -134,8 +321,9 @@
 		44EC56411DDE0F0C00DAAFF8 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				442E53561E1E23C6001FCBD8 /* IAWUITableView+Extension.swift */,
+				442E53571E1E23C6001FCBD8 /* IAWUIView+Extension.swift */,
 				44EC56421DDE0F0C00DAAFF8 /* IAWApplication.swift */,
-				44EC56431DDE0F0C00DAAFF8 /* IAWBaseViewController.swift */,
 				44EC56441DDE0F0C00DAAFF8 /* IAWColor.swift */,
 				44EC56451DDE0F0C00DAAFF8 /* IAWImageView.swift */,
 				44EC56461DDE0F0C00DAAFF8 /* IAWScreen.swift */,
@@ -165,6 +353,8 @@
 		E5033D61F9E9745C3E03E517 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				442E53721E1FB08A001FCBD8 /* CryptoSwift.framework */,
+				442E53701E1FABDB001FCBD8 /* CryptoSwift.framework */,
 				FD248E7BAF6A2C34F8CA11D9 /* Pods_IAWExtensionTool.framework */,
 			);
 			name = Frameworks;
@@ -178,6 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				441C6EC41DDE0BEC0080D0F0 /* IAWExtensionTool.h in Headers */,
+				44A43A8D1E1CF6D8005BB1FE /* CropViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +433,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44A43A7F1E1CF699005BB1FE /* star_big3@3x.png in Resources */,
+				44A43A911E1CF6D8005BB1FE /* PhotoCropEditorBorder@2x.png in Resources */,
+				44A43A7E1E1CF699005BB1FE /* star_big2@3x.png in Resources */,
+				44A43A7D1E1CF699005BB1FE /* star_big1@3x.png in Resources */,
+				44A43A901E1CF6D8005BB1FE /* PhotoCropEditorBorder.png in Resources */,
+				44A43A921E1CF6D8005BB1FE /* PhotoCropEditorBorder@3x.png in Resources */,
+				44A43A8F1E1CF6D8005BB1FE /* Info.plist in Resources */,
 				44EC565C1DDE0F1800DAAFF8 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,23 +484,53 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44EC56521DDE0F0C00DAAFF8 /* IAWBaseViewController.swift in Sources */,
-				44EC564C1DDE0F0C00DAAFF8 /* IAWAppTool.swift in Sources */,
+				442E533E1E1DE494001FCBD8 /* IAW_WebViewController.swift in Sources */,
+				442E533B1E1DE494001FCBD8 /* IAW_EditTextViewController.swift in Sources */,
+				442E536B1E1F76BE001FCBD8 /* IAW_TokenTool.swift in Sources */,
+				44EC564C1DDE0F0C00DAAFF8 /* IAW_AppTool.swift in Sources */,
+				442E53651E1F756A001FCBD8 /* IAW_UITool.swift in Sources */,
+				442E534B1E1DE575001FCBD8 /* IAW_BaseViewController.swift in Sources */,
+				442E53321E1D0C33001FCBD8 /* LoadProgressAnimationView.swift in Sources */,
+				44A43A751E1CF66A005BB1FE /* WHC_Frame.swift in Sources */,
 				44EC56561DDE0F0C00DAAFF8 /* IAWTextField.swift in Sources */,
+				44A43A7C1E1CF699005BB1FE /* RatingBar.swift in Sources */,
+				442E53691E1F7646001FCBD8 /* IAW_WebViewTool.swift in Sources */,
+				44A43A931E1CF6D8005BB1FE /* ResizeControl.swift in Sources */,
+				442E53351E1D1057001FCBD8 /* IAW_Constant.swift in Sources */,
 				44AD44F11E1264C000E19542 /* IAW_SignMd5Tool.swift in Sources */,
+				442E535F1E1F384D001FCBD8 /* IAW_TextViewTool.swift in Sources */,
+				44A43A8E1E1CF6D8005BB1FE /* CropViewController.swift in Sources */,
+				44A43A941E1CF6D8005BB1FE /* UIImage+Crop.swift in Sources */,
 				44EC564A1DDE0F0C00DAAFF8 /* IAWBundle.swift in Sources */,
-				44EC56501DDE0F0C00DAAFF8 /* IAWTextFieldTool.swift in Sources */,
+				442E53531E1DE575001FCBD8 /* IAW_ResponseMsgModel.swift in Sources */,
+				44A43A8C1E1CF6D8005BB1FE /* CropView.swift in Sources */,
+				442E53591E1E23C6001FCBD8 /* IAWUIView+Extension.swift in Sources */,
+				442E53671E1F75F5001FCBD8 /* IAW_TabelViewTool.swift in Sources */,
+				442E536D1E1F8C2D001FCBD8 /* IAW_NetTool.swift in Sources */,
 				44EC564B1DDE0F0C00DAAFF8 /* IAWString.swift in Sources */,
-				44EC564E1DDE0F0C00DAAFF8 /* IAWProgressHUDTool.swift in Sources */,
-				44EC564F1DDE0F0C00DAAFF8 /* IAWRNCryptorTool.swift in Sources */,
+				442E53511E1DE575001FCBD8 /* IAW_ResponseModel.swift in Sources */,
+				442E534D1E1DE575001FCBD8 /* IAW_TabBarController.swift in Sources */,
+				442E535D1E1F313C001FCBD8 /* IAW_MsgTip.swift in Sources */,
+				44EC564E1DDE0F0C00DAAFF8 /* IAW_ProgressHUDTool.swift in Sources */,
+				442E535B1E1E3876001FCBD8 /* IAW_PhotoTool.swift in Sources */,
+				44EC564F1DDE0F0C00DAAFF8 /* IAW_RNCryptorTool.swift in Sources */,
 				44EC56511DDE0F0C00DAAFF8 /* IAWApplication.swift in Sources */,
 				44EC56571DDE0F0C00DAAFF8 /* IAWWebView.swift in Sources */,
 				44EC56531DDE0F0C00DAAFF8 /* IAWColor.swift in Sources */,
+				44A43A741E1CF66A005BB1FE /* WHC_AutoLayout.swift in Sources */,
+				44A43A8B1E1CF6D8005BB1FE /* CropRectView.swift in Sources */,
+				44A43A731E1CF66A005BB1FE /* WHC_AutoCellHeight.swift in Sources */,
 				44EC56541DDE0F0C00DAAFF8 /* IAWImageView.swift in Sources */,
-				44EC564D1DDE0F0C00DAAFF8 /* IAWJsonTool.swift in Sources */,
+				44EC564D1DDE0F0C00DAAFF8 /* IAW_JsonTool.swift in Sources */,
+				442E53521E1DE575001FCBD8 /* IAW_ResponseModels.swift in Sources */,
 				44EC565E1DDE18B500DAAFF8 /* IAWXcassetsTool.swift in Sources */,
+				44A43A761E1CF66A005BB1FE /* WHC_StackView.swift in Sources */,
 				44EC56551DDE0F0C00DAAFF8 /* IAWScreen.swift in Sources */,
 				44EC56491DDE0F0C00DAAFF8 /* IAWArray.swift in Sources */,
+				442E53631E1F38AD001FCBD8 /* IAW_LabelTool.swift in Sources */,
+				442E53611E1F388D001FCBD8 /* IAW_TextFieldTool.swift in Sources */,
+				442E534C1E1DE575001FCBD8 /* IAW_NavigationController.swift in Sources */,
+				442E53581E1E23C6001FCBD8 /* IAWUITableView+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +640,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5A11D36588B35B00253E8477 /* Pods-IAWExtensionTool.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = AA5ZGF9A6N;
@@ -432,6 +661,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 38CAE004563470CD1EE8E6A6 /* Pods-IAWExtensionTool.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = AA5ZGF9A6N;

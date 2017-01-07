@@ -25,7 +25,67 @@
 //  SOFTWARE.
 
 import Foundation
+
+#if !os(macOS) && !os(watchOS)
+
 import UIKit
+
+public extension OMExtension where OMBase: UITableView {
+    
+    func setHeader(height: CGFloat) {
+        
+        var view = UIView()
+        view.om.height = height
+        base.tableHeaderView = view
+    }
+    
+    func setHeaderZero() {
+        
+        setHeader(height: 0.1)
+    }
+    
+    func setFooter(height: CGFloat) {
+        
+        var view = UIView()
+        view.om.height = height
+        base.tableFooterView = view
+    }
+    
+    func setFooterZero() {
+        
+        setFooter(height: 0)
+    }
+}
+    
+public extension OMExtension where OMBase: UITableView {
+    
+    var lastSection: Int {
+        
+        return base.numberOfSections > 0 ? base.numberOfSections - 1 : 0
+    }
+    
+    func lastRow(inSection section: Int = 0) -> IndexPath? {
+        
+        guard section >= 0, base.numberOfSections > section else {
+            
+            return nil
+        }
+        
+        return IndexPath(row: base.numberOfRows(inSection: section) - 1, section: section)
+    }
+    
+    func scrollToBottom(animated: Bool = true) {
+        
+        let bottomOffset = CGPoint(x: 0, y: base.contentSize.height - base.bounds.size.height)
+        
+        base.setContentOffset(bottomOffset, animated: animated)
+    }
+    
+    func scrollToTop(animated: Bool = true) {
+        
+        base.setContentOffset(CGPoint.zero, animated: animated)
+    }
+}
 
 public extension OMExtension where OMBase: UITableView {
     
@@ -35,7 +95,7 @@ public extension OMExtension where OMBase: UITableView {
         
         base.setContentOffset(base.contentOffset, animated: false)
         
-        Thread.omRunInMainThread(delay: 0.05) {
+        Thread.OM.runInMain(delay: 0.05) {
             
             UIView.animate(withDuration: 0.2, animations: {
                 
@@ -120,3 +180,5 @@ public extension UITableView {
     }
 
 }
+
+#endif

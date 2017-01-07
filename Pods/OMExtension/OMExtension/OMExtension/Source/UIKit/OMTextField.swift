@@ -25,6 +25,9 @@
 //  SOFTWARE.
 
 import Foundation
+
+#if !os(macOS) && !os(watchOS)
+
 import UIKit
 
 fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
@@ -62,6 +65,8 @@ public extension OMExtension where OMBase: UITextField {
         }
     }
     
+    #if !os(tvOS)
+    
     func addDoneButton(barStyle: UIBarStyle = .default, title: String? = "完成") {
         
         let toolbar = UIToolbar()
@@ -72,6 +77,8 @@ public extension OMExtension where OMBase: UITextField {
         
         base.inputAccessoryView = toolbar
     }
+    
+    #endif
     
     func addLeftSpace(padding: CGFloat) {
         
@@ -89,6 +96,11 @@ public extension OMExtension where OMBase: UITextField {
         self.base.leftView?.frame.size = CGSize(width: image.size.width + padding, height: image.size.height)
         self.base.leftViewMode = UITextFieldViewMode.always
     }
+    
+    func setPlaceholderColor(_ color: UIColor) {
+        
+        base.attributedPlaceholder = base.placeholder?.omGetAttributes(color: [(color, base.placeholder)])
+    }
 }
 
 public extension UITextField {
@@ -103,13 +115,13 @@ public extension UITextField {
         
         om.addTextLimit(length: length, limitHandler: limitHandler)
     }
-    
+    #if !os(tvOS)
     @available(*, deprecated, message: "Extensions directly deprecated. Use `textField.om.addDoneButton` instead.", renamed: "om.addDoneButton")
     func omAddDoneButton(_ barStyle: UIBarStyle = .default, title: String? = "完成") {
         
         om.addDoneButton(barStyle: barStyle, title: title)
     }
-    
+    #endif
     @available(*, deprecated, message: "Extensions directly deprecated. Use `textField.om.addLeftSpace` instead.", renamed: "om.addLeftSpace")
     func omAddLeftPadding(_ padding: CGFloat) {
         
@@ -123,3 +135,5 @@ public extension UITextField {
     }
 
 }
+
+#endif

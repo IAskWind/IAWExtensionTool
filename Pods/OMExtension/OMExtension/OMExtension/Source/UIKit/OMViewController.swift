@@ -25,6 +25,9 @@
 //  SOFTWARE.
 
 import Foundation
+
+#if !os(macOS) && !os(watchOS)
+
 import UIKit
 
 // MARK: - common
@@ -36,12 +39,16 @@ public extension OMExtension where OMBase: UIViewController {
         return base.navigationController?.navigationBar
     }
     
+    #if !os(tvOS)
+    
     func setBackBarButtonItem(title: String? = nil) {
         
         let temporaryBarButtonItem = UIBarButtonItem()
         temporaryBarButtonItem.title = title ?? ""
         base.navigationItem.backBarButtonItem = temporaryBarButtonItem
     }
+    
+    #endif
     
     func pushViewController(_ viewController: UIViewController, animated: Bool = true) {
         
@@ -129,13 +136,13 @@ public extension UIViewController {
         
         return om.navigationBar
     }
-    
+    #if !os(tvOS)
     @available(*, deprecated, message: "Extensions directly deprecated. Use `viewController.om.setBackBarButtonItem` instead.", renamed: "om.setBackBarButtonItem")
     func omSetBackBarButtonItem(_ title: String) {
         
         om.setBackBarButtonItem(title: title)
     }
-    
+    #endif
     @available(*, deprecated, message: "Extensions directly deprecated. Use `viewController.om.pushViewController` instead.", renamed: "om.pushViewController")
     func omPushViewController(_ viewController: UIViewController, animated: Bool = true) {
         
@@ -369,11 +376,11 @@ public extension UIViewController {
             
             _view.addSubview(_imageView)
             
-            updateFrame(offset)
+            updateFrame(offset: offset)
         }
     }
     
-    private func titleLabel(_ attributedString: NSAttributedString?, space: CGFloat) {
+    private func titleLabel(_ attributedString: NSAttributedString?, offset: CGFloat, space: CGFloat) {
         
         if omPlaceholderTitleLabel == nil {
             
@@ -397,11 +404,11 @@ public extension UIViewController {
             
             _view.addSubview(_titleLabel)
             
-            updateFrame(space: space)
+            updateFrame(offset: offset, space: space)
         }
     }
     
-    private func descriptionlLabel(_ attributedString: NSAttributedString?, space: CGFloat) {
+    private func descriptionlLabel(_ attributedString: NSAttributedString?, offset: CGFloat, space: CGFloat) {
         
         if omPlaceholderDescriptionLabel == nil {
             
@@ -425,11 +432,11 @@ public extension UIViewController {
             
             _view.addSubview(_descriptionLabel)
             
-            updateFrame(space: space)
+            updateFrame(offset: offset, space: space)
         }
     }
     
-    private func button(_ backgroundImages: [(backgroundImage: UIImage?, state: UIControlState)]? = nil, titles: [(title: NSMutableAttributedString?, state: UIControlState)]? = nil, size: CGSize? = nil, space: CGFloat) {
+    private func button(_ backgroundImages: [(backgroundImage: UIImage?, state: UIControlState)]? = nil, titles: [(title: NSMutableAttributedString?, state: UIControlState)]? = nil, size: CGSize? = nil, offset: CGFloat, space: CGFloat) {
         
         if omPlaceholderButton == nil {
             
@@ -451,11 +458,11 @@ public extension UIViewController {
             
             _view.addSubview(_button)
             
-            updateFrame(space: space)
+            updateFrame(offset: offset, space: space)
         }
     }
     
-    private func updateFrame(_ offset: CGFloat = 0, space: CGFloat = 8, buttonSize: CGSize? = nil) {
+    private func updateFrame(offset: CGFloat, space: CGFloat = 8, buttonSize: CGSize? = nil) {
         
         guard var _view = omPlaceholderView else {
             
@@ -471,7 +478,7 @@ public extension UIViewController {
         _view.om.top = 0
         
         _imageView.center.x = _view.center.x
-        _imageView.center.y = _view.center.y
+        _imageView.center.y = _view.center.y + offset
         
         guard let _titleLabel = omPlaceholderTitleLabel else {
             
@@ -604,28 +611,32 @@ public extension UIViewController {
         }
         
         imageView(image, offset: offsetY)
-        titleLabel(titleAttributedString, space: space)
-        descriptionlLabel(descriptionAttributedString, space: space)
-        button(buttonBackgroundImages, titles: buttonTitles, size: buttonSize, space: space)
+        titleLabel(titleAttributedString, offset: offset, space: space)
+        descriptionlLabel(descriptionAttributedString, offset: offset, space: space)
+        button(buttonBackgroundImages, titles: buttonTitles, size: buttonSize, offset: offset, space: space)
         
-        omPlaceholderButton?.om.addTapGestureRecognizer(handler: { [weak self] (_) in
+        #if !os(tvOS)
             
-            if let button = self?.omPlaceholderButton {
+            omPlaceholderButton?.om.addTapGestureRecognizer(handler: { [weak self] (_) in
                 
-                buttonTapHandler?(button)
+                if let button = self?.omPlaceholderButton {
+                    
+                    buttonTapHandler?(button)
+                }
+                
+            })
+            
+            omPlaceholderView?.om.addTapGestureRecognizer(handler: { (_) in
+                
+                placeholderViewTapHandler?()
+            })
+            
+            NotificationCenter.default.addObserver(forName: NSNotification.Name.UIDeviceOrientationDidChange, object: nil, queue: OperationQueue.main) { [weak self] (notification) in
+                
+                self?.updateFrame(offset: offset, space: space, buttonSize: buttonSize)
             }
             
-            })
-        
-        omPlaceholderView?.om.addTapGestureRecognizer(handler: { (_) in
-            
-            placeholderViewTapHandler?()
-        })
-        
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIDeviceOrientationDidChange, object: nil, queue: OperationQueue.main) { [weak self] (notification) in
-            
-            self?.updateFrame(offset, space: space, buttonSize: buttonSize)
-        }
+        #endif
     }
     
     @available(*, deprecated, message: "Extensions directly deprecated. Use `viewController.om.hidePlaceholder` instead.", renamed: "om.hidePlaceholder")
@@ -665,3 +676,5 @@ public extension UIViewController {
     }
     
 }
+
+#endif

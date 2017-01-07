@@ -25,6 +25,9 @@
 //  SOFTWARE.
 
 import Foundation
+
+#if !os(macOS) && !os(watchOS)
+
 import UIKit
 
 // MARK: - App
@@ -427,137 +430,7 @@ public extension UIApplication {
      */
     @discardableResult
     static func omOpenPrefsWiFi() -> Bool { return OM.openPrefsWiFi() }
-
-}
-
-// MARK: - Audio
-
-/**
- http://iphonedevwiki.net/index.php/AudioServices
- */
-public enum OMSystemSoundID: Int {
-    case newMail = 1000
-    case mailSent = 1001
-    case voiceMail = 1002
-    case recivedMessage = 1003
-    case sentMessage = 1004
-    case alarm = 1005
-    case lowPower = 1006
-    case smsReceived1 = 1007
-    case smsReceived2 = 1008
-    case smsReceived3 = 1009
-    case smsReceived4 = 1010
-    case smsReceived5 = 1013
-    case smsReceived6 = 1014
-    case tweetSent = 1016
-    case anticipate = 1020
-    case bloom = 1021
-    case calypso = 1022
-    case chooChoo = 1023
-    case descent = 1024
-    case fanfare = 1025
-    case ladder = 1026
-    case minuet = 1027
-    case newsFlash = 1028
-    case noir = 1029
-    case sherwoodForest = 1030
-    case spell = 1031
-    case suspence = 1032
-    case telegraph = 1033
-    case tiptoes = 1034
-    case typewriters = 1035
-    case update = 1036
-    case ussdAlert = 1050
-    case simToolkitCallDropped = 1051
-    case simToolkitGeneralBeep = 1052
-    case simToolkitNegativeACK = 1053
-    case simToolkitPositiveACK = 1054
-    case simToolkitSMS = 1055
-    case tink = 1057
-    case ctBusy = 1070
-    case ctCongestion = 1071
-    case ctPathACK = 1072
-    case ctError = 1073
-    case ctCallWaiting = 1074
-    case ctKeytone = 1075
-    case lock = 1100
-    case unlock = 1101
-    case failedUnlock = 1102
-    case keypressedTink = 1103
-    case keypressedTock = 1104
-    case tock = 1105
-    case beepBeep = 1106
-    case ringerCharged = 1107
-    case photoShutter = 1108
-    case shake = 1109
-    case jblBegin = 1110
-    case jblConfirm = 1111
-    case jblCancel = 1112
-    case beginRecording = 1113
-    case endRecording = 1114
-    case jblAmbiguous = 1115
-    case jblNoMatch = 1116
-    case beginVideoRecord = 1117
-    case endVideoRecord = 1118
-    case vcInvitationAccepted = 1150
-    case vcRinging = 1151
-    case vcEnded = 1152
-    case vcCallWaiting = 1153
-    case vcCallUpgrade = 1154
-    case touchTone1 = 1200
-    case touchTone2 = 1201
-    case touchTone3 = 1202
-    case touchTone4 = 1203
-    case touchTone5 = 1204
-    case touchTone6 = 1205
-    case touchTone7 = 1206
-    case touchTone8 = 1207
-    case touchTone9 = 1208
-    case touchTone10 = 1209
-    case touchToneStar = 1210
-    case touchTonePound = 1211
-    case headsetStartCall = 1254
-    case headsetRedial = 1255
-    case headsetAnswerCall = 1256
-    case headsetEndCall = 1257
-    case headsetCallWaitingActions = 1258
-    case headsetTransitionEnd = 1259
-    case voicemail = 1300
-    case receivedMessage = 1301
-    case newMail2 = 1302
-    case mailSent2 = 1303
-    case alarm2 = 1304
-    case lock2 = 1305
-    case tock2 = 1306
-    case smsReceived1_2 = 1307
-    case smsReceived2_2 = 1308
-    case smsReceived3_2 = 1309
-    case smsReceived4_2 = 1310
-    case smsReceivedVibrate = 1311
-    case smsReceived1_3 = 1312
-    case smsReceived5_3 = 1313
-    case smsReceived6_3 = 1314
-    case voicemail2 = 1315
-    case anticipate2 = 1320
-    case bloom2 = 1321
-    case calypso2 = 1322
-    case chooChoo2 = 1323
-    case descent2 = 1324
-    case fanfare2 = 1325
-    case ladder2 = 1326
-    case minuet2 = 1327
-    case newsFlash2 = 1328
-    case noir2 = 1329
-    case sherwoodForest2 = 1330
-    case spell2 = 1331
-    case suspence2 = 1332
-    case telegraph2 = 1333
-    case tiptoes2 = 1334
-    case typewriters2 = 1335
-    case update2 = 1336
-    case ringerVibeChanged = 1350
-    case silentVibeChanged = 1351
-    case vibrate = 4095
+    
 }
 
 import AudioToolbox
@@ -565,9 +438,9 @@ import AudioToolbox
 public extension UIApplication {
     
     @available(*, deprecated, message: "Extensions directly deprecated. Use `UIApplication.OM.playSystemSound` instead.", renamed: "OM.playSystemSound")
-    static func omSystemSoundPlay(_ omAudioSystemSoundID: OMSystemSoundID) {
+    static func omSystemSoundPlay(_ omAudioSystemSoundID: OM.SoundID) {
         
-        OM.playSystemSound(systemSoundID: omAudioSystemSoundID)
+        OM.playSystemSound(soundID: omAudioSystemSoundID)
     }
     
     @available(*, deprecated, message: "Extensions directly deprecated. Use `UIApplication.OM.playVibrate` instead.", renamed: "OM.playVibrate")
@@ -581,10 +454,12 @@ public extension UIApplication {
         
         OM.playSound(forResource: forResource)
     }
-
+    
 }
 
 // MARK: - Authentication
+
+#if !os(tvOS)
 
 import LocalAuthentication
 
@@ -632,7 +507,7 @@ public extension UIApplication {
                         handler(.error)
                     }
                 }
-            } as! (Bool, Error?) -> Void)
+                } as! (Bool, Error?) -> Void)
             
         } else {
             
@@ -650,9 +525,164 @@ public extension UIApplication {
     }
 }
 
+#endif
+
+public enum OMBaseURLType: String {
+    case release, develop, test, custom
+    
+    public var currentType: OMBaseURLType {
+        
+        if let type = UserDefaults.standard.object(forKey: UIApplication.OM.release.defaultBaseURLTypeKey) as? String, !UIApplication.OM.release.isAppstore {
+            
+            return OMBaseURLType(rawValue: type) ?? OMBaseURLType.release
+            
+        } else {
+            
+            return self
+        }
+    }
+    
+    public var currentURL: String {
+        
+        return UIApplication.OM.release.module(type: currentType)
+    }
+}
+
 public extension UIApplication {
     
     struct OM {
+        
+        // MARK: - Audio
+        
+        /**
+         http://iphonedevwiki.net/index.php/AudioServices
+         */
+        public enum SoundID: Int {
+            case newMail = 1000
+            case mailSent = 1001
+            case voiceMail = 1002
+            case recivedMessage = 1003
+            case sentMessage = 1004
+            case alarm = 1005
+            case lowPower = 1006
+            case smsReceived1 = 1007
+            case smsReceived2 = 1008
+            case smsReceived3 = 1009
+            case smsReceived4 = 1010
+            case smsReceived5 = 1013
+            case smsReceived6 = 1014
+            case tweetSent = 1016
+            case anticipate = 1020
+            case bloom = 1021
+            case calypso = 1022
+            case chooChoo = 1023
+            case descent = 1024
+            case fanfare = 1025
+            case ladder = 1026
+            case minuet = 1027
+            case newsFlash = 1028
+            case noir = 1029
+            case sherwoodForest = 1030
+            case spell = 1031
+            case suspence = 1032
+            case telegraph = 1033
+            case tiptoes = 1034
+            case typewriters = 1035
+            case update = 1036
+            case ussdAlert = 1050
+            case simToolkitCallDropped = 1051
+            case simToolkitGeneralBeep = 1052
+            case simToolkitNegativeACK = 1053
+            case simToolkitPositiveACK = 1054
+            case simToolkitSMS = 1055
+            case tink = 1057
+            case ctBusy = 1070
+            case ctCongestion = 1071
+            case ctPathACK = 1072
+            case ctError = 1073
+            case ctCallWaiting = 1074
+            case ctKeytone = 1075
+            case lock = 1100
+            case unlock = 1101
+            case failedUnlock = 1102
+            case keypressedTink = 1103
+            case keypressedTock = 1104
+            case tock = 1105
+            case beepBeep = 1106
+            case ringerCharged = 1107
+            case photoShutter = 1108
+            case shake = 1109
+            case jblBegin = 1110
+            case jblConfirm = 1111
+            case jblCancel = 1112
+            case beginRecording = 1113
+            case endRecording = 1114
+            case jblAmbiguous = 1115
+            case jblNoMatch = 1116
+            case beginVideoRecord = 1117
+            case endVideoRecord = 1118
+            case vcInvitationAccepted = 1150
+            case vcRinging = 1151
+            case vcEnded = 1152
+            case vcCallWaiting = 1153
+            case vcCallUpgrade = 1154
+            case touchTone1 = 1200
+            case touchTone2 = 1201
+            case touchTone3 = 1202
+            case touchTone4 = 1203
+            case touchTone5 = 1204
+            case touchTone6 = 1205
+            case touchTone7 = 1206
+            case touchTone8 = 1207
+            case touchTone9 = 1208
+            case touchTone10 = 1209
+            case touchToneStar = 1210
+            case touchTonePound = 1211
+            case headsetStartCall = 1254
+            case headsetRedial = 1255
+            case headsetAnswerCall = 1256
+            case headsetEndCall = 1257
+            case headsetCallWaitingActions = 1258
+            case headsetTransitionEnd = 1259
+            case voicemail = 1300
+            case receivedMessage = 1301
+            case newMail2 = 1302
+            case mailSent2 = 1303
+            case alarm2 = 1304
+            case lock2 = 1305
+            case tock2 = 1306
+            case smsReceived1_2 = 1307
+            case smsReceived2_2 = 1308
+            case smsReceived3_2 = 1309
+            case smsReceived4_2 = 1310
+            case smsReceivedVibrate = 1311
+            case smsReceived1_3 = 1312
+            case smsReceived5_3 = 1313
+            case smsReceived6_3 = 1314
+            case voicemail2 = 1315
+            case anticipate2 = 1320
+            case bloom2 = 1321
+            case calypso2 = 1322
+            case chooChoo2 = 1323
+            case descent2 = 1324
+            case fanfare2 = 1325
+            case ladder2 = 1326
+            case minuet2 = 1327
+            case newsFlash2 = 1328
+            case noir2 = 1329
+            case sherwoodForest2 = 1330
+            case spell2 = 1331
+            case suspence2 = 1332
+            case telegraph2 = 1333
+            case tiptoes2 = 1334
+            case typewriters2 = 1335
+            case update2 = 1336
+            case ringerVibeChanged = 1350
+            case silentVibeChanged = 1351
+            case vibrate = 4095
+        }
+        
+        // MARK: - App
         
         /// 获取单例delegate
         public static var appDelegate: UIApplicationDelegate { return UIApplication.shared.delegate! }
@@ -662,7 +692,11 @@ public extension UIApplication {
             
             var top = UIApplication.shared.keyWindow?.rootViewController
             
-            if top?.isKind(of: UITabBarController.classForCoder()) == true {
+            if top?.presentedViewController != nil {
+                
+                top = top?.presentedViewController
+                
+            } else if top?.isKind(of: UITabBarController.classForCoder()) == true {
                 
                 top = (top as! UITabBarController).selectedViewController
                 
@@ -670,10 +704,6 @@ public extension UIApplication {
                     
                     top = (top as! UINavigationController).topViewController
                 }
-                
-            } else if top?.presentedViewController != nil {
-                
-                top = top?.presentedViewController
                 
             } else if (top?.isKind(of: UINavigationController.classForCoder()) == true) && (top as! UINavigationController).topViewController != nil {
                 
@@ -697,7 +727,7 @@ public extension UIApplication {
         // 获取当前UITabBarController
         public static var currentTBC: UITabBarController? {
             
-            if let top = UIApplication.shared.keyWindow?.rootViewController , top.isKind(of: UITabBarController.classForCoder()) == true {
+            if let top = UIApplication.shared.keyWindow?.rootViewController, top.isKind(of: UITabBarController.classForCoder()) == true {
                 
                 return (top as! UITabBarController)
             }
@@ -721,7 +751,7 @@ public extension UIApplication {
         public static var isFirstStart: Bool { return OM.isFirstStartForKey(OM.appIdentifier) }
         
         /// 是否存在一个以内部版本号为标记的key
-        public static var isFirstStartForCurrentBuild: Bool { return OM.isFirstStartForKey(OM.appIdentifier) }
+        public static var isFirstStartForCurrentBuild: Bool { return OM.isFirstStartForKey(OM.appBuild) }
         
         /// 是否存在一个以外部版本号为标记的key
         public static var isFirstStartForCurrentVersion: Bool { return OM.isFirstStartForKey(OM.appVersion) }
@@ -750,6 +780,8 @@ public extension UIApplication {
                 return false
             }
         }
+        
+        // MARK: - Prefs
         
         //  http://stackoverflow.com/questions/8246070/ios-launching-settings-restrictions-url-scheme/8246814#8246814
         
@@ -834,13 +866,13 @@ public extension UIApplication {
         ///
         /// - Parameter id: 应该id
         /// - Returns: 成功/失败
-        public static func getAppStoreURL(id: Int) -> String { return "http://itunes.apple.com/app/id\(id)" }
+        public static func getAppStoreURL(id: Int) -> String { return "https://itunes.apple.com/app/id\(id)" }
         
         /// 应用在appStore中的详情json的请求地址
         ///
         /// - Parameter id: 应该id
         /// - Returns: 成功/失败
-        public static func getAppStoreLookupURL(id: Int) -> String { return "http://itunes.apple.com/US/lookup?id=\(id)" }
+        public static func getAppStoreLookupURL(id: Int) -> String { return "https://itunes.apple.com/US/lookup?id=\(id)" }
         
         /**
          跳转到应用设置
@@ -1066,9 +1098,11 @@ public extension UIApplication {
         @discardableResult
         public static func openPrefsWiFi() -> Bool { return openPrefsRoot("WIFI") }
         
-        public static func playSystemSound(systemSoundID: OMSystemSoundID) {
+        // MARK: - Audio
+        
+        public static func playSystemSound(soundID: OM.SoundID) {
             
-            AudioServicesPlaySystemSound(SystemSoundID(systemSoundID.rawValue))
+            AudioServicesPlaySystemSound(SystemSoundID(soundID.rawValue))
         }
         
         public static func playVibrate() {
@@ -1085,6 +1119,10 @@ public extension UIApplication {
             AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundID)
             AudioServicesPlaySystemSound(soundID)
         }
+        
+        // MARK: - Authentication
+        
+        #if !os(tvOS)
         
         public static func authenticationTouchID(reason: String, handler: @escaping (Bool, LAError?) -> Void) {
             
@@ -1104,5 +1142,169 @@ public extension UIApplication {
                 handler(false, error as? LAError)
             }
         }
+        
+        #endif
+        
+        // MARK: - Release
+        
+        public struct release {
+            
+            /* Must first in AppDelegate didFinishLaunchingWithOptions configure the environment
+             #if DEBUG
+             let isDebug = true
+             #else
+             let isDebug = false
+             #endif
+             
+             #if APPSTORE
+             let isAppstore = true
+             #else
+             let isAppstore = false
+             #endif
+             
+             #if BETA
+             let isBeta = true
+             #else
+             let isBeta = false
+             #endif
+             
+             UIApplication.OM.release.isDebug = isDebug
+             UIApplication.OM.release.isAppstore = isAppstore
+             UIApplication.OM.release.isBeta = isBeta
+             
+             UIApplication.OM.release.configURLRelease = "https://release.example.com"
+             UIApplication.OM.release.configURLDeveloper = "https://developer.example.com"
+             UIApplication.OM.release.configURLTest = "https://test.example.com"
+             */
+            
+            public static var isDebug = true
+            public static var isAppstore = false
+            public static var isBeta = false
+            
+            public static var defaultBaseURLTypeKey = "OM_BaseURLTypeKey"
+            public static var defaultCustomModuleKey = "OM_CustomModuleKey"
+            
+            /// 默认BaseURLType
+            public static var baseURL: OMBaseURLType = baseURLType
+            
+            private static var baseURLType: OMBaseURLType {
+                
+                if isAppstore {
+                    
+                    return .release
+                    
+                } else if isDebug {
+                    
+                    return .develop
+                }
+                
+                return .test
+            }
+            
+            private static func showCustomBaseURL(currentURL: String = baseURL.currentURL, viewController: UIViewController? = UIApplication.OM.currentVC, completionHandler: ((OMBaseURLType) -> Void)? = nil) {
+                
+                let alert = UIAlertController(title: "custom BaseURL", message: nil, preferredStyle: .alert)
+                
+                alert.addTextField { (textField) in
+                    
+                    textField.text = currentURL
+                    textField.keyboardType = .URL
+                }
+                alert.addAction(UIAlertAction(title: "ok", style: .default, handler: { (_) in
+                    
+                    let url = alert.textFields?.first?.text
+                    
+                    if let url = url, url.omIsURL {
+                        
+                        UserDefaults.standard.set(url, forKey: defaultCustomModuleKey)
+                        UserDefaults.standard.synchronize()
+                        
+                        saveBaseURL(URLType: .custom)
+                        completionHandler?(.custom)
+                        
+                    } else {
+                        
+                        let alert = UIAlertController(title: "address validation fails", message: nil, preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler:  { _ in
+                            
+                            showCustomBaseURL(currentURL: url ?? baseURL.currentURL, viewController: viewController, completionHandler: completionHandler)
+                        }))
+                        viewController?.om.presentViewController(alert)
+                    }
+                    
+                }))
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                
+                viewController?.om.presentViewController(alert)
+            }
+            
+            public static func showBaseURL(viewController: UIViewController? = UIApplication.OM.currentVC, completionHandler: ((OMBaseURLType) -> Void)? = nil) {
+                
+                let current = UserDefaults.standard.object(forKey: defaultBaseURLTypeKey) as? String ?? baseURL.rawValue
+                
+                let alert = UIAlertController(title: "current BaseURL: [" + current + "]", message: nil, preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: OMBaseURLType.release.rawValue, style: .default, handler: { (_) in
+                    
+                    saveBaseURL(URLType: .release)
+                    completionHandler?(.release)
+                }))
+                alert.addAction(UIAlertAction(title: OMBaseURLType.develop.rawValue, style: .default, handler: { (_) in
+                    
+                    saveBaseURL(URLType: .develop)
+                    completionHandler?(.develop)
+                }))
+                alert.addAction(UIAlertAction(title: OMBaseURLType.test.rawValue, style: .default, handler: { (_) in
+                    
+                    saveBaseURL(URLType: .test)
+                    completionHandler?(.test)
+                }))
+                alert.addAction(UIAlertAction(title: OMBaseURLType.custom.rawValue, style: .destructive, handler: { (_) in
+                    
+                    showCustomBaseURL(viewController: viewController, completionHandler: completionHandler)
+                }))
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                
+                guard let viewController = viewController else {
+                    
+                    print("viewController is nil")
+                    
+                    return
+                }
+                
+                viewController.om.presentViewController(alert)
+            }
+            
+            public static func saveBaseURL(URLType: OMBaseURLType) {
+                
+                UserDefaults.standard.set(URLType.rawValue, forKey: defaultBaseURLTypeKey)
+                UserDefaults.standard.synchronize()
+            }
+            
+            public static var configURLRelease = "https://release.example.com"
+            public static var configURLDeveloper = "https://developer.example.com"
+            public static var configURLTest = "https://test.example.com"
+            
+            fileprivate
+            static func module(type: OMBaseURLType) -> String {
+                
+                switch type {
+                case .release:
+                    return configURLRelease
+                case .develop:
+                    return configURLDeveloper
+                case .test:
+                    return configURLTest
+                case .custom:
+                    if let url = UserDefaults.standard.object(forKey: defaultCustomModuleKey) as? String {
+                        
+                        return url
+                    }
+                    return module(type: .develop)
+                }
+            }
+        }
     }
 }
+
+#endif

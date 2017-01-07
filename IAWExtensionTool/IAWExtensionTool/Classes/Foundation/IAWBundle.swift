@@ -10,7 +10,7 @@ import Foundation
 public extension Bundle{
     
     class func iawframeworkBundle()->Bundle{
-        let bundle = Bundle(for: IAWProgressHUDTool.self)
+        let bundle = Bundle(for: IAW_BaseViewController.self)
         if let path = bundle.path(forResource:"IAWExtensionTool", ofType: "bundle") {
             return Bundle(path: path)!
         }

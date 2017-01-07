@@ -23,5 +23,8 @@ public extension UIImageView {
         self.layer.borderWidth = 2
         self.layer.masksToBounds = true
     }
+    func showView(){
     
+    
+    }
 }

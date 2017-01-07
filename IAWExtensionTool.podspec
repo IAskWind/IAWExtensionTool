@@ -42,7 +42,12 @@ TODO: Add long description of the pod here.
    s.dependency 'SVProgressHUD'
    s.dependency 'RNCryptor'
    s.dependency 'SnapKit', '~> 3.0.2'
+   s.dependency 'Alamofire'
    s.dependency 'AlamofireObjectMapper', '~> 4.0'
    s.dependency 'Kingfisher'
    s.dependency 'CryptoSwift'
+   s.dependency 'MJRefresh'
+   s.dependency 'SKPhotoBrowser'
+   s.dependency 'OMExtension'
+
 end

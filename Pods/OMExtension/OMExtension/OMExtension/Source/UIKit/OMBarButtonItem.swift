@@ -25,7 +25,12 @@
 //  SOFTWARE.
 
 import Foundation
+
+#if !os(macOS) && !os(watchOS)
+
 import UIKit
+
+// MARK: clickHandler
 
 public extension OMExtension where OMBase: UIBarButtonItem {
     
@@ -74,3 +79,5 @@ fileprivate extension UIBarButtonItem {
         action = #selector(clickAction)
     }
 }
+
+#endif

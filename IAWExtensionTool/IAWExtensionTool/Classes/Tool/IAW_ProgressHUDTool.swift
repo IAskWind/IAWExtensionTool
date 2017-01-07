@@ -8,7 +8,7 @@
 
 import Foundation
 import SVProgressHUD
-open class IAWProgressHUDTool{
+open class IAW_ProgressHUDTool{
     
     //一般在BaseViewController调用
     open class func initProgressHUD(){
@@ -35,7 +35,9 @@ open class IAWProgressHUDTool{
     }
     
     open class  func dimiss(){
-        SVProgressHUD.dismiss()
+        if SVProgressHUD.isVisible() {
+            SVProgressHUD.dismiss()
+        }
     }
     
 }

@@ -9,11 +9,29 @@
 import UIKit
 import IAWExtensionTool
 
-class MainViewController: IAWBaseViewController {
-    
+class MainViewController: IAW_BaseViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.brown
+        view.addSubview(IAW_CommonLine);
+        IAW_CommonLine.snp.makeConstraints{
+            (make) in
+             make.top.equalTo(10);
+             make.left.equalTo(10)
+             make.height.equalTo(5)
+             make.width.equalTo(UIScreen.iawWidth)
+        }
+        let BASE_URL = "http://fpbl.easyunion.net:8080/"
+        let url = "\(BASE_URL)api/auth/login"
+        let params = ["userName": "17855111340",
+                      "passwd": "123456"]
+
+        IAW_NetTool.loginAPP(url, params: params){
+            (userVo:UserVo) in
+                print("获得的登录用户名:\(userVo.name)")
+        
+        }
         let a = UITextField()
         a.iawSetLimit(10)
         var b = [Int]()
@@ -24,8 +42,10 @@ class MainViewController: IAWBaseViewController {
         print(b.iawArrCopy(count: 2))
         print(UIScreen.iawWidth)
         
-        IAWProgressHUDTool.initProgressHUD()
-        IAWProgressHUDTool.showErrorInfo(msg: "你好，世界")
+        
+        
+        IAW_ProgressHUDTool.initProgressHUD()
+        IAW_ProgressHUDTool.showErrorInfo(msg: "你好，世界")
         // Do any additional setup after loading the view, typically from a nib.
     }
     

@@ -40,7 +40,7 @@ public extension Double {
     
     var omToDate: Date {
         
-        return Date.omWithTimeStamp(self)
+        return Date(timeIntervalSince1970: self / 1000)
     }
     
     func omToDecimalStyle(_ precision: Int = 2) -> String {
@@ -50,6 +50,48 @@ public extension Double {
         formatter.maximumFractionDigits = precision
         
         return formatter.string(from: NSNumber(value: self)) ?? ""
+    }
+    
+    var omToDigits: [Int] {
+        
+        var digits: [Int] = []
+        
+        for char in String(self).characters {
+            
+            if let int = Int(String(char)) {
+                
+                digits.append(int)
+            }
+        }
+        
+        return digits
+    }
+    
+    var omAbs: Double {
+        
+        return abs(self)
+    }
+    
+    /// 向下取整(取得不大于浮点数的最大整数)
+    var omCeil: Double {
+        
+        return Foundation.ceil(self)
+    }
+    
+    /// 向上取整(取得不小于浮点数的最小整数)
+    var omFloor: Double {
+        
+        return Foundation.floor(self)
+    }
+    
+    /// 当地货币
+    var omLocaleCurrency: String {
+        
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.locale = Locale.current
+        
+        return formatter.string(from: self as NSNumber)!
     }
     
 }
