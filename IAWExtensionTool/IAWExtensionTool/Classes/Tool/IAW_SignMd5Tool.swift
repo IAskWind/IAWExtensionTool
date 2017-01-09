@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import CryptoSwift
+//import CryptoSwift
 
 open class IAW_SignMd5Tool{
     
@@ -23,10 +23,11 @@ open class IAW_SignMd5Tool{
         query = query + secret
         // 第三步：使用MD5
         let bytes = query.utf8.map({$0})
-        let digest = Digest.md5(bytes)
-        // 第四步：把二进制转化为大写的十六进制
-        let md5Str = digest.toHexString().uppercased()
-        return md5Str
+//        let digest = Digest.md5(bytes)
+//        // 第四步：把二进制转化为大写的十六进制
+//        let md5Str = digest.toHexString().uppercased()
+//        return md5Str
+        return ""
     }
     
     

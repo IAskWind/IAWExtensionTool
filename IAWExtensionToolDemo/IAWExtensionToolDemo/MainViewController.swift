@@ -8,18 +8,21 @@
 
 import UIKit
 import IAWExtensionTool
-
+import SnapKit
 class MainViewController: IAW_BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.brown
-        view.addSubview(IAW_CommonLine);
+//        let line = UIView()
+//        line.alpha = 0.2
+//        line.backgroundColor = UIColor.gray
+//        IAW_CommonLine
+        view.addSubview(IAW_CommonLine)
         IAW_CommonLine.snp.makeConstraints{
             (make) in
-             make.top.equalTo(10);
-             make.left.equalTo(10)
-             make.height.equalTo(5)
+             make.top.equalTo(self.view).offset(60)
+             make.height.equalTo(10)
              make.width.equalTo(UIScreen.iawWidth)
         }
         let BASE_URL = "http://fpbl.easyunion.net:8080/"

@@ -9,15 +9,17 @@ target 'IAWExtensionToolDemo' do
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
   
     # Pods for IAWExtensionToolDemo
-    pod 'SnapKit', '~> 3.0.2’
-    pod 'Kingfisher'
+    pod 'SnapKit', '~> 3.0.2'
     pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
-    pod "FDFullscreenPopGesture", "~> 1.1"
-    pod 'SwiftyJSON', '~> 3.0.0'
-    pod 'AlamofireObjectMapper', '~> 4.0'
-    pod 'MJRefresh'
     pod 'RNCryptor'
+    pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'master'
+    pod 'AlamofireObjectMapper', '~> 4.0'
+    pod 'Kingfisher'
+    pod 'CryptoSwift', :git => 'https://github.com/krzyzanowskim/CryptoSwift', :branch => 'master'
+    pod 'MJRefresh'
+    pod 'SKPhotoBrowser', :git => 'https://github.com/suzuki-0000/SKPhotoBrowser.git', :branch => 'swift3'
     pod 'OMExtension'
+
 end
 
 target 'IAWExtensionTool' do

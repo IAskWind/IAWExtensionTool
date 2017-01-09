@@ -94,8 +94,6 @@
 		442E53681E1F7646001FCBD8 /* IAW_WebViewTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_WebViewTool.swift; sourceTree = "<group>"; };
 		442E536A1E1F76BE001FCBD8 /* IAW_TokenTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_TokenTool.swift; sourceTree = "<group>"; };
 		442E536C1E1F8C2D001FCBD8 /* IAW_NetTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_NetTool.swift; sourceTree = "<group>"; };
-		442E53701E1FABDB001FCBD8 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = "/Users/winston/App/IOS/IAWExtensionTool/Pods/../build/Debug-iphoneos/CryptoSwift/CryptoSwift.framework"; sourceTree = "<absolute>"; };
-		442E53721E1FB08A001FCBD8 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = "/Users/winston/App/IOS/IAWExtensionTool/Pods/../build/Debug-iphoneos/CryptoSwift/CryptoSwift.framework"; sourceTree = "<absolute>"; };
 		44A43A6F1E1CF66A005BB1FE /* WHC_AutoCellHeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHC_AutoCellHeight.swift; sourceTree = "<group>"; };
 		44A43A701E1CF66A005BB1FE /* WHC_AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHC_AutoLayout.swift; sourceTree = "<group>"; };
 		44A43A711E1CF66A005BB1FE /* WHC_Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHC_Frame.swift; sourceTree = "<group>"; };
@@ -353,8 +351,6 @@
 		E5033D61F9E9745C3E03E517 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				442E53721E1FB08A001FCBD8 /* CryptoSwift.framework */,
-				442E53701E1FABDB001FCBD8 /* CryptoSwift.framework */,
 				FD248E7BAF6A2C34F8CA11D9 /* Pods_IAWExtensionTool.framework */,
 			);
 			name = Frameworks;
@@ -649,6 +645,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = IAWExtensionTool/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iaskwind.IAWExtensionTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -670,6 +667,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = IAWExtensionTool/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iaskwind.IAWExtensionTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";

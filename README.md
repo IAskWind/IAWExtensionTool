@@ -19,6 +19,8 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod "IAWExtensionTool"
 ```
+### 权限 网络请求 相册 照相机
+![权限图](./权限.png =500x300)
 ### 实例 评分控件 RatingBar https://github.com/IAskWind/RatingBar
 		  func dealCommonRatingBar(_ dealView:UIView,title:String,ratingBarTag:Int){
         dealView.width = SCREENW
