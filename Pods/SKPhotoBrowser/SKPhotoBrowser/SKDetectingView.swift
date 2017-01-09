@@ -9,17 +9,17 @@
 import UIKit
 
 @objc protocol SKDetectingViewDelegate {
-    func handleSingleTap(_ view: UIView, touch: UITouch)
-    func handleDoubleTap(_ view: UIView, touch: UITouch)
+    func handleSingleTap(view: UIView, touch: UITouch)
+    func handleDoubleTap(view: UIView, touch: UITouch)
 }
 
 class SKDetectingView: UIView {
     weak var delegate: SKDetectingViewDelegate?
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesEnded(touches, with: event)
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        super.touchesEnded(touches, withEvent: event)
         defer {
-            _ = next
+            nextResponder()
         }
         
         guard let touch = touches.first else {
@@ -32,11 +32,11 @@ class SKDetectingView: UIView {
         }
     }
     
-    func handleSingleTap(_ touch: UITouch) {
+    func handleSingleTap(touch: UITouch) {
         delegate?.handleSingleTap(self, touch: touch)
     }
     
-    func handleDoubleTap(_ touch: UITouch) {
+    func handleDoubleTap(touch: UITouch) {
         delegate?.handleDoubleTap(self, touch: touch)
     }
 }

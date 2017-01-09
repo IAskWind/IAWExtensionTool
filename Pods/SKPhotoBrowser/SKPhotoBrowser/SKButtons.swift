@@ -9,7 +9,7 @@
 import Foundation
 
 // helpers which often used
-private let bundle = Bundle(for: SKPhotoBrowser.self)
+private let bundle = NSBundle(forClass: SKPhotoBrowser.self)
 
 class SKButton: UIButton {
     var showFrame: CGRect!
@@ -17,7 +17,7 @@ class SKButton: UIButton {
     var insets: UIEdgeInsets {
 
 
-        return UI_USER_INTERFACE_IDIOM() == .phone
+        return UI_USER_INTERFACE_IDIOM() == .Phone
             ?  UIEdgeInsets(top: 15.25, left: 15.25, bottom: 15.25, right: 15.25) : UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
     }
     var size: CGSize = CGSize(width: 44, height: 44)
@@ -25,21 +25,22 @@ class SKButton: UIButton {
     
     var buttonTopOffset: CGFloat { return 5 }
     
-    func setup(_ imageName: String) {
-        backgroundColor = UIColor.clear
+    func setup(imageName: String) {
+        backgroundColor = .clearColor()
+        tintColor = SKPhotoBrowserOptions.textAndIconColor
         imageEdgeInsets = insets
 //        clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = true
-        autoresizingMask = [.flexibleBottomMargin, .flexibleLeftMargin, .flexibleRightMargin, .flexibleTopMargin]
+        autoresizingMask = [.FlexibleBottomMargin, .FlexibleLeftMargin, .FlexibleRightMargin, .FlexibleTopMargin]
         
         let image = UIImage(named: "SKPhotoBrowser.bundle/images/\(imageName)",
-                            in: bundle, compatibleWith: nil) ?? UIImage()
-        setImage(image, for: UIControlState())
+                            inBundle: bundle, compatibleWithTraitCollection: nil)?.imageWithRenderingMode(.AlwaysTemplate) ?? UIImage()
+        setImage(image, forState: .Normal)
     }
   
     func updateFrame() { }
   
-    func setFrameSize(_ size: CGSize) {
+    func setFrameSize(size: CGSize) {
         let newRect = CGRect(x: margin, y: buttonTopOffset, width: size.width, height: size.height)
         self.frame = newRect
         showFrame = newRect
@@ -80,7 +81,7 @@ class SKDeleteButton: SKButton {
     override func updateFrame() {
     }
   
-    override func setFrameSize(_ size: CGSize) {
+    override func setFrameSize(size: CGSize) {
         let newRect = CGRect(x: SKMesurement.screenWidth - size.width, y: buttonTopOffset, width: size.width, height: size.height)
         self.frame = newRect
         showFrame = newRect

@@ -17,7 +17,7 @@ target 'IAWExtensionToolDemo' do
     pod 'Kingfisher'
     pod 'CryptoSwift', :git => 'https://github.com/krzyzanowskim/CryptoSwift', :branch => 'master'
     pod 'MJRefresh'
-    pod 'SKPhotoBrowser', :git => 'https://github.com/suzuki-0000/SKPhotoBrowser.git', :branch => 'swift3'
+    pod 'SKPhotoBrowser'
     pod 'OMExtension'
 
 end
@@ -33,7 +33,7 @@ target 'IAWExtensionTool' do
   pod 'Kingfisher'
   pod 'CryptoSwift', :git => 'https://github.com/krzyzanowskim/CryptoSwift', :branch => 'master'
   pod 'MJRefresh'
-  pod 'SKPhotoBrowser', :git => 'https://github.com/suzuki-0000/SKPhotoBrowser.git', :branch => 'swift3'
+  pod 'SKPhotoBrowser'
   pod 'OMExtension'
 end
 

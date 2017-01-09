@@ -21,7 +21,7 @@ DEPENDENCIES:
   - MJRefresh
   - OMExtension
   - RNCryptor
-  - SKPhotoBrowser (from `https://github.com/suzuki-0000/SKPhotoBrowser.git`, branch `swift3`)
+  - SKPhotoBrowser
   - SnapKit (~> 3.0.2)
   - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
 
@@ -32,9 +32,6 @@ EXTERNAL SOURCES:
   CryptoSwift:
     :branch: master
     :git: https://github.com/krzyzanowskim/CryptoSwift
-  SKPhotoBrowser:
-    :branch: swift3
-    :git: https://github.com/suzuki-0000/SKPhotoBrowser.git
   SVProgressHUD:
     :git: https://github.com/SVProgressHUD/SVProgressHUD.git
 
@@ -45,9 +42,6 @@ CHECKOUT OPTIONS:
   CryptoSwift:
     :commit: bf3a902e09f759ec48b90c29b6b4d58d06686f74
     :git: https://github.com/krzyzanowskim/CryptoSwift
-  SKPhotoBrowser:
-    :commit: c575b55599976b86646a08c7e9aa8569e66ff72c
-    :git: https://github.com/suzuki-0000/SKPhotoBrowser.git
   SVProgressHUD:
     :commit: cbf9eea80216823fd6df83370162d9857e59c1ca
     :git: https://github.com/SVProgressHUD/SVProgressHUD.git
@@ -61,10 +55,10 @@ SPEC CHECKSUMS:
   ObjectMapper: 9e385c2295bcc4e16eabbcfc85db801442bba545
   OMExtension: 2527dba7e48c012b58a4f1d96ce7a539360c2149
   RNCryptor: 2e352a488779d1a9184ab629be22a7c5bc84acb5
-  SKPhotoBrowser: 14b08bef65c1720f6edc728ab7f2b1f8ca76f453
+  SKPhotoBrowser: b3c9be2500d10a4c97979f07e45b1a520aec3b77
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
 
-PODFILE CHECKSUM: ce64f845e4166082915eb2df44168cbe9bb16e46
+PODFILE CHECKSUM: 7bc32cf6b5ab09d9376024c3f5560bfb54254fe9
 
 COCOAPODS: 1.2.0.beta.3

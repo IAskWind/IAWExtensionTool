@@ -15,28 +15,28 @@ import Foundation
      
      - Parameter index: the index of the new photo
      */
-    @objc optional func didShowPhotoAtIndex(_ index: Int)
+    optional func didShowPhotoAtIndex(index: Int)
     
     /**
      Tells the delegate the browser will start to dismiss
      
      - Parameter index: the index of the current photo
      */
-    @objc optional func willDismissAtPageIndex(_ index: Int)
+    optional func willDismissAtPageIndex(index: Int)
     
     /**
      Tells the delegate that the browser will start showing the `UIActionSheet`
      
      - Parameter photoIndex: the index of the current photo
      */
-    @objc optional func willShowActionSheet(_ photoIndex: Int)
+    optional func willShowActionSheet(photoIndex: Int)
     
     /**
      Tells the delegate that the browser has been dismissed
      
      - Parameter index: the index of the current photo
      */
-    @objc optional func didDismissAtPageIndex(_ index: Int)
+    optional func didDismissAtPageIndex(index: Int)
     
     /**
      Tells the delegate that the browser did dismiss the UIActionSheet
@@ -44,14 +44,14 @@ import Foundation
      - Parameter buttonIndex: the index of the pressed button
      - Parameter photoIndex: the index of the current photo
      */
-    @objc optional func didDismissActionSheetWithButtonIndex(_ buttonIndex: Int, photoIndex: Int)
+    optional func didDismissActionSheetWithButtonIndex(buttonIndex: Int, photoIndex: Int)
     
     /**
      Tells the delegate that the browser did scroll to index
      
      - Parameter index: the index of the photo where the user had scroll
      */
-    @objc optional func didScrollToIndex(_ index: Int)
+    optional func didScrollToIndex(index: Int)
     
     /**
      Tells the delegate the user removed a photo, when implementing this call, be sure to call reload to finish the deletion process
@@ -60,7 +60,7 @@ import Foundation
      - Parameter index: the index of the removed photo
      - Parameter reload: function that needs to be called after finishing syncing up
      */
-    @objc optional func removePhoto(_ browser: SKPhotoBrowser, index: Int, reload: @escaping (() -> Void))
+    optional func removePhoto(browser: SKPhotoBrowser, index: Int, reload: (() -> Void))
     
     /**
      Asks the delegate for the view for a certain photo. Needed to detemine the animation when presenting/closing the browser.
@@ -70,11 +70,11 @@ import Foundation
      
      - Returns: the view to animate to
      */
-    @objc optional func viewForPhoto(_ browser: SKPhotoBrowser, index: Int) -> UIView?
+    optional func viewForPhoto(browser: SKPhotoBrowser, index: Int) -> UIView?
     
     /**
      Tells the delegate that the controls view toggled visibility
      */
-    @objc optional func controlsVisibilityToggled(hidden: Bool) -> Void
+    optional func controlsVisibilityToggled(hidden: Bool) -> Void
 }
 
