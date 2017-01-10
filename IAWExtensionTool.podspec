@@ -40,7 +40,7 @@ TODO: Add long description of the pod here.
   s.frameworks = 'UIKit', 'Foundation'
   # s.dependency 'AFNetworking', '~> 2.3'
    s.dependency 'SnapKit', '~> 3.0.2'
-   s.dependency 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git', :branch => 'master'
+   s.dependency 'SVProgressHUD'
    s.dependency 'RNCryptor'
    s.dependency 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'master'
    s.dependency 'AlamofireObjectMapper', '~> 4.0'
