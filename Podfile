@@ -10,7 +10,7 @@ target 'IAWExtensionToolDemo' do
   
     # Pods for IAWExtensionToolDemo
     pod 'SnapKit', '~> 3.0.2'
-    pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
+    pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git', :branch => 'master'
     pod 'RNCryptor'
     pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'master'
     pod 'AlamofireObjectMapper', '~> 4.0'
@@ -26,7 +26,7 @@ target 'IAWExtensionTool' do
   platform :ios, ‘9.0’
   xcodeproj 'IAWExtensionTool/IAWExtensionTool.xcodeproj'
   pod 'SnapKit', '~> 3.0.2'
-  pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
+  pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git', :branch => 'master'
   pod 'RNCryptor'
   pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'master'
   pod 'AlamofireObjectMapper', '~> 4.0'
