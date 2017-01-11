@@ -47,7 +47,7 @@ TODO: Add long description of the pod here.
    s.dependency 'Kingfisher'
    s.dependency 'CryptoSwift'
    s.dependency 'MJRefresh'
-   s.dependency 'SKPhotoBrowser'
+   s.dependency 'SKPhotoBrowser', '~> 4.0'
    s.dependency 'OMExtension'
 
 end
