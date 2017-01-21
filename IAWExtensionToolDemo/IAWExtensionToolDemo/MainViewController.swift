@@ -18,6 +18,7 @@ class MainViewController: IAW_BaseViewController {
 //        line.alpha = 0.2
 //        line.backgroundColor = UIColor.gray
 //        IAW_CommonLine
+//        IAW_CommonLine()
 //        view.addSubview(IAW_CommonLine)
 //        IAW_CommonLine.snp.makeConstraints{
 //            (make) in

@@ -31,12 +31,19 @@ public let IAW_ScreenW = UIScreen.main.bounds.size.width
 public let IAW_ScreenH = UIScreen.main.bounds.size.height
 
 ///公用线条
-public  var IAW_CommonLine:UIView = {
+//public  var IAW_CommonLine:UIView = {
+//    let line = UIView()
+//    line.alpha = 0.2
+//    line.backgroundColor = UIColor.gray
+//    return line
+//}()
+//公用线条
+public func IAW_CommonLine(lineColor:UIColor = UIColor.gray)-> UIView{
     let line = UIView()
     line.alpha = 0.2
-    line.backgroundColor = UIColor.gray
+    line.backgroundColor = lineColor
     return line
-}()
+}
 //全局NavBar的颜色
 public var IAW_GlobalNavBarColor:UIColor {
     return IAW_GlobalRedColor
