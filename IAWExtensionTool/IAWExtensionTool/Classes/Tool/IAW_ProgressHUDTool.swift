@@ -19,15 +19,15 @@ open class IAW_ProgressHUDTool{
     }
     
     open class func showInfo(msg:String?){
-        SVProgressHUD.show(IAWXcassetsTool.defaultInfo.image, status: msg)
+        SVProgressHUD.show(IAW_ImgXcassetsTool.defaultInfo.image, status: msg)
     }
     
     open class  func showErrorInfo(msg:String?){
-          SVProgressHUD.show(IAWXcassetsTool.errorInfo.image,status:msg)
+          SVProgressHUD.show(IAW_ImgXcassetsTool.iaw_snow.image,status:msg)
     }
     
     open class  func showSuccessInfo(msg:String?){
-        SVProgressHUD.show(IAWXcassetsTool.successInfo.image, status: msg)
+        SVProgressHUD.show(IAW_ImgXcassetsTool.successInfo.image, status: msg)
     }
     
     open class  func show(msg:String?){

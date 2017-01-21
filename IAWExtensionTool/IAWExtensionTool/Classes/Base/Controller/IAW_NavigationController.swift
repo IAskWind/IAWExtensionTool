@@ -7,9 +7,9 @@
 //
 import UIKit
 //import SVProgressHUD
-class IAW_NavigationController: UINavigationController {
+open class IAW_NavigationController: UINavigationController {
     
-    internal override class func initialize() {
+    open override class func initialize() {
         super.initialize()
         /// 设置导航栏标题
         let navBar = UINavigationBar.appearance()
@@ -24,12 +24,12 @@ class IAW_NavigationController: UINavigationController {
      - parameter viewController: 需要压栈的控制器
      - parameter animated:       是否动画
      */
-    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+    override open func pushViewController(_ viewController: UIViewController, animated: Bool) {
         /// 这时push进来的控制器viewController，不是第一个子控制器（不是根控制器）
         if viewControllers.count > 0 {
             // push 后隐藏 tabbar
             viewController.hidesBottomBarWhenPushed = true
-            viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: IAWXcassetsTool.back_9x15.image, style: .plain, target: self, action: #selector(navigationBackClick))
+            viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: IAW_ImgXcassetsTool.back_9x15.image, style: .plain, target: self, action: #selector(navigationBackClick))
         }
         if viewController.title != nil && !(viewController.title?.isEmpty)!{
             self.setNavigationBarHidden(false, animated: false)

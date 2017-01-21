@@ -14,9 +14,9 @@ public extension UIImageView {
 
     func iawCircleHeader(_ url: String,radius:Int){
         if url != "" {
-            self.kf.setImage(with: URL(string:url)!, placeholder: IAWXcassetsTool.headerPhoto.image)
+            self.kf.setImage(with: URL(string:url)!, placeholder: IAW_ImgXcassetsTool.headerPhoto.image)
         }else{
-            self.image = IAWXcassetsTool.headerPhoto.image
+            self.image = IAW_ImgXcassetsTool.headerPhoto.image
         }
         self.layer.cornerRadius = CGFloat(radius)
         self.layer.borderColor = UIColor.white.cgColor

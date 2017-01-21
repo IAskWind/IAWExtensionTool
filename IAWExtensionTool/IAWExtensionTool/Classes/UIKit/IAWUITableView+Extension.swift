@@ -15,7 +15,7 @@ public extension UITableView {
             let bgView = UIView()
             bgView.frame = self.frame
             let imgView = UIImageView()
-            imgView.image = IAWXcassetsTool.not_network_loading_226x119.image
+            imgView.image = IAW_ImgXcassetsTool.not_network_loading_226x119.image
             imgView.contentMode = .center
             let titleLable = UILabel()
             titleLable.textColor = UIColor.iaw_Color(0, g: 0, b: 0, a: 0.6)

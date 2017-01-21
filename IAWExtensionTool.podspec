@@ -37,7 +37,7 @@ TODO: Add long description of the pod here.
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  s.frameworks = 'UIKit', 'Foundation'
+  s.frameworks = 'UIKit', 'Foundation','QuartzCore'
   # s.dependency 'AFNetworking', '~> 2.3'
    s.dependency 'SnapKit', '~> 3.0.2'
    s.dependency 'SVProgressHUD'
@@ -47,7 +47,7 @@ TODO: Add long description of the pod here.
    s.dependency 'Kingfisher'
    s.dependency 'CryptoSwift'
    s.dependency 'MJRefresh'
-   s.dependency 'SKPhotoBrowser', '~> 4.0'
+   s.dependency 'SKPhotoBrowser', '~> 4.0.0'
    s.dependency 'OMExtension'
 
 end

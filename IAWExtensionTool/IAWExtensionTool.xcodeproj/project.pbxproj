@@ -30,6 +30,9 @@
 		442E53691E1F7646001FCBD8 /* IAW_WebViewTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E53681E1F7646001FCBD8 /* IAW_WebViewTool.swift */; };
 		442E536B1E1F76BE001FCBD8 /* IAW_TokenTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E536A1E1F76BE001FCBD8 /* IAW_TokenTool.swift */; };
 		442E536D1E1F8C2D001FCBD8 /* IAW_NetTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E536C1E1F8C2D001FCBD8 /* IAW_NetTool.swift */; };
+		4492FD731E287503006D69CB /* IAW_FullScreenTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4492FD701E287503006D69CB /* IAW_FullScreenTool.swift */; };
+		4492FD741E287503006D69CB /* Particle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4492FD711E287503006D69CB /* Particle.swift */; };
+		4492FD751E287503006D69CB /* ParticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4492FD721E287503006D69CB /* ParticleView.swift */; };
 		44A43A731E1CF66A005BB1FE /* WHC_AutoCellHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A43A6F1E1CF66A005BB1FE /* WHC_AutoCellHeight.swift */; };
 		44A43A741E1CF66A005BB1FE /* WHC_AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A43A701E1CF66A005BB1FE /* WHC_AutoLayout.swift */; };
 		44A43A751E1CF66A005BB1FE /* WHC_Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A43A711E1CF66A005BB1FE /* WHC_Frame.swift */; };
@@ -63,7 +66,7 @@
 		44EC56561DDE0F0C00DAAFF8 /* IAWTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC56471DDE0F0C00DAAFF8 /* IAWTextField.swift */; };
 		44EC56571DDE0F0C00DAAFF8 /* IAWWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC56481DDE0F0C00DAAFF8 /* IAWWebView.swift */; };
 		44EC565C1DDE0F1800DAAFF8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44EC565A1DDE0F1800DAAFF8 /* Images.xcassets */; };
-		44EC565E1DDE18B500DAAFF8 /* IAWXcassetsTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC565D1DDE18B500DAAFF8 /* IAWXcassetsTool.swift */; };
+		44EC565E1DDE18B500DAAFF8 /* IAW_ImgXcassetsTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC565D1DDE18B500DAAFF8 /* IAW_ImgXcassetsTool.swift */; };
 		AD8E5370726069281113256F /* Pods_IAWExtensionTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD248E7BAF6A2C34F8CA11D9 /* Pods_IAWExtensionTool.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
@@ -94,6 +97,9 @@
 		442E53681E1F7646001FCBD8 /* IAW_WebViewTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_WebViewTool.swift; sourceTree = "<group>"; };
 		442E536A1E1F76BE001FCBD8 /* IAW_TokenTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_TokenTool.swift; sourceTree = "<group>"; };
 		442E536C1E1F8C2D001FCBD8 /* IAW_NetTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_NetTool.swift; sourceTree = "<group>"; };
+		4492FD701E287503006D69CB /* IAW_FullScreenTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_FullScreenTool.swift; sourceTree = "<group>"; };
+		4492FD711E287503006D69CB /* Particle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Particle.swift; sourceTree = "<group>"; };
+		4492FD721E287503006D69CB /* ParticleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticleView.swift; sourceTree = "<group>"; };
 		44A43A6F1E1CF66A005BB1FE /* WHC_AutoCellHeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHC_AutoCellHeight.swift; sourceTree = "<group>"; };
 		44A43A701E1CF66A005BB1FE /* WHC_AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHC_AutoLayout.swift; sourceTree = "<group>"; };
 		44A43A711E1CF66A005BB1FE /* WHC_Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHC_Frame.swift; sourceTree = "<group>"; };
@@ -127,7 +133,7 @@
 		44EC56471DDE0F0C00DAAFF8 /* IAWTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAWTextField.swift; sourceTree = "<group>"; };
 		44EC56481DDE0F0C00DAAFF8 /* IAWWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAWWebView.swift; sourceTree = "<group>"; };
 		44EC565A1DDE0F1800DAAFF8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		44EC565D1DDE18B500DAAFF8 /* IAWXcassetsTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IAWXcassetsTool.swift; path = Classes/Tool/IAWXcassetsTool.swift; sourceTree = "<group>"; };
+		44EC565D1DDE18B500DAAFF8 /* IAW_ImgXcassetsTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IAW_ImgXcassetsTool.swift; path = Classes/Tool/IAW_ImgXcassetsTool.swift; sourceTree = "<group>"; };
 		5A11D36588B35B00253E8477 /* Pods-IAWExtensionTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IAWExtensionTool.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-IAWExtensionTool/Pods-IAWExtensionTool.debug.xcconfig"; sourceTree = "<group>"; };
 		FD248E7BAF6A2C34F8CA11D9 /* Pods_IAWExtensionTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IAWExtensionTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -168,7 +174,7 @@
 				44EC56361DDE0F0C00DAAFF8 /* Classes */,
 				44EC56591DDE0F1800DAAFF8 /* Resources */,
 				441C6EC21DDE0BEC0080D0F0 /* IAWExtensionTool.h */,
-				44EC565D1DDE18B500DAAFF8 /* IAWXcassetsTool.swift */,
+				44EC565D1DDE18B500DAAFF8 /* IAW_ImgXcassetsTool.swift */,
 				441C6EC31DDE0BEC0080D0F0 /* Info.plist */,
 			);
 			path = IAWExtensionTool;
@@ -229,6 +235,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		4492FD691E2632A3006D69CB /* Effect */ = {
+			isa = PBXGroup;
+			children = (
+				4492FD701E287503006D69CB /* IAW_FullScreenTool.swift */,
+				4492FD711E287503006D69CB /* Particle.swift */,
+				4492FD721E287503006D69CB /* ParticleView.swift */,
+			);
+			path = Effect;
+			sourceTree = "<group>";
+		};
 		44A43A6E1E1CF66A005BB1FE /* WHCStackView */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +287,7 @@
 		44EC56361DDE0F0C00DAAFF8 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4492FD691E2632A3006D69CB /* Effect */,
 				442E533F1E1DE575001FCBD8 /* Base */,
 				442E53361E1DE494001FCBD8 /* Common */,
 				442E53331E1D1057001FCBD8 /* Constant */,
@@ -500,6 +517,7 @@
 				44EC564A1DDE0F0C00DAAFF8 /* IAWBundle.swift in Sources */,
 				442E53531E1DE575001FCBD8 /* IAW_ResponseMsgModel.swift in Sources */,
 				44A43A8C1E1CF6D8005BB1FE /* CropView.swift in Sources */,
+				4492FD731E287503006D69CB /* IAW_FullScreenTool.swift in Sources */,
 				442E53591E1E23C6001FCBD8 /* IAWUIView+Extension.swift in Sources */,
 				442E53671E1F75F5001FCBD8 /* IAW_TabelViewTool.swift in Sources */,
 				442E536D1E1F8C2D001FCBD8 /* IAW_NetTool.swift in Sources */,
@@ -507,9 +525,11 @@
 				442E53511E1DE575001FCBD8 /* IAW_ResponseModel.swift in Sources */,
 				442E534D1E1DE575001FCBD8 /* IAW_TabBarController.swift in Sources */,
 				442E535D1E1F313C001FCBD8 /* IAW_MsgTip.swift in Sources */,
+				4492FD751E287503006D69CB /* ParticleView.swift in Sources */,
 				44EC564E1DDE0F0C00DAAFF8 /* IAW_ProgressHUDTool.swift in Sources */,
 				442E535B1E1E3876001FCBD8 /* IAW_PhotoTool.swift in Sources */,
 				44EC564F1DDE0F0C00DAAFF8 /* IAW_RNCryptorTool.swift in Sources */,
+				4492FD741E287503006D69CB /* Particle.swift in Sources */,
 				44EC56511DDE0F0C00DAAFF8 /* IAWApplication.swift in Sources */,
 				44EC56571DDE0F0C00DAAFF8 /* IAWWebView.swift in Sources */,
 				44EC56531DDE0F0C00DAAFF8 /* IAWColor.swift in Sources */,
@@ -519,7 +539,7 @@
 				44EC56541DDE0F0C00DAAFF8 /* IAWImageView.swift in Sources */,
 				44EC564D1DDE0F0C00DAAFF8 /* IAW_JsonTool.swift in Sources */,
 				442E53521E1DE575001FCBD8 /* IAW_ResponseModels.swift in Sources */,
-				44EC565E1DDE18B500DAAFF8 /* IAWXcassetsTool.swift in Sources */,
+				44EC565E1DDE18B500DAAFF8 /* IAW_ImgXcassetsTool.swift in Sources */,
 				44A43A761E1CF66A005BB1FE /* WHC_StackView.swift in Sources */,
 				44EC56551DDE0F0C00DAAFF8 /* IAWScreen.swift in Sources */,
 				44EC56491DDE0F0C00DAAFF8 /* IAWArray.swift in Sources */,

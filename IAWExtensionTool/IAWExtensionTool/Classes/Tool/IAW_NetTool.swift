@@ -24,6 +24,12 @@ open class IAW_NetTool{
         }
         
     }
+    //  调用
+    //        IAW_NetTool.loginAPP(url, params: params){
+    //            (userVo:UserVo) in
+    //                print("获得的登录用户名:\(userVo.name)")
+    //
+    //        }
     
     open class func loginAPP<T:Mappable>(_ url:String,params:[String:Any],finished:@escaping (T)->()){
         IAW_ProgressHUDTool.show(msg: IAW_MsgTip.loginingTip)

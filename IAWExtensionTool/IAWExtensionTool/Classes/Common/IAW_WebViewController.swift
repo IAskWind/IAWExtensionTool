@@ -57,7 +57,7 @@ open class IAW_WebViewController: IAW_BaseViewController {
     
     fileprivate func buildRightItemBarButton() {
         let rightButton = UIButton(frame: CGRect(x: 0, y: 0, width: 60, height: 44))
-        rightButton.setImage(IAWXcassetsTool.v2_refreshWhite.image, for: UIControlState())
+        rightButton.setImage(IAW_ImgXcassetsTool.v2_refreshWhite.image, for: UIControlState())
         rightButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -53)
         rightButton.addTarget(self, action: #selector(IAW_WebViewController.refreshClick), for: UIControlEvents.touchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightButton)

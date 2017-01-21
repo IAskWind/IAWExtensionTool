@@ -8,10 +8,10 @@
 
 import UIKit
 
-class IAW_TabBarController: UITabBarController {
+open class IAW_TabBarController: UITabBarController {
     //第一个参数chindviewcontroller，第二个参数title,第三个imageName
     var childVcArray:[(String,String,String)]?
-    override func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         
         tabBar.tintColor = UIColor(red: 245 / 255, green: 80 / 255, blue: 83 / 255, alpha: 1.0)
