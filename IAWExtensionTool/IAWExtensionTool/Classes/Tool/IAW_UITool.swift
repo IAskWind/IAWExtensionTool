@@ -9,10 +9,11 @@
 
 import Foundation
 open class IAW_UITool{
-    
-    open class func toTabBar(_ target: UIViewController,transitionStyle:UIModalTransitionStyle){
+    ///childVcArray  第一个参数chindviewcontroller，第二个参数title,第三个imageName
+    open class func toTabBar(_ target: UIViewController,transitionStyle:UIModalTransitionStyle,childVcArray:[(String,String,String)]){
         weak var weakSelf = target
         let tabBar = IAW_TabBarController();
+        tabBar.childVcArray = childVcArray
         tabBar.modalTransitionStyle = transitionStyle
         weakSelf?.present(tabBar, animated: true, completion: nil)
     }
