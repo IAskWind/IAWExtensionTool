@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'IAWExtensionTool'
-  s.version          = '0.1.6'
+  s.version          = '0.1.7'
   s.summary          = 'A short description of IAWExtensionTool.'
 
 # This description is used to generate tags and improve search results.
@@ -44,7 +44,7 @@ TODO: Add long description of the pod here.
    s.dependency 'RNCryptor'
    s.dependency 'Alamofire', '~> 4.0'
    s.dependency 'AlamofireObjectMapper', '~> 4.0'
-   s.dependency 'Kingfisher'
+   s.dependency 'Kingfisher', '~> 3.3.1'
    s.dependency 'CryptoSwift'
    s.dependency 'MJRefresh'
    s.dependency 'SKPhotoBrowser', '~> 4.0.0'

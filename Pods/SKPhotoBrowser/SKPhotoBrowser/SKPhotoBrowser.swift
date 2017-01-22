@@ -54,9 +54,6 @@ open class SKPhotoBrowser: UIViewController {
         return photos.count
     }
     
-    // statusbar initial state
-    private var statusbarHidden: Bool = UIApplication.shared.isStatusBarHidden
-    
     // MARK - Initializer
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -96,9 +93,9 @@ open class SKPhotoBrowser: UIViewController {
     func setup() {
         if let window = UIApplication.shared.delegate?.window {
             applicationWindow = window
-        }else if let window = UIApplication.shared.keyWindow {
+        } else if let window = UIApplication.shared.keyWindow {
             applicationWindow = window
-        }else {
+        } else {
             return
         }
         
@@ -106,7 +103,10 @@ open class SKPhotoBrowser: UIViewController {
         modalPresentationStyle = .custom
         modalTransitionStyle = .crossDissolve
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.handleSKPhotoLoadingDidEndNotification(_:)), name: NSNotification.Name(rawValue: SKPHOTO_LOADING_DID_END_NOTIFICATION), object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(handleSKPhotoLoadingDidEndNotification(_:)),
+                                               name: NSNotification.Name(rawValue: SKPHOTO_LOADING_DID_END_NOTIFICATION),
+                                               object: nil)
     }
     
     // MARK: - override
@@ -137,8 +137,6 @@ open class SKPhotoBrowser: UIViewController {
         super.viewWillLayoutSubviews()
         isPerformingLayout = true
         
-        closeButton.updateFrame()
-        deleteButton.updateFrame()
         pagingScrollView.updateFrame(view.bounds, currentPageIndex: currentPageIndex)
         
         toolbar.frame = frameForToolbarAtOrientation()
@@ -152,6 +150,13 @@ open class SKPhotoBrowser: UIViewController {
     override open func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         isViewActive = true
+
+    }
+    
+    override open var prefersStatusBarHidden: Bool {
+        get {
+            return !SKPhotoBrowserOptions.displayStatusbar
+        }
     }
     
     // MARK: - Notification
@@ -461,7 +466,7 @@ internal extension SKPhotoBrowser {
             ? zoomingScrollView.center.y - viewHalfHeight
             : -(zoomingScrollView.center.y - viewHalfHeight)) / viewHalfHeight
         
-        view.backgroundColor = UIColor.black.withAlphaComponent(max(0.7, offset))
+        view.backgroundColor = SKPhotoBrowserOptions.backgroundColor.withAlphaComponent(max(0.7, offset))
         
         // gesture end
         if sender.state == .ended {
@@ -485,7 +490,7 @@ internal extension SKPhotoBrowser {
                 UIView.beginAnimations(nil, context: nil)
                 UIView.setAnimationDuration(animationDuration)
                 UIView.setAnimationCurve(UIViewAnimationCurve.easeIn)
-                view.backgroundColor = UIColor.black
+                view.backgroundColor = SKPhotoBrowserOptions.backgroundColor
                 zoomingScrollView.center = CGPoint(x: finalX, y: finalY)
                 UIView.commitAnimations()
             }
@@ -542,12 +547,12 @@ internal extension SKPhotoBrowser {
 // MARK: - Private Function 
 private extension SKPhotoBrowser {
     func configureAppearance() {
-        view.backgroundColor = UIColor.black
+        view.backgroundColor = SKPhotoBrowserOptions.backgroundColor
         view.clipsToBounds = true
         view.isOpaque = false
         
         backgroundView = UIView(frame: CGRect(x: 0, y: 0, width: SKMesurement.screenWidth, height: SKMesurement.screenHeight))
-        backgroundView.backgroundColor = UIColor.black
+        backgroundView.backgroundColor = SKPhotoBrowserOptions.backgroundColor
         backgroundView.alpha = 0.0
         applicationWindow.addSubview(backgroundView)
         
