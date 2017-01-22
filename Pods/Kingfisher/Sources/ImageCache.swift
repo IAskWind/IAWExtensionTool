@@ -4,7 +4,7 @@
 //
 //  Created by Wei Wang on 15/4/6.
 //
-//  Copyright (c) 2017 Wei Wang <onevcat@gmail.com>
+//  Copyright (c) 2016 Wei Wang <onevcat@gmail.com>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -93,7 +93,6 @@ open class ImageCache {
     
     /// The longest time duration in second of the cache being stored in disk. 
     /// Default is 1 week (60 * 60 * 24 * 7 seconds).
-    /// Setting this to a negative value will make the disk cache never expiring.
     open var maxCachePeriodInSecond: TimeInterval = 60 * 60 * 24 * 7 //Cache exists for 1 week
     
     /// The largest disk size can be taken for the cache. It is the total 
@@ -476,7 +475,7 @@ open class ImageCache {
         
         let diskCacheURL = URL(fileURLWithPath: diskCachePath)
         let resourceKeys: Set<URLResourceKey> = [.isDirectoryKey, .contentAccessDateKey, .totalFileAllocatedSizeKey]
-        let expiredDate = (maxCachePeriodInSecond < 0) ? nil : Date(timeIntervalSinceNow: -maxCachePeriodInSecond)
+        let expiredDate = Date(timeIntervalSinceNow: -maxCachePeriodInSecond)
         
         var cachedFiles = [URL: URLResourceValues]()
         var urlsToDelete = [URL]()
@@ -494,14 +493,14 @@ open class ImageCache {
                         continue
                     }
                     
-                    // If this file is expired, add it to URLsToDelete
-                    if !onlyForCacheSize,
-                       let expiredDate = expiredDate,
-                       let lastAccessData = resourceValues.contentAccessDate,
-                       (lastAccessData as NSDate).laterDate(expiredDate) == expiredDate
-                    {
-                        urlsToDelete.append(fileUrl)
-                        continue
+                    if !onlyForCacheSize {
+                        // If this file is expired, add it to URLsToDelete
+                        if let lastAccessData = resourceValues.contentAccessDate {
+                            if (lastAccessData as NSDate).laterDate(expiredDate) == expiredDate {
+                                urlsToDelete.append(fileUrl)
+                                continue
+                            }
+                        }
                     }
 
                     if let fileSize = resourceValues.totalFileAllocatedSize {
