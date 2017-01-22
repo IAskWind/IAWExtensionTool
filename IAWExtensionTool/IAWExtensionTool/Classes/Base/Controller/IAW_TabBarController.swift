@@ -15,10 +15,13 @@ open class IAW_TabBarController: UITabBarController {
         super.viewDidLoad()
         
         tabBar.tintColor = UIColor(red: 245 / 255, green: 80 / 255, blue: 83 / 255, alpha: 1.0)
+        
+    }
+    
+    override open func viewWillAppear(_ animated: Bool) {
         // 添加子控制器
         addChildViewControllers()
     }
-    
     /**
      # 添加子控制器
      */
