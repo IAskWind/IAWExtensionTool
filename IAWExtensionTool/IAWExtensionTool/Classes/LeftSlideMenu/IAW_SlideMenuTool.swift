@@ -17,7 +17,7 @@ open class IAW_SlideMenuTool{
         weak var weakSelf = target
         let leftSpace = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil,                                action: nil)
         leftSpace.width = leftMargin
-        let leftButton: UIBarButtonItem = UIBarButtonItem(image: leftMenuImg, style: UIBarButtonItemStyle.plain, target: self, action: #selector(weakSelf!.toggleLeft))
+        let leftButton: UIBarButtonItem = UIBarButtonItem(image: leftMenuImg, style: UIBarButtonItemStyle.plain, target: weakSelf, action: #selector(weakSelf!.toggleLeft))
         //        navigationItem.leftBarButtonItem = leftButton
         weakSelf?.navigationItem.setLeftBarButtonItems([leftSpace,leftButton], animated: true)
     }

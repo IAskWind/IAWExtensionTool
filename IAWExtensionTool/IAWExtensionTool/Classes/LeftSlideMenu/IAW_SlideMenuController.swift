@@ -8,7 +8,7 @@
 
 import UIKit
 import SlideMenuControllerSwift
-open class ExSlideMenuController : SlideMenuController {
+open class IAW_SlideMenuController : SlideMenuController {
     
     override open func isTagetViewController() -> Bool {
         //        if let vc = UIApplication.topViewController() {

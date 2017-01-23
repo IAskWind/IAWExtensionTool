@@ -29,7 +29,7 @@ open class IAW_UITool{
         let tabBar = IAW_TabBarController()
         tabBar.childVcArray = childVcArray
 //        let leftViewController = IAWLeftViewController()
-        let slideMenuController = ExSlideMenuController(mainViewController: tabBar, leftMenuViewController: leftVC)
+        let slideMenuController = IAW_SlideMenuController(mainViewController: tabBar, leftMenuViewController: leftVC)
         slideMenuController.automaticallyAdjustsScrollViewInsets = true
         slideMenuController.delegate = tabBar
         slideMenuController.modalTransitionStyle = transitionStyle
