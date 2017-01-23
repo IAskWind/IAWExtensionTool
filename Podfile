@@ -19,6 +19,7 @@ target 'IAWExtensionToolDemo' do
     pod 'MJRefresh'
     pod 'SKPhotoBrowser', '~> 4.0.0'
     pod 'OMExtension'
+    pod 'SlideMenuControllerSwift'
 
 end
 
@@ -35,6 +36,7 @@ target 'IAWExtensionTool' do
   pod 'MJRefresh'
   pod 'SKPhotoBrowser', '~> 4.0.0'
   pod 'OMExtension'
+  pod 'SlideMenuControllerSwift'
 end
 
 

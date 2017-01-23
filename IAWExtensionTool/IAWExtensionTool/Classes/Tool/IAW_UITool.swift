@@ -10,7 +10,7 @@
 import Foundation
 open class IAW_UITool{
     ///childVcArray  第一个参数chindviewcontroller，第二个参数title,第三个imageName
-    open class func toTabBar(_ target: UIViewController,transitionStyle:UIModalTransitionStyle,childVcArray:[(String,String,String)]){
+    open class func toTabBar(_ target: UIViewController,transitionStyle:UIModalTransitionStyle,childVcArray:[(String,String,String,Bool)]){
         weak var weakSelf = target
         let tabBar = IAW_TabBarController();
         tabBar.childVcArray = childVcArray
@@ -23,7 +23,19 @@ open class IAW_UITool{
         UserDefaults.standard.set("", forKey: IAW_AccessToken)
         weakSelf?.dismiss(animated: true, completion: nil)
     }
-
+    // 带侧边栏 带底部tabbar
+    open class func toTabBarAndSlideMenu(_ target: UIViewController,leftVC: UIViewController,transitionStyle:UIModalTransitionStyle,childVcArray:[(String,String,String,Bool)]){
+        weak var weakSelf = target
+        let tabBar = IAW_TabBarController()
+        tabBar.childVcArray = childVcArray
+//        let leftViewController = IAWLeftViewController()
+        let slideMenuController = ExSlideMenuController(mainViewController: tabBar, leftMenuViewController: leftVC)
+        slideMenuController.automaticallyAdjustsScrollViewInsets = true
+        slideMenuController.delegate = tabBar
+        slideMenuController.modalTransitionStyle = transitionStyle
+        weakSelf?.present(slideMenuController, animated: true, completion: nil)
+        
+    }
 
 
 }

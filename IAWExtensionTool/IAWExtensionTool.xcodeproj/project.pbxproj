@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		441C6EC41DDE0BEC0080D0F0 /* IAWExtensionTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 441C6EC21DDE0BEC0080D0F0 /* IAWExtensionTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4426C2C61E35F59B00E74B79 /* IAW_SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4426C2C51E35F59B00E74B79 /* IAW_SlideMenuController.swift */; };
+		4426C2C81E35F67400E74B79 /* IAW_SlideMenuTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4426C2C71E35F67400E74B79 /* IAW_SlideMenuTool.swift */; };
 		442E53321E1D0C33001FCBD8 /* LoadProgressAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E53311E1D0C33001FCBD8 /* LoadProgressAnimationView.swift */; };
 		442E53351E1D1057001FCBD8 /* IAW_Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E53341E1D1057001FCBD8 /* IAW_Constant.swift */; };
 		442E533B1E1DE494001FCBD8 /* IAW_EditTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E53371E1DE494001FCBD8 /* IAW_EditTextViewController.swift */; };
@@ -75,6 +77,8 @@
 		441C6EBF1DDE0BEC0080D0F0 /* IAWExtensionTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IAWExtensionTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		441C6EC21DDE0BEC0080D0F0 /* IAWExtensionTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IAWExtensionTool.h; sourceTree = "<group>"; };
 		441C6EC31DDE0BEC0080D0F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4426C2C51E35F59B00E74B79 /* IAW_SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_SlideMenuController.swift; sourceTree = "<group>"; };
+		4426C2C71E35F67400E74B79 /* IAW_SlideMenuTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_SlideMenuTool.swift; sourceTree = "<group>"; };
 		442E53311E1D0C33001FCBD8 /* LoadProgressAnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadProgressAnimationView.swift; sourceTree = "<group>"; };
 		442E53341E1D1057001FCBD8 /* IAW_Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_Constant.swift; sourceTree = "<group>"; };
 		442E53371E1DE494001FCBD8 /* IAW_EditTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_EditTextViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +182,15 @@
 				441C6EC31DDE0BEC0080D0F0 /* Info.plist */,
 			);
 			path = IAWExtensionTool;
+			sourceTree = "<group>";
+		};
+		4426C2C41E35F57500E74B79 /* LeftSlideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				4426C2C51E35F59B00E74B79 /* IAW_SlideMenuController.swift */,
+				4426C2C71E35F67400E74B79 /* IAW_SlideMenuTool.swift */,
+			);
+			path = LeftSlideMenu;
 			sourceTree = "<group>";
 		};
 		442E53301E1D0C33001FCBD8 /* CustomView */ = {
@@ -287,6 +300,7 @@
 		44EC56361DDE0F0C00DAAFF8 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4426C2C41E35F57500E74B79 /* LeftSlideMenu */,
 				4492FD691E2632A3006D69CB /* Effect */,
 				442E533F1E1DE575001FCBD8 /* Base */,
 				442E53361E1DE494001FCBD8 /* Common */,
@@ -522,6 +536,8 @@
 				442E53671E1F75F5001FCBD8 /* IAW_TabelViewTool.swift in Sources */,
 				442E536D1E1F8C2D001FCBD8 /* IAW_NetTool.swift in Sources */,
 				44EC564B1DDE0F0C00DAAFF8 /* IAWString.swift in Sources */,
+				4426C2C61E35F59B00E74B79 /* IAW_SlideMenuController.swift in Sources */,
+				4426C2C81E35F67400E74B79 /* IAW_SlideMenuTool.swift in Sources */,
 				442E53511E1DE575001FCBD8 /* IAW_ResponseModel.swift in Sources */,
 				442E534D1E1DE575001FCBD8 /* IAW_TabBarController.swift in Sources */,
 				442E535D1E1F313C001FCBD8 /* IAW_MsgTip.swift in Sources */,

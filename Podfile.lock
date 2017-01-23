@@ -10,6 +10,7 @@ PODS:
   - OMExtension (2.1.5)
   - RNCryptor (5.0.1)
   - SKPhotoBrowser (4.0.1)
+  - SlideMenuControllerSwift (3.0.1)
   - SnapKit (3.0.2)
   - SVProgressHUD (2.1.2)
 
@@ -22,6 +23,7 @@ DEPENDENCIES:
   - OMExtension
   - RNCryptor
   - SKPhotoBrowser (~> 4.0.0)
+  - SlideMenuControllerSwift
   - SnapKit (~> 3.0.2)
   - SVProgressHUD
 
@@ -51,9 +53,10 @@ SPEC CHECKSUMS:
   OMExtension: 2527dba7e48c012b58a4f1d96ce7a539360c2149
   RNCryptor: 2e352a488779d1a9184ab629be22a7c5bc84acb5
   SKPhotoBrowser: 3a7c6fc02aa1620ab17253a47a49fafda46536e8
+  SlideMenuControllerSwift: 9a163b16d54afab734add42858cba7ef7c307755
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
 
-PODFILE CHECKSUM: 5ecc09f1579224aaa7ab112b14e132ae6fe40279
+PODFILE CHECKSUM: 04b4ef8e83f14d998e81b8d57d378e3ac11dabd7
 
 COCOAPODS: 1.2.0.beta.3

@@ -18,7 +18,7 @@ public enum IAW_ImgXcassetsTool: String {
     case back_9x15 = "back_9x15"
     case not_network_loading_226x119 = "not_network_loading_226x119"
     case iaw_snow = "iaw_snow"
-      
+    case ic_menu_black_24dp = "ic_menu_black_24dp"  
     /// Returns the associated image.
     public var image: UIImage {
         return UIImage(named: rawValue, in: Bundle.iawframeworkBundle(), compatibleWith: nil)!
