@@ -17,7 +17,7 @@ open class IAW_SlideMenuTool{
         weak var weakSelf = target
         let sdBtn = UIButton(frame: CGRect(x:0, y:0, width:barW, height:barH))
         sdBtn.setImage(leftMenuImg, for: UIControlState())
-        sdBtn.addTarget(self, action:#selector(weakSelf?.toggleLeft), for:.touchUpInside)
+        sdBtn.addTarget(weakSelf, action:#selector(weakSelf?.toggleLeft), for:.touchUpInside)
         
         let sdItem=UIBarButtonItem(customView: sdBtn)
         target.navigationItem.leftBarButtonItem = sdItem

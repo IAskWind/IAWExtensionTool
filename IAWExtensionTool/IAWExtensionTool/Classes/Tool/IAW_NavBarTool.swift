@@ -12,8 +12,9 @@ open class IAW_NavBarTool{
     /**
      ** 用在AppDelegate做全局设置
      */
-    open class func setNavBarColor(barColor:UIColor) {
+    open class func setNavBar(navBarColor:UIColor,navBarTitleFontSize:CGFloat = 15,navBarTitleColor:UIColor = UIColor.white){
         let navBar = UINavigationBar.appearance()
-        navBar.barTintColor = barColor
+        navBar.barTintColor = navBarColor
+        navBar.titleTextAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: navBarTitleFontSize),NSForegroundColorAttributeName: navBarTitleColor]
     }
 }
