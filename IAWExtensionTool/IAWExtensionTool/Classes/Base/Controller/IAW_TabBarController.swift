@@ -10,18 +10,19 @@ import UIKit
 import SlideMenuControllerSwift
 open class IAW_TabBarController: UITabBarController {
     //第一个参数chindviewcontroller，第二个参数title,第三个imageName,第4个是否有侧边栏
-    public var childVcArray:[(String,String,String,Bool)]?
+    var childVcArray:[(String,String,String,Bool)]?
     override open func viewDidLoad() {
         super.viewDidLoad()
         
         tabBar.tintColor = UIColor(red: 245 / 255, green: 80 / 255, blue: 83 / 255, alpha: 1.0)
         
     }
-    
-    override open func viewWillAppear(_ animated: Bool) {
-        // 添加子控制器
-        addChildViewControllers()
+    convenience init(childVcArray: [(String,String,String,Bool)]) {
+        self.init(nibName: nil, bundle: nil)
+        self.childVcArray = childVcArray
+        self.addChildViewControllers()
     }
+    
     /**
      # 添加子控制器
      */
@@ -58,7 +59,7 @@ open class IAW_TabBarController: UITabBarController {
         // 给每个控制器包装一个导航控制器
         let nav = IAW_NavigationController()
         if isLeftBarBtn {
-            IAW_SlideMenuTool.addLeftBarItem(target: vc,leftMargin: 15)
+            IAW_SlideMenuTool.addLeftBarItem(target: vc)
         }
 
         nav.addChildViewController(vc)

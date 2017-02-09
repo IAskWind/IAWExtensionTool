@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		441BE0DB1E4CA0F300D42305 /* IAWNavBarTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441BE0DA1E4CA0F300D42305 /* IAWNavBarTool.swift */; };
 		441C6EC41DDE0BEC0080D0F0 /* IAWExtensionTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 441C6EC21DDE0BEC0080D0F0 /* IAWExtensionTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4426C2C61E35F59B00E74B79 /* IAW_SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4426C2C51E35F59B00E74B79 /* IAW_SlideMenuController.swift */; };
 		4426C2C81E35F67400E74B79 /* IAW_SlideMenuTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4426C2C71E35F67400E74B79 /* IAW_SlideMenuTool.swift */; };
@@ -75,6 +76,7 @@
 
 /* Begin PBXFileReference section */
 		38CAE004563470CD1EE8E6A6 /* Pods-IAWExtensionTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IAWExtensionTool.release.xcconfig"; path = "../Pods/Target Support Files/Pods-IAWExtensionTool/Pods-IAWExtensionTool.release.xcconfig"; sourceTree = "<group>"; };
+		441BE0DA1E4CA0F300D42305 /* IAWNavBarTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAWNavBarTool.swift; sourceTree = "<group>"; };
 		441C6EBF1DDE0BEC0080D0F0 /* IAWExtensionTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IAWExtensionTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		441C6EC21DDE0BEC0080D0F0 /* IAWExtensionTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IAWExtensionTool.h; sourceTree = "<group>"; };
 		441C6EC31DDE0BEC0080D0F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			children = (
 				4426C2C51E35F59B00E74B79 /* IAW_SlideMenuController.swift */,
 				4426C2C71E35F67400E74B79 /* IAW_SlideMenuTool.swift */,
+				441BE0DA1E4CA0F300D42305 /* IAWNavBarTool.swift */,
 			);
 			path = LeftSlideMenu;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 				44EC56511DDE0F0C00DAAFF8 /* IAWApplication.swift in Sources */,
 				44EC56571DDE0F0C00DAAFF8 /* IAWWebView.swift in Sources */,
 				44EC56531DDE0F0C00DAAFF8 /* IAWColor.swift in Sources */,
+				441BE0DB1E4CA0F300D42305 /* IAWNavBarTool.swift in Sources */,
 				44A43A741E1CF66A005BB1FE /* WHC_AutoLayout.swift in Sources */,
 				44A43A8B1E1CF6D8005BB1FE /* CropRectView.swift in Sources */,
 				44A43A731E1CF66A005BB1FE /* WHC_AutoCellHeight.swift in Sources */,
