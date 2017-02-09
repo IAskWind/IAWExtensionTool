@@ -58,7 +58,7 @@ open class IAW_TabBarController: UITabBarController {
         // 给每个控制器包装一个导航控制器
         let nav = IAW_NavigationController()
         if isLeftBarBtn {
-            IAW_SlideMenuTool.addLeftBarItem(target: vc)
+            IAW_SlideMenuTool.addLeftBarItem(target: vc,leftMargin: 15)
         }
 
         nav.addChildViewController(vc)
