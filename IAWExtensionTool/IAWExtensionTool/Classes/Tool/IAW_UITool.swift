@@ -8,6 +8,7 @@
 //
 
 import Foundation
+import SlideMenuControllerSwift
 open class IAW_UITool{
     ///childVcArray  第一个参数chindviewcontroller，第二个参数title,第三个imageName
     open class func toTabBar(_ target: UIViewController,transitionStyle:UIModalTransitionStyle,childVcArray:[(String,String,String,Bool)]){
@@ -28,7 +29,8 @@ open class IAW_UITool{
         weak var weakSelf = target
         let tabBar = IAW_TabBarController()
         tabBar.childVcArray = childVcArray
-//        let leftViewController = IAWLeftViewController()
+        SlideMenuOptions.contentViewScale = 1
+//                SlideMenuOptions.contentViewOpacity = 0.5 //背景通明度
         let slideMenuController = IAW_SlideMenuController(mainViewController: tabBar, leftMenuViewController: leftVC)
         slideMenuController.automaticallyAdjustsScrollViewInsets = true
         slideMenuController.delegate = tabBar
