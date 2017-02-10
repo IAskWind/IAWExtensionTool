@@ -22,11 +22,11 @@ protocol RatingBarDelegate {
     func ratingChanged(_ ratingBar:RatingBar,newRating:Float)
 }
 
-class RatingBar: UIView {
+open class RatingBar: UIView {
     var delegate:RatingBarDelegate?
 
-    var starRating:Float?
-    var lastRating:Float?
+   open var starRating:Float?
+   open var lastRating:Float?
     
     var starWidth:CGFloat?
     var starHeight:CGFloat?
@@ -41,9 +41,9 @@ class RatingBar: UIView {
     var s4:UIImageView?
     var s5:UIImageView?
     //是否是指示器 默认 true，表示用来显示，不用来打分
-    var isIndicator:Bool = true
+    open  var isIndicator:Bool = true
     //默认支持半颗星
-    var supportHalfStar:Bool = true
+    open  var supportHalfStar:Bool = true
     /**设置星星显示状态
        deselectedName   满星图片名
        halfSelectedName 半星图片名
@@ -162,16 +162,16 @@ class RatingBar: UIView {
         return starRating!
     }
     //手势
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override open func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
         self.touchesRating(touches as NSSet)
     }
     
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override open func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesMoved(touches, with: event)
         self.touchesRating(touches as NSSet)
     }
