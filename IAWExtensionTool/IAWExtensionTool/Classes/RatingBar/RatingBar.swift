@@ -18,7 +18,7 @@ fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
   }
 }
 
-protocol RatingBarDelegate {
+public protocol RatingBarDelegate {
     func ratingChanged(_ ratingBar:RatingBar,newRating:Float)
 }
 
@@ -50,7 +50,7 @@ open class RatingBar: UIView {
        fullSelectedName 空星图片名
        starSideLength   星星边长
      */
-    func setSeletedState(_ deselectedName:String?,halfSelectedName:String?,fullSelectedName:String?,starSideLength:CGFloat, delegate:RatingBarDelegate){
+    open func setSeletedState(_ deselectedName:String?,halfSelectedName:String?,fullSelectedName:String?,starSideLength:CGFloat, delegate:RatingBarDelegate){
         self.delegate = delegate
         unSelectedImage = UIImage(named: deselectedName!)
         fullSelectedImage = UIImage(named: fullSelectedName!)
@@ -114,7 +114,7 @@ open class RatingBar: UIView {
         self.addSubview(s5!)
     }
     //设置评分值
-    func displayRating(_ rating:Float){
+    open func displayRating(_ rating:Float){
         s1?.image = unSelectedImage
         s2?.image = unSelectedImage
         s3?.image = unSelectedImage
@@ -158,7 +158,7 @@ open class RatingBar: UIView {
 
     }
     
-    func rating() -> Float{
+    open func rating() -> Float{
         return starRating!
     }
     //手势
@@ -176,7 +176,7 @@ open class RatingBar: UIView {
         self.touchesRating(touches as NSSet)
     }
     //触发
-    func touchesRating(_ touches:NSSet){
+    open func touchesRating(_ touches:NSSet){
         if(self.isIndicator == true){
             return
         }
