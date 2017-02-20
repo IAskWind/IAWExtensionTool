@@ -26,7 +26,7 @@ open class IAW_UITool{
     }
     // 带侧边栏 带底部tabbar
     //注意：用在AppDelegate的调用 //并且返回的UIWindow要赋值给AppDelegate声明的
-    open class func toTabBarAndSlideMenu(leftVC: UIViewController,transitionStyle:UIModalTransitionStyle,childVcArray:[(String,String,String,Bool)])->UIWindow{
+    open class func rootToTabBarAndSlideMenu(window:UIWindow,leftVC: UIViewController,transitionStyle:UIModalTransitionStyle,childVcArray:[(String,String,String,Bool)]){
 //        weak var weakSelf = target
         let tabBar = IAW_TabBarController(childVcArray:childVcArray)
         SlideMenuOptions.contentViewScale = 1
@@ -35,7 +35,7 @@ open class IAW_UITool{
         slideMenuController.automaticallyAdjustsScrollViewInsets = true
         slideMenuController.delegate = tabBar
         slideMenuController.modalTransitionStyle = transitionStyle
-        return IAW_AppTool.rootVC(vc: slideMenuController)
+        IAW_AppTool.rootVC(mWindow: window,vc: slideMenuController)
         
     }
 

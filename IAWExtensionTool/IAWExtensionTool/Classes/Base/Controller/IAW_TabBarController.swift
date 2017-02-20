@@ -17,7 +17,7 @@ open class IAW_TabBarController: UITabBarController {
         tabBar.tintColor = UIColor(red: 245 / 255, green: 80 / 255, blue: 83 / 255, alpha: 1.0)
         
     }
-    convenience init(childVcArray: [(String,String,String,Bool)]) {
+    public convenience init(childVcArray: [(String,String,String,Bool)]) {
         self.init(nibName: nil, bundle: nil)
         self.childVcArray = childVcArray
         self.addChildViewControllers()
