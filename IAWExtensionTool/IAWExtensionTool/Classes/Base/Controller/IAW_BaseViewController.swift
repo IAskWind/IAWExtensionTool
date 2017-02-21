@@ -11,7 +11,7 @@ import UIKit
 import SnapKit
 //import SVProgressHUD
 
-open class IAW_BaseViewController: UIViewController,UIGestureRecognizerDelegate {
+open class IAW_BaseViewController: UIViewController,UIGestureRecognizerDelegate,UITextFieldDelegate{
     
     override open func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +60,13 @@ open class IAW_BaseViewController: UIViewController,UIGestureRecognizerDelegate 
     //点击界面 隐藏键盘
     func backViewTap(){
         view.endEditing(true)
+    }
+    // textField点击完成关闭软键盘
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        //隐藏键盘
+        textField.resignFirstResponder()
+        return true
     }
     
     override open func didReceiveMemoryWarning() {
