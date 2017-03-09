@@ -23,7 +23,7 @@ open class IAW_ProgressHUDTool{
     }
     
     open class  func showErrorInfo(msg:String?){
-          SVProgressHUD.show(IAW_ImgXcassetsTool.iaw_snow.image,status:msg)
+          SVProgressHUD.show(IAW_ImgXcassetsTool.errorInfo.image,status:msg)
     }
     
     open class  func showSuccessInfo(msg:String?){
