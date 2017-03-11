@@ -11,14 +11,22 @@ import SlideMenuControllerSwift
 open class IAW_TabBarController: UITabBarController {
     //第一个参数chindviewcontroller，第二个参数title,第三个imageName,第4个是否有侧边栏
     var childVcArray:[(String,String,String,Bool)]?
+    var navBarTintColor:UIColor?
+    var navBarTitleFontSize:CGFloat?
+    var navBarTitleColor:UIColor?
+    
     override open func viewDidLoad() {
         super.viewDidLoad()
         
-        tabBar.tintColor = UIColor(red: 245 / 255, green: 80 / 255, blue: 83 / 255, alpha: 1.0)
+//        tabBar.tintColor = UIColor(red: 245 / 255, green: 80 / 255, blue: 83 / 255, alpha: 1.0)
         
     }
-    public convenience init(childVcArray: [(String,String,String,Bool)]) {
+    public convenience init(childVcArray: [(String,String,String,Bool)],tabBarTintColor:UIColor,navBarTintColor:UIColor,navBarTitleFontSize:CGFloat = 15,navBarTitleColor:UIColor = UIColor.white) {
         self.init(nibName: nil, bundle: nil)
+        self.navBarTintColor = navBarTintColor
+        self.navBarTitleFontSize = navBarTitleFontSize
+        self.navBarTitleColor = navBarTitleColor
+        tabBar.tintColor = tabBarTintColor
         self.childVcArray = childVcArray
         self.addChildViewControllers()
     }
@@ -57,11 +65,10 @@ open class IAW_TabBarController: UITabBarController {
         vc.tabBarItem.selectedImage = UIImage(named: imageName + "selected")
         vc.title = title
         // 给每个控制器包装一个导航控制器
-        let nav = IAW_NavigationController()
+        let nav = IAW_NavigationController(navBarTintColor: navBarTintColor!,navBarTitleFontSize: navBarTitleFontSize!,navBarTitleColor: navBarTitleColor!)
         if isLeftBarBtn {
             IAW_SlideMenuTool.addLeftBarItem(target: vc)
         }
-
         nav.addChildViewController(vc)
         addChildViewController(nav)
     }

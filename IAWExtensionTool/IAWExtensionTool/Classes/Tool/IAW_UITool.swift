@@ -26,9 +26,9 @@ open class IAW_UITool{
     }
     // 带侧边栏 带底部tabbar
     //注意：用在AppDelegate的调用 //并且返回的UIWindow要赋值给AppDelegate声明的
-    open class func rootToTabBarAndSlideMenu(window:UIWindow,leftVC: UIViewController,transitionStyle:UIModalTransitionStyle,childVcArray:[(String,String,String,Bool)]){
+    open class func rootToTabBarAndSlideMenu(window:UIWindow,leftVC: UIViewController,transitionStyle:UIModalTransitionStyle,childVcArray:[(String,String,String,Bool)],tabBarTintColor:UIColor,navBarTintColor:UIColor){
 //        weak var weakSelf = target
-        let tabBar = IAW_TabBarController(childVcArray:childVcArray)
+        let tabBar = IAW_TabBarController(childVcArray:childVcArray,tabBarTintColor:tabBarTintColor,navBarTintColor:navBarTintColor)
         SlideMenuOptions.contentViewScale = 1
 //                SlideMenuOptions.contentViewOpacity = 0.5 //背景通明度
         let slideMenuController = IAW_SlideMenuController(mainViewController: tabBar, leftMenuViewController: leftVC)

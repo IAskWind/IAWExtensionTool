@@ -11,11 +11,20 @@ open class IAW_NavigationController: UINavigationController {
     
     open override class func initialize() {
         super.initialize()
-        /// 设置导航栏标题
-        let navBar = UINavigationBar.appearance()
-        navBar.barTintColor = IAW_GlobalNavBarColor
-        navBar.tintColor = UIColor.white
-        navBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont.systemFont(ofSize: 20)]
+//        /// 设置导航栏标题
+//        let navBar = UINavigationBar.appearance()
+//        navBar.barTintColor = IAW_GlobalNavBarColor
+//        navBar.tintColor = UIColor.white
+//        navBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont.systemFont(ofSize: 20)]
+    }
+    
+    public convenience init(navBarTintColor:UIColor,navBarTitleFontSize:CGFloat = 15,navBarTitleColor:UIColor = UIColor.white) {
+        self.init(nibName: nil, bundle: nil)
+                /// 设置导航栏标题
+                let navBar = UINavigationBar.appearance()
+                navBar.barTintColor = navBarTintColor
+                navBar.tintColor = navBarTitleColor
+                navBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont.systemFont(ofSize: navBarTitleFontSize)]
     }
     /**
      # 统一所有控制器导航栏左上角的返回按钮
