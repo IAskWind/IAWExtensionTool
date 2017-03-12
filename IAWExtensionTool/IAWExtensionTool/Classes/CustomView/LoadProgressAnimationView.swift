@@ -20,7 +20,7 @@ open class LoadProgressAnimationView: UIView {
         }
     }
     
-     init(bgColor:UIColor,frame: CGRect) {
+     public init(bgColor:UIColor,frame: CGRect) {
         super.init(frame: frame)
         
         viewWidth = frame.size.width
@@ -32,7 +32,7 @@ open class LoadProgressAnimationView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func startLoadProgressAnimation() {
+    public func startLoadProgressAnimation() {
         self.frame.size.width = 0
         isHidden = false
         weak var tmpSelf = self
@@ -51,7 +51,7 @@ open class LoadProgressAnimationView: UIView {
         
     }
     
-    func endLoadProgressAnimation() {
+    public func endLoadProgressAnimation() {
         weak var tmpSelf = self
         
         UIView.animate(withDuration: 0.2, animations: { () -> Void in

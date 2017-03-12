@@ -144,6 +144,9 @@ extension IAW_NetTool{
         let header = MJRefreshNormalHeader(refreshingBlock:blockRefresh)
         header!.lastUpdatedTimeLabel.isHidden = true
         header!.isAutomaticallyChangeAlpha = true //根据拖拽比例自动切换透
+        if (header?.isRefreshing())!{
+         header?.endRefreshing()
+        }
         header!.beginRefreshing()
         tableView.mj_header = header!
         
