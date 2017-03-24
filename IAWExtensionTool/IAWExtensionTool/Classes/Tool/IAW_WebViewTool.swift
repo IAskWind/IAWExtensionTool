@@ -36,7 +36,7 @@ open class IAW_WebViewTool{
     open class func webViewNoTokenLoadUrl(webView:UIWebView,urlStr:String) {
         //处理中文参数，报错的问题，进行url编码
         let urlS = urlStr.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-        print(urlS)
+        print(urlS as Any)
         let request = URLRequest(url: URL(string: urlS!)!)
         //        request.addValue(UserDefaults.standard.string(forKey: accessToken) != nil ? UserDefaults.standard.string(forKey: accessToken)! : "", forHTTPHeaderField: "accesstoken")
         webView.loadRequest(request)

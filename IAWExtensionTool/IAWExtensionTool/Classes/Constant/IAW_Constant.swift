@@ -97,6 +97,11 @@ public func IAW_HEXColor(_ hexColor:String) -> UIColor {
     
     return color
 }
+//px处理 labelMapWidth 标注图用的屏幕宽 pt单位 默认6s为375
+public func IAW_PX(px:CGFloat,labelMapWidth:CGFloat = 375)-> CGFloat{
+    
+    return  (IAW_ScreenW/labelMapWidth)*(px/2)
+}
 
 //view设置点击事件封装方法
 public func iaw_SetViewClick(dealView:UIView,target:Any?,viewClick:Selector){

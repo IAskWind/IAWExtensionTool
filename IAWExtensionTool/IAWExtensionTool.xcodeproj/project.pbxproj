@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4404BBD81E8517F3004CFF9F /* IAW_TaskTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404BBD71E8517F3004CFF9F /* IAW_TaskTool.swift */; };
+		4404BBDA1E851BB1004CFF9F /* IAW_MsgTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404BBD91E851BB1004CFF9F /* IAW_MsgTool.swift */; };
+		4404BBDC1E851E2B004CFF9F /* IAW_CountDownTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404BBDB1E851E2B004CFF9F /* IAW_CountDownTool.swift */; };
+		4404BBDE1E851EAA004CFF9F /* IAW_NoTokenWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404BBDD1E851EAA004CFF9F /* IAW_NoTokenWebViewController.swift */; };
 		441C6EC41DDE0BEC0080D0F0 /* IAWExtensionTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 441C6EC21DDE0BEC0080D0F0 /* IAWExtensionTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4426C2C61E35F59B00E74B79 /* IAW_SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4426C2C51E35F59B00E74B79 /* IAW_SlideMenuController.swift */; };
 		4426C2C81E35F67400E74B79 /* IAW_SlideMenuTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4426C2C71E35F67400E74B79 /* IAW_SlideMenuTool.swift */; };
@@ -75,6 +79,10 @@
 
 /* Begin PBXFileReference section */
 		38CAE004563470CD1EE8E6A6 /* Pods-IAWExtensionTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IAWExtensionTool.release.xcconfig"; path = "../Pods/Target Support Files/Pods-IAWExtensionTool/Pods-IAWExtensionTool.release.xcconfig"; sourceTree = "<group>"; };
+		4404BBD71E8517F3004CFF9F /* IAW_TaskTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IAW_TaskTool.swift; path = ../Constant/IAW_TaskTool.swift; sourceTree = "<group>"; };
+		4404BBD91E851BB1004CFF9F /* IAW_MsgTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_MsgTool.swift; sourceTree = "<group>"; };
+		4404BBDB1E851E2B004CFF9F /* IAW_CountDownTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_CountDownTool.swift; sourceTree = "<group>"; };
+		4404BBDD1E851EAA004CFF9F /* IAW_NoTokenWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_NoTokenWebViewController.swift; sourceTree = "<group>"; };
 		441C6EBF1DDE0BEC0080D0F0 /* IAWExtensionTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IAWExtensionTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		441C6EC21DDE0BEC0080D0F0 /* IAWExtensionTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IAWExtensionTool.h; sourceTree = "<group>"; };
 		441C6EC31DDE0BEC0080D0F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -215,6 +223,7 @@
 		442E53361E1DE494001FCBD8 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				4404BBDD1E851EAA004CFF9F /* IAW_NoTokenWebViewController.swift */,
 				442E53371E1DE494001FCBD8 /* IAW_EditTextViewController.swift */,
 				442E533A1E1DE494001FCBD8 /* IAW_WebViewController.swift */,
 			);
@@ -331,6 +340,7 @@
 		44EC563B1DDE0F0C00DAAFF8 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				4404BBD71E8517F3004CFF9F /* IAW_TaskTool.swift */,
 				44EC563C1DDE0F0C00DAAFF8 /* IAW_AppTool.swift */,
 				44EC563D1DDE0F0C00DAAFF8 /* IAW_JsonTool.swift */,
 				44EC563E1DDE0F0C00DAAFF8 /* IAW_ProgressHUDTool.swift */,
@@ -346,6 +356,8 @@
 				442E536A1E1F76BE001FCBD8 /* IAW_TokenTool.swift */,
 				442E536C1E1F8C2D001FCBD8 /* IAW_NetTool.swift */,
 				44732A8A1E372D33001F698D /* IAW_NavBarTool.swift */,
+				4404BBD91E851BB1004CFF9F /* IAW_MsgTool.swift */,
+				4404BBDB1E851E2B004CFF9F /* IAW_CountDownTool.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -431,7 +443,7 @@
 		441C6EB61DDE0BEC0080D0F0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = winston;
 				TargetAttributes = {
 					441C6EBE1DDE0BEC0080D0F0 = {
@@ -523,6 +535,7 @@
 				442E53321E1D0C33001FCBD8 /* LoadProgressAnimationView.swift in Sources */,
 				44A43A751E1CF66A005BB1FE /* WHC_Frame.swift in Sources */,
 				44EC56561DDE0F0C00DAAFF8 /* IAWTextField.swift in Sources */,
+				4404BBDA1E851BB1004CFF9F /* IAW_MsgTool.swift in Sources */,
 				44A43A7C1E1CF699005BB1FE /* RatingBar.swift in Sources */,
 				442E53691E1F7646001FCBD8 /* IAW_WebViewTool.swift in Sources */,
 				44A43A931E1CF6D8005BB1FE /* ResizeControl.swift in Sources */,
@@ -538,6 +551,7 @@
 				4492FD731E287503006D69CB /* IAW_FullScreenTool.swift in Sources */,
 				442E53591E1E23C6001FCBD8 /* IAWUIView+Extension.swift in Sources */,
 				442E53671E1F75F5001FCBD8 /* IAW_TabelViewTool.swift in Sources */,
+				4404BBDC1E851E2B004CFF9F /* IAW_CountDownTool.swift in Sources */,
 				442E536D1E1F8C2D001FCBD8 /* IAW_NetTool.swift in Sources */,
 				44EC564B1DDE0F0C00DAAFF8 /* IAWString.swift in Sources */,
 				4426C2C61E35F59B00E74B79 /* IAW_SlideMenuController.swift in Sources */,
@@ -566,7 +580,9 @@
 				442E53631E1F38AD001FCBD8 /* IAW_LabelTool.swift in Sources */,
 				442E53611E1F388D001FCBD8 /* IAW_TextFieldTool.swift in Sources */,
 				442E534C1E1DE575001FCBD8 /* IAW_NavigationController.swift in Sources */,
+				4404BBD81E8517F3004CFF9F /* IAW_TaskTool.swift in Sources */,
 				442E53581E1E23C6001FCBD8 /* IAWUITableView+Extension.swift in Sources */,
+				4404BBDE1E851EAA004CFF9F /* IAW_NoTokenWebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,6 +607,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -644,6 +661,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

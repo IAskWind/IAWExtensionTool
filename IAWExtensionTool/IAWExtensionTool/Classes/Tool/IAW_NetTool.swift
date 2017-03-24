@@ -141,18 +141,29 @@ extension IAW_NetTool{
             //                a.stateLabel.isHidden = true
             //            }
         }
-        let header = MJRefreshNormalHeader(refreshingBlock:blockRefresh)
-        header!.lastUpdatedTimeLabel.isHidden = true
-        header!.isAutomaticallyChangeAlpha = true //根据拖拽比例自动切换透
-        if (header?.isRefreshing())!{
-         header?.endRefreshing()
+        if tableView.mj_header == nil{
+            let header = MJRefreshNormalHeader(refreshingBlock:blockRefresh)
+            header!.lastUpdatedTimeLabel.isHidden = true
+            header!.isAutomaticallyChangeAlpha = true //根据拖拽比例自动切换透
+            tableView.mj_header = header!
+        }else{
+            tableView.mj_header.refreshingBlock = blockRefresh
         }
-        header!.beginRefreshing()
-        tableView.mj_header = header!
+        if tableView.mj_header.isRefreshing(){
+            tableView.mj_header.endRefreshing()
+        }
         
-        let footer = MJRefreshAutoNormalFooter(refreshingBlock: blockAdd)
-        footer?.stateLabel.isHidden = true
-        tableView.mj_footer = footer
+        
+        tableView.mj_header.beginRefreshing()
+        
+        
+        if tableView.mj_footer == nil{
+            let footer = MJRefreshAutoNormalFooter(refreshingBlock: blockAdd)
+            footer?.stateLabel.isHidden = true
+            tableView.mj_footer = footer
+        }else{
+            tableView.mj_footer.refreshingBlock = blockAdd
+        }
         
         
     }
