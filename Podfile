@@ -22,9 +22,9 @@ target 'IAWExtensionToolDemo' do
     pod 'SlideMenuControllerSwift'
     pod 'SwiftMessages'
     #倒计时处理
-    pod 'CountdownLabel', :git => 'https://github.com/IAskWind/CountdownLabel.git', :branch => 'swift3'
+    #pod 'CountdownLabel', :git => 'https://github.com/IAskWind/CountdownLabel.git', :branch => 'swift3'
     #事件总线
-    pod 'SwiftEventBus', :tag => '2.2.0', :git => 'https://github.com/cesarferreira/SwiftEventBus.git'
+    #pod 'SwiftEventBus', :tag => '2.2.0', :git => 'https://github.com/cesarferreira/SwiftEventBus.git'
 end
 
 target 'IAWExtensionTool' do
@@ -43,7 +43,7 @@ target 'IAWExtensionTool' do
   pod 'SlideMenuControllerSwift'
   pod 'SwiftMessages'
   #倒计时处理
-  pod 'CountdownLabel', :git => 'https://github.com/IAskWind/CountdownLabel.git', :branch => 'swift3'
+  #pod 'CountdownLabel', :git => 'https://github.com/IAskWind/CountdownLabel.git', :branch => 'swift3'
   #事件总线
-  pod 'SwiftEventBus', :tag => '2.2.0', :git => 'https://github.com/cesarferreira/SwiftEventBus.git'
+  #pod 'SwiftEventBus', :tag => '2.2.0', :git => 'https://github.com/cesarferreira/SwiftEventBus.git'
 end

@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import CountdownLabel
 open class IAW_CountDownTool{
     //倒计时处理
     open class func countDown(countdownLabel:CountdownLabel,fromDate:String,targetDate:String){

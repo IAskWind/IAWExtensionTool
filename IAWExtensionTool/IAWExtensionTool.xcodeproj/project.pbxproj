@@ -11,6 +11,27 @@
 		4404BBDA1E851BB1004CFF9F /* IAW_MsgTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404BBD91E851BB1004CFF9F /* IAW_MsgTool.swift */; };
 		4404BBDC1E851E2B004CFF9F /* IAW_CountDownTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404BBDB1E851E2B004CFF9F /* IAW_CountDownTool.swift */; };
 		4404BBDE1E851EAA004CFF9F /* IAW_NoTokenWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404BBDD1E851EAA004CFF9F /* IAW_NoTokenWebViewController.swift */; };
+		4404BBF71E852AD9004CFF9F /* CountdownLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 4404BBE01E852AD9004CFF9F /* CountdownLabel.h */; };
+		4404BBF81E852AD9004CFF9F /* CountdownLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404BBE11E852AD9004CFF9F /* CountdownLabel.swift */; };
+		4404BBF91E852AD9004CFF9F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4404BBE21E852AD9004CFF9F /* Info.plist */; };
+		4404BBFA1E852AD9004CFF9F /* LTCharacterDiffResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404BBE41E852AD9004CFF9F /* LTCharacterDiffResult.swift */; };
+		4404BBFB1E852AD9004CFF9F /* LTCharacterLimbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404BBE51E852AD9004CFF9F /* LTCharacterLimbo.swift */; };
+		4404BBFC1E852AD9004CFF9F /* LTEasing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404BBE61E852AD9004CFF9F /* LTEasing.swift */; };
+		4404BBFD1E852AD9004CFF9F /* LTEmitterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404BBE71E852AD9004CFF9F /* LTEmitterView.swift */; };
+		4404BBFE1E852AD9004CFF9F /* LTMorphingEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404BBE81E852AD9004CFF9F /* LTMorphingEffect.swift */; };
+		4404BBFF1E852AD9004CFF9F /* LTMorphingLabel+Anvil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404BBE91E852AD9004CFF9F /* LTMorphingLabel+Anvil.swift */; };
+		4404BC001E852AD9004CFF9F /* LTMorphingLabel+Burn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404BBEA1E852AD9004CFF9F /* LTMorphingLabel+Burn.swift */; };
+		4404BC011E852AD9004CFF9F /* LTMorphingLabel+Evaporate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404BBEB1E852AD9004CFF9F /* LTMorphingLabel+Evaporate.swift */; };
+		4404BC021E852AD9004CFF9F /* LTMorphingLabel+Fall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404BBEC1E852AD9004CFF9F /* LTMorphingLabel+Fall.swift */; };
+		4404BC031E852AD9004CFF9F /* LTMorphingLabel+Pixelate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404BBED1E852AD9004CFF9F /* LTMorphingLabel+Pixelate.swift */; };
+		4404BC041E852AD9004CFF9F /* LTMorphingLabel+Sparkle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404BBEE1E852AD9004CFF9F /* LTMorphingLabel+Sparkle.swift */; };
+		4404BC051E852AD9004CFF9F /* LTMorphingLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 4404BBEF1E852AD9004CFF9F /* LTMorphingLabel.h */; };
+		4404BC061E852AD9004CFF9F /* LTMorphingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404BBF01E852AD9004CFF9F /* LTMorphingLabel.swift */; };
+		4404BC071E852AD9004CFF9F /* LTStringDiffResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404BBF11E852AD9004CFF9F /* LTStringDiffResult.swift */; };
+		4404BC081E852AD9004CFF9F /* Fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 4404BBF31E852AD9004CFF9F /* Fire.png */; };
+		4404BC091E852AD9004CFF9F /* Fragment.png in Resources */ = {isa = PBXBuildFile; fileRef = 4404BBF41E852AD9004CFF9F /* Fragment.png */; };
+		4404BC0A1E852AD9004CFF9F /* Smoke.png in Resources */ = {isa = PBXBuildFile; fileRef = 4404BBF51E852AD9004CFF9F /* Smoke.png */; };
+		4404BC0B1E852AD9004CFF9F /* Sparkle.png in Resources */ = {isa = PBXBuildFile; fileRef = 4404BBF61E852AD9004CFF9F /* Sparkle.png */; };
 		441C6EC41DDE0BEC0080D0F0 /* IAWExtensionTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 441C6EC21DDE0BEC0080D0F0 /* IAWExtensionTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4426C2C61E35F59B00E74B79 /* IAW_SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4426C2C51E35F59B00E74B79 /* IAW_SlideMenuController.swift */; };
 		4426C2C81E35F67400E74B79 /* IAW_SlideMenuTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4426C2C71E35F67400E74B79 /* IAW_SlideMenuTool.swift */; };
@@ -83,6 +104,27 @@
 		4404BBD91E851BB1004CFF9F /* IAW_MsgTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_MsgTool.swift; sourceTree = "<group>"; };
 		4404BBDB1E851E2B004CFF9F /* IAW_CountDownTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_CountDownTool.swift; sourceTree = "<group>"; };
 		4404BBDD1E851EAA004CFF9F /* IAW_NoTokenWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_NoTokenWebViewController.swift; sourceTree = "<group>"; };
+		4404BBE01E852AD9004CFF9F /* CountdownLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountdownLabel.h; sourceTree = "<group>"; };
+		4404BBE11E852AD9004CFF9F /* CountdownLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownLabel.swift; sourceTree = "<group>"; };
+		4404BBE21E852AD9004CFF9F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4404BBE41E852AD9004CFF9F /* LTCharacterDiffResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTCharacterDiffResult.swift; sourceTree = "<group>"; };
+		4404BBE51E852AD9004CFF9F /* LTCharacterLimbo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTCharacterLimbo.swift; sourceTree = "<group>"; };
+		4404BBE61E852AD9004CFF9F /* LTEasing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTEasing.swift; sourceTree = "<group>"; };
+		4404BBE71E852AD9004CFF9F /* LTEmitterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTEmitterView.swift; sourceTree = "<group>"; };
+		4404BBE81E852AD9004CFF9F /* LTMorphingEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTMorphingEffect.swift; sourceTree = "<group>"; };
+		4404BBE91E852AD9004CFF9F /* LTMorphingLabel+Anvil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Anvil.swift"; sourceTree = "<group>"; };
+		4404BBEA1E852AD9004CFF9F /* LTMorphingLabel+Burn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Burn.swift"; sourceTree = "<group>"; };
+		4404BBEB1E852AD9004CFF9F /* LTMorphingLabel+Evaporate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Evaporate.swift"; sourceTree = "<group>"; };
+		4404BBEC1E852AD9004CFF9F /* LTMorphingLabel+Fall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Fall.swift"; sourceTree = "<group>"; };
+		4404BBED1E852AD9004CFF9F /* LTMorphingLabel+Pixelate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Pixelate.swift"; sourceTree = "<group>"; };
+		4404BBEE1E852AD9004CFF9F /* LTMorphingLabel+Sparkle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Sparkle.swift"; sourceTree = "<group>"; };
+		4404BBEF1E852AD9004CFF9F /* LTMorphingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTMorphingLabel.h; sourceTree = "<group>"; };
+		4404BBF01E852AD9004CFF9F /* LTMorphingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTMorphingLabel.swift; sourceTree = "<group>"; };
+		4404BBF11E852AD9004CFF9F /* LTStringDiffResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTStringDiffResult.swift; sourceTree = "<group>"; };
+		4404BBF31E852AD9004CFF9F /* Fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fire.png; sourceTree = "<group>"; };
+		4404BBF41E852AD9004CFF9F /* Fragment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fragment.png; sourceTree = "<group>"; };
+		4404BBF51E852AD9004CFF9F /* Smoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Smoke.png; sourceTree = "<group>"; };
+		4404BBF61E852AD9004CFF9F /* Sparkle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sparkle.png; sourceTree = "<group>"; };
 		441C6EBF1DDE0BEC0080D0F0 /* IAWExtensionTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IAWExtensionTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		441C6EC21DDE0BEC0080D0F0 /* IAWExtensionTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IAWExtensionTool.h; sourceTree = "<group>"; };
 		441C6EC31DDE0BEC0080D0F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -164,6 +206,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4404BBDF1E852AD9004CFF9F /* CountdownLabel */ = {
+			isa = PBXGroup;
+			children = (
+				4404BBE01E852AD9004CFF9F /* CountdownLabel.h */,
+				4404BBE11E852AD9004CFF9F /* CountdownLabel.swift */,
+				4404BBE21E852AD9004CFF9F /* Info.plist */,
+				4404BBE31E852AD9004CFF9F /* LTMorphingLabel */,
+			);
+			path = CountdownLabel;
+			sourceTree = "<group>";
+		};
+		4404BBE31E852AD9004CFF9F /* LTMorphingLabel */ = {
+			isa = PBXGroup;
+			children = (
+				4404BBE41E852AD9004CFF9F /* LTCharacterDiffResult.swift */,
+				4404BBE51E852AD9004CFF9F /* LTCharacterLimbo.swift */,
+				4404BBE61E852AD9004CFF9F /* LTEasing.swift */,
+				4404BBE71E852AD9004CFF9F /* LTEmitterView.swift */,
+				4404BBE81E852AD9004CFF9F /* LTMorphingEffect.swift */,
+				4404BBE91E852AD9004CFF9F /* LTMorphingLabel+Anvil.swift */,
+				4404BBEA1E852AD9004CFF9F /* LTMorphingLabel+Burn.swift */,
+				4404BBEB1E852AD9004CFF9F /* LTMorphingLabel+Evaporate.swift */,
+				4404BBEC1E852AD9004CFF9F /* LTMorphingLabel+Fall.swift */,
+				4404BBED1E852AD9004CFF9F /* LTMorphingLabel+Pixelate.swift */,
+				4404BBEE1E852AD9004CFF9F /* LTMorphingLabel+Sparkle.swift */,
+				4404BBEF1E852AD9004CFF9F /* LTMorphingLabel.h */,
+				4404BBF01E852AD9004CFF9F /* LTMorphingLabel.swift */,
+				4404BBF11E852AD9004CFF9F /* LTStringDiffResult.swift */,
+				4404BBF21E852AD9004CFF9F /* Particles */,
+			);
+			path = LTMorphingLabel;
+			sourceTree = "<group>";
+		};
+		4404BBF21E852AD9004CFF9F /* Particles */ = {
+			isa = PBXGroup;
+			children = (
+				4404BBF31E852AD9004CFF9F /* Fire.png */,
+				4404BBF41E852AD9004CFF9F /* Fragment.png */,
+				4404BBF51E852AD9004CFF9F /* Smoke.png */,
+				4404BBF61E852AD9004CFF9F /* Sparkle.png */,
+			);
+			path = Particles;
+			sourceTree = "<group>";
+		};
 		441C6EB51DDE0BEC0080D0F0 = {
 			isa = PBXGroup;
 			children = (
@@ -311,6 +397,7 @@
 		44EC56361DDE0F0C00DAAFF8 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4404BBDF1E852AD9004CFF9F /* CountdownLabel */,
 				4426C2C41E35F57500E74B79 /* LeftSlideMenu */,
 				4492FD691E2632A3006D69CB /* Effect */,
 				442E533F1E1DE575001FCBD8 /* Base */,
@@ -409,8 +496,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4404BBF71E852AD9004CFF9F /* CountdownLabel.h in Headers */,
 				441C6EC41DDE0BEC0080D0F0 /* IAWExtensionTool.h in Headers */,
 				44A43A8D1E1CF6D8005BB1FE /* CropViewController.h in Headers */,
+				4404BC051E852AD9004CFF9F /* LTMorphingLabel.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,12 +566,17 @@
 			files = (
 				44A43A7F1E1CF699005BB1FE /* star_big3@3x.png in Resources */,
 				44A43A911E1CF6D8005BB1FE /* PhotoCropEditorBorder@2x.png in Resources */,
+				4404BC091E852AD9004CFF9F /* Fragment.png in Resources */,
+				4404BBF91E852AD9004CFF9F /* Info.plist in Resources */,
 				44A43A7E1E1CF699005BB1FE /* star_big2@3x.png in Resources */,
+				4404BC0B1E852AD9004CFF9F /* Sparkle.png in Resources */,
 				44A43A7D1E1CF699005BB1FE /* star_big1@3x.png in Resources */,
 				44A43A901E1CF6D8005BB1FE /* PhotoCropEditorBorder.png in Resources */,
 				44A43A921E1CF6D8005BB1FE /* PhotoCropEditorBorder@3x.png in Resources */,
+				4404BC081E852AD9004CFF9F /* Fire.png in Resources */,
 				44A43A8F1E1CF6D8005BB1FE /* Info.plist in Resources */,
 				44EC565C1DDE0F1800DAAFF8 /* Images.xcassets in Resources */,
+				4404BC0A1E852AD9004CFF9F /* Smoke.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,16 +628,21 @@
 				442E534B1E1DE575001FCBD8 /* IAW_BaseViewController.swift in Sources */,
 				442E53321E1D0C33001FCBD8 /* LoadProgressAnimationView.swift in Sources */,
 				44A43A751E1CF66A005BB1FE /* WHC_Frame.swift in Sources */,
+				4404BC061E852AD9004CFF9F /* LTMorphingLabel.swift in Sources */,
 				44EC56561DDE0F0C00DAAFF8 /* IAWTextField.swift in Sources */,
 				4404BBDA1E851BB1004CFF9F /* IAW_MsgTool.swift in Sources */,
+				4404BC011E852AD9004CFF9F /* LTMorphingLabel+Evaporate.swift in Sources */,
 				44A43A7C1E1CF699005BB1FE /* RatingBar.swift in Sources */,
 				442E53691E1F7646001FCBD8 /* IAW_WebViewTool.swift in Sources */,
 				44A43A931E1CF6D8005BB1FE /* ResizeControl.swift in Sources */,
 				442E53351E1D1057001FCBD8 /* IAW_Constant.swift in Sources */,
+				4404BBFE1E852AD9004CFF9F /* LTMorphingEffect.swift in Sources */,
 				44AD44F11E1264C000E19542 /* IAW_SignMd5Tool.swift in Sources */,
 				442E535F1E1F384D001FCBD8 /* IAW_TextViewTool.swift in Sources */,
 				44732A8B1E372D33001F698D /* IAW_NavBarTool.swift in Sources */,
+				4404BBFB1E852AD9004CFF9F /* LTCharacterLimbo.swift in Sources */,
 				44A43A8E1E1CF6D8005BB1FE /* CropViewController.swift in Sources */,
+				4404BBFC1E852AD9004CFF9F /* LTEasing.swift in Sources */,
 				44A43A941E1CF6D8005BB1FE /* UIImage+Crop.swift in Sources */,
 				44EC564A1DDE0F0C00DAAFF8 /* IAWBundle.swift in Sources */,
 				442E53531E1DE575001FCBD8 /* IAW_ResponseMsgModel.swift in Sources */,
@@ -551,24 +650,33 @@
 				4492FD731E287503006D69CB /* IAW_FullScreenTool.swift in Sources */,
 				442E53591E1E23C6001FCBD8 /* IAWUIView+Extension.swift in Sources */,
 				442E53671E1F75F5001FCBD8 /* IAW_TabelViewTool.swift in Sources */,
+				4404BBFA1E852AD9004CFF9F /* LTCharacterDiffResult.swift in Sources */,
 				4404BBDC1E851E2B004CFF9F /* IAW_CountDownTool.swift in Sources */,
+				4404BC021E852AD9004CFF9F /* LTMorphingLabel+Fall.swift in Sources */,
+				4404BBF81E852AD9004CFF9F /* CountdownLabel.swift in Sources */,
+				4404BBFF1E852AD9004CFF9F /* LTMorphingLabel+Anvil.swift in Sources */,
 				442E536D1E1F8C2D001FCBD8 /* IAW_NetTool.swift in Sources */,
 				44EC564B1DDE0F0C00DAAFF8 /* IAWString.swift in Sources */,
+				4404BC071E852AD9004CFF9F /* LTStringDiffResult.swift in Sources */,
+				4404BC031E852AD9004CFF9F /* LTMorphingLabel+Pixelate.swift in Sources */,
 				4426C2C61E35F59B00E74B79 /* IAW_SlideMenuController.swift in Sources */,
 				4426C2C81E35F67400E74B79 /* IAW_SlideMenuTool.swift in Sources */,
 				442E53511E1DE575001FCBD8 /* IAW_ResponseModel.swift in Sources */,
 				442E534D1E1DE575001FCBD8 /* IAW_TabBarController.swift in Sources */,
 				442E535D1E1F313C001FCBD8 /* IAW_MsgTip.swift in Sources */,
+				4404BC041E852AD9004CFF9F /* LTMorphingLabel+Sparkle.swift in Sources */,
 				4492FD751E287503006D69CB /* ParticleView.swift in Sources */,
 				44EC564E1DDE0F0C00DAAFF8 /* IAW_ProgressHUDTool.swift in Sources */,
 				442E535B1E1E3876001FCBD8 /* IAW_PhotoTool.swift in Sources */,
 				44EC564F1DDE0F0C00DAAFF8 /* IAW_RNCryptorTool.swift in Sources */,
+				4404BBFD1E852AD9004CFF9F /* LTEmitterView.swift in Sources */,
 				4492FD741E287503006D69CB /* Particle.swift in Sources */,
 				44EC56511DDE0F0C00DAAFF8 /* IAWApplication.swift in Sources */,
 				44EC56571DDE0F0C00DAAFF8 /* IAWWebView.swift in Sources */,
 				44EC56531DDE0F0C00DAAFF8 /* IAWColor.swift in Sources */,
 				44A43A741E1CF66A005BB1FE /* WHC_AutoLayout.swift in Sources */,
 				44A43A8B1E1CF6D8005BB1FE /* CropRectView.swift in Sources */,
+				4404BC001E852AD9004CFF9F /* LTMorphingLabel+Burn.swift in Sources */,
 				44A43A731E1CF66A005BB1FE /* WHC_AutoCellHeight.swift in Sources */,
 				44EC56541DDE0F0C00DAAFF8 /* IAWImageView.swift in Sources */,
 				44EC564D1DDE0F0C00DAAFF8 /* IAW_JsonTool.swift in Sources */,

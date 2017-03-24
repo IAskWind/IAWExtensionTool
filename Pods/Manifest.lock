@@ -3,7 +3,6 @@ PODS:
   - AlamofireObjectMapper (4.0.1):
     - Alamofire (~> 4.1)
     - ObjectMapper (~> 2.0)
-  - CountdownLabel (1.2.0)
   - CryptoSwift (0.6.7)
   - Kingfisher (3.2.4)
   - MJRefresh (3.1.12)
@@ -14,13 +13,11 @@ PODS:
   - SlideMenuControllerSwift (3.0.1)
   - SnapKit (3.1.2)
   - SVProgressHUD (2.1.2)
-  - SwiftEventBus (2.2.0)
   - SwiftMessages (3.3.1)
 
 DEPENDENCIES:
   - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `master`)
   - AlamofireObjectMapper (~> 4.0)
-  - CountdownLabel (from `https://github.com/IAskWind/CountdownLabel.git`, branch `swift3`)
   - CryptoSwift (from `https://github.com/krzyzanowskim/CryptoSwift`, branch `master`)
   - Kingfisher (~> 3.2.4)
   - MJRefresh
@@ -30,41 +27,27 @@ DEPENDENCIES:
   - SlideMenuControllerSwift
   - SnapKit (~> 3.1.2)
   - SVProgressHUD
-  - SwiftEventBus (from `https://github.com/cesarferreira/SwiftEventBus.git`, tag `2.2.0`)
   - SwiftMessages
 
 EXTERNAL SOURCES:
   Alamofire:
     :branch: master
     :git: https://github.com/Alamofire/Alamofire.git
-  CountdownLabel:
-    :branch: swift3
-    :git: https://github.com/IAskWind/CountdownLabel.git
   CryptoSwift:
     :branch: master
     :git: https://github.com/krzyzanowskim/CryptoSwift
-  SwiftEventBus:
-    :git: https://github.com/cesarferreira/SwiftEventBus.git
-    :tag: 2.2.0
 
 CHECKOUT OPTIONS:
   Alamofire:
     :commit: 779930c399307caa3d1afb01fd628754e323ea34
     :git: https://github.com/Alamofire/Alamofire.git
-  CountdownLabel:
-    :commit: fdb39416168861b187e50b6b26bf0987fa3b458f
-    :git: https://github.com/IAskWind/CountdownLabel.git
   CryptoSwift:
     :commit: bf3a902e09f759ec48b90c29b6b4d58d06686f74
     :git: https://github.com/krzyzanowskim/CryptoSwift
-  SwiftEventBus:
-    :git: https://github.com/cesarferreira/SwiftEventBus.git
-    :tag: 2.2.0
 
 SPEC CHECKSUMS:
   Alamofire: 26d8877ec03b4e6e6cbfbf7c03924b4844a2d453
   AlamofireObjectMapper: 842d2eed43a4d0593ff0110d54ac86a170c4519c
-  CountdownLabel: 7dcc9bb2c8f488af7a4d29053f41c014ea0b973d
   CryptoSwift: 8f7b936cfd910257631f30d26e7188fa64e91e97
   Kingfisher: 8d80f39da403cd9c9ee11984e1655f4d6a566cdb
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
@@ -75,9 +58,8 @@ SPEC CHECKSUMS:
   SlideMenuControllerSwift: 9a163b16d54afab734add42858cba7ef7c307755
   SnapKit: 12b24f569cb7c143acc9c22b9d91b23e7b1c84a2
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
-  SwiftEventBus: 39cde57d1881f9d6e8afb1f9e41f973e331bf847
   SwiftMessages: 31e27e35c2f11b116ad7ec3232b56ca9bd242475
 
-PODFILE CHECKSUM: 908ec938c199f6287bf00261f17fb647c9ea36bb
+PODFILE CHECKSUM: 273588d16d9883cd9d2df9d917f5ab21d8478bbf
 
 COCOAPODS: 1.2.0.beta.3
