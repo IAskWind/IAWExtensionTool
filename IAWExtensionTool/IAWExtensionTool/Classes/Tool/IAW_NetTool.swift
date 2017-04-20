@@ -97,6 +97,198 @@ open class IAW_NetTool{
         }
         pageBlock(tableView: tableView, block: block)
     }
+    
+    //****************************泛型运用
+    
+    
+    //    data 返回msg
+   open class func loadData<M:IAW_BaseModel<Any>>(_ url:String,method: HTTPMethod = .post,params:[String:Any],loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (M)->(),dealTokenInvalid:@escaping (Bool)->(Bool)){
+        if !checkNet(){
+            return
+        }
+        var task:IAW_TaskTool.Task?
+        if !loadingTip.isEmpty{
+            task = IAW_TaskTool.delay(1) { //1秒后显示
+                IAW_ProgressHUDTool.show(msg:loadingTip)
+            }
+        }
+        
+        Alamofire.request(url, method: method, parameters: params).responseObject{
+            (response:DataResponse<M>) in
+            if !loadingTip.isEmpty{
+                IAW_TaskTool.cancel(task) //速度太快的不显示进度条
+                IAW_ProgressHUDTool.dimiss()
+            }
+            if let model = response.result.value{
+                if dealTokenInvalid(model.isTokenInvalid()){
+                    return
+                }
+                let success = model.isSuccess()
+                guard success else {
+                    IAW_MsgTool.showErrorInfo(msg: model.getMsg())
+                    return
+                }
+                if !userDefinedTip{
+                    IAW_MsgTool.showSuccessInfo(msg: model.getMsg())
+                }
+                finished(model)
+                
+            }
+        }
+        
+    }
+    
+    //返回 T 带 failure
+    open class func loadData<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,params:[String:Any],loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (DataResponse<M>,T)->(),failure:@escaping ()->(),dealTokenInvalid:@escaping (Bool)->(Bool)){
+        if !checkNet(){
+            return
+        }
+        var task:IAW_TaskTool.Task?
+        if !loadingTip.isEmpty{
+            task = IAW_TaskTool.delay(1) { //1秒后显示
+                IAW_ProgressHUDTool.show(msg:loadingTip)
+            }
+        }
+        
+        Alamofire.request(url, method: method, parameters: params).responseObject{
+            (response:DataResponse<M>) in
+            if !loadingTip.isEmpty{
+                IAW_TaskTool.cancel(task) //速度太快的不显示进度条
+                IAW_ProgressHUDTool.dimiss()
+            }
+            
+            if let model = response.result.value{
+                if dealTokenInvalid(model.isTokenInvalid()){
+                    return
+                }
+                let success = model.isSuccess()
+                guard success else {
+                    failure()
+                    IAW_MsgTool.showErrorInfo(msg: model.getMsg())
+                    return
+                }
+                if !userDefinedTip{
+                    IAW_MsgTool.showSuccessInfo(msg: model.getMsg())
+                }
+                if let data = model.getData(){
+                    finished(response,data)
+                }
+            }
+        }
+        
+    }
+    
+    //返回 T 不带failure
+    open class func loadData<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,params:[String:Any],loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (DataResponse<M>,T)->(),dealTokenInvalid:@escaping (Bool)->(Bool)){
+        if !checkNet(){
+            return
+        }
+        var task:IAW_TaskTool.Task?
+        if !loadingTip.isEmpty{
+            task = IAW_TaskTool.delay(1) { //1秒后显示
+                IAW_ProgressHUDTool.show(msg:loadingTip)
+            }
+        }
+        
+        Alamofire.request(url, method: method, parameters: params).responseObject{
+            (response:DataResponse<M>) in
+            if !loadingTip.isEmpty{
+                IAW_TaskTool.cancel(task) //速度太快的不显示进度条
+                IAW_ProgressHUDTool.dimiss()
+            }
+            
+            if let model = response.result.value{
+                if dealTokenInvalid(model.isTokenInvalid()){
+                    return
+                }
+                let success = model.isSuccess()
+                guard success else {
+                    IAW_MsgTool.showErrorInfo(msg: model.getMsg())
+                    return
+                }
+                if !userDefinedTip{
+                    IAW_MsgTool.showSuccessInfo(msg: model.getMsg())
+                }
+                if let data = model.getData(){
+                    finished(response,data)
+                }
+            }
+        }
+        
+    }
+    
+    
+    //返回[T]
+    open class func loadDatas<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,params:[String:Any],loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (M,[T])->(),dealTokenInvalid:@escaping (Bool)->(Bool)){
+        if !checkNet(){
+            return
+        }
+        var task:IAW_TaskTool.Task?
+        if !loadingTip.isEmpty{
+            task = IAW_TaskTool.delay(1) { //1秒后显示
+                IAW_ProgressHUDTool.show(msg:loadingTip)
+            }
+        }
+        
+        Alamofire.request(url, method: method, parameters: params).responseObject{
+            (response:DataResponse<M>) in
+            if !loadingTip.isEmpty{
+                IAW_TaskTool.cancel(task) //速度太快的不显示进度条
+                IAW_ProgressHUDTool.dimiss()
+            }
+            if let model = response.result.value{
+                if dealTokenInvalid(model.isTokenInvalid()){
+                    return
+                }
+                let success = model.isSuccess()
+                guard success else {
+                    IAW_MsgTool.showErrorInfo(msg: model.getMsg())
+                    return
+                }
+                if !userDefinedTip{
+                    IAW_MsgTool.showSuccessInfo(msg: model.getMsg())
+                }
+                if let data = model.getDatas(){
+                    
+                    finished(model, data)
+                }
+            }
+        }
+        
+    }
+    
+    //泛型分页请求
+    open class func loadDatasByPage<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,params:[String:Any],tableView:UITableView,_ finished:@escaping (_ pageNum:Int,_ datas:[T],M)->(),dealTokenInvalid:@escaping (Bool)->(Bool)){
+        if !IAW_NetTool.checkNet(){
+            return
+        }
+        let block:(Int,@escaping(Int)->())->() = {
+            (pageNum,pageReturn) in
+            var params_new = params
+            params_new.updateValue(pageNum, forKey: "page")
+            Alamofire.request(url, method:method,parameters: params_new,headers: self.headers).responseObject{
+                (response:DataResponse<M>) in
+                IAW_NetTool.endRefresh(tableView: tableView)
+                if let model = response.result.value{
+                    if dealTokenInvalid(model.isTokenInvalid()){
+                        return
+                    }
+                    let success = model.isSuccess()
+                    guard success else {
+                        IAW_MsgTool.showErrorInfo(msg: model.getMsg())
+                        return
+                    }
+                    
+                    if let data = model.getDatas(){
+                        pageReturn(model.getPage()!)
+                        finished(model.getPage()!,data,model)
+                    }
+                }
+            }
+        }
+        pageBlock(tableView: tableView, block: block)
+        
+    }
 
     
 
@@ -166,6 +358,17 @@ extension IAW_NetTool{
         }
         
         
+    }
+    
+    //检测当前网络是否连接
+    open class func checkNet()->Bool{
+        let manager = NetworkReachabilityManager()
+        let isNet = manager?.isReachable
+        print(isNet as Any)
+        if !isNet!{
+            IAW_MsgTool.showWarningInfo(msg: "请检查您的网络是否连接!",seconds: 3)
+        }
+        return isNet!
     }
     
     

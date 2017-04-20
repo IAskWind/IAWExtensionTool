@@ -57,6 +57,11 @@
 		442E53691E1F7646001FCBD8 /* IAW_WebViewTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E53681E1F7646001FCBD8 /* IAW_WebViewTool.swift */; };
 		442E536B1E1F76BE001FCBD8 /* IAW_TokenTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E536A1E1F76BE001FCBD8 /* IAW_TokenTool.swift */; };
 		442E536D1E1F8C2D001FCBD8 /* IAW_NetTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E536C1E1F8C2D001FCBD8 /* IAW_NetTool.swift */; };
+		44389C9F1EA4D50D0082B5ED /* IAW_BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44389C9B1EA4D50D0082B5ED /* IAW_BaseModel.swift */; };
+		44389CA01EA4D50D0082B5ED /* IAW_ResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44389C9C1EA4D50D0082B5ED /* IAW_ResModel.swift */; };
+		44389CA11EA4D50D0082B5ED /* IAW_ResModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44389C9D1EA4D50D0082B5ED /* IAW_ResModels.swift */; };
+		44389CA21EA4D50D0082B5ED /* IAW_ResMsgModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44389C9E1EA4D50D0082B5ED /* IAW_ResMsgModel.swift */; };
+		444C2DA41EA5A34200E8AC51 /* IAW_SelectListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444C2DA31EA5A34200E8AC51 /* IAW_SelectListVC.swift */; };
 		44732A8B1E372D33001F698D /* IAW_NavBarTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44732A8A1E372D33001F698D /* IAW_NavBarTool.swift */; };
 		4492FD731E287503006D69CB /* IAW_FullScreenTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4492FD701E287503006D69CB /* IAW_FullScreenTool.swift */; };
 		4492FD741E287503006D69CB /* Particle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4492FD711E287503006D69CB /* Particle.swift */; };
@@ -152,6 +157,11 @@
 		442E53681E1F7646001FCBD8 /* IAW_WebViewTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_WebViewTool.swift; sourceTree = "<group>"; };
 		442E536A1E1F76BE001FCBD8 /* IAW_TokenTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_TokenTool.swift; sourceTree = "<group>"; };
 		442E536C1E1F8C2D001FCBD8 /* IAW_NetTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_NetTool.swift; sourceTree = "<group>"; };
+		44389C9B1EA4D50D0082B5ED /* IAW_BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_BaseModel.swift; sourceTree = "<group>"; };
+		44389C9C1EA4D50D0082B5ED /* IAW_ResModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_ResModel.swift; sourceTree = "<group>"; };
+		44389C9D1EA4D50D0082B5ED /* IAW_ResModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_ResModels.swift; sourceTree = "<group>"; };
+		44389C9E1EA4D50D0082B5ED /* IAW_ResMsgModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_ResMsgModel.swift; sourceTree = "<group>"; };
+		444C2DA31EA5A34200E8AC51 /* IAW_SelectListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_SelectListVC.swift; sourceTree = "<group>"; };
 		44732A8A1E372D33001F698D /* IAW_NavBarTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_NavBarTool.swift; sourceTree = "<group>"; };
 		4492FD701E287503006D69CB /* IAW_FullScreenTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_FullScreenTool.swift; sourceTree = "<group>"; };
 		4492FD711E287503006D69CB /* Particle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Particle.swift; sourceTree = "<group>"; };
@@ -292,6 +302,7 @@
 		442E53301E1D0C33001FCBD8 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				444C2DA31EA5A34200E8AC51 /* IAW_SelectListVC.swift */,
 				442E53311E1D0C33001FCBD8 /* LoadProgressAnimationView.swift */,
 			);
 			path = CustomView;
@@ -338,6 +349,10 @@
 		442E53441E1DE575001FCBD8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				44389C9B1EA4D50D0082B5ED /* IAW_BaseModel.swift */,
+				44389C9C1EA4D50D0082B5ED /* IAW_ResModel.swift */,
+				44389C9D1EA4D50D0082B5ED /* IAW_ResModels.swift */,
+				44389C9E1EA4D50D0082B5ED /* IAW_ResMsgModel.swift */,
 				442E53481E1DE575001FCBD8 /* IAW_ResponseModel.swift */,
 				442E53491E1DE575001FCBD8 /* IAW_ResponseModels.swift */,
 				442E534A1E1DE575001FCBD8 /* IAW_ResponseMsgModel.swift */,
@@ -638,6 +653,7 @@
 				442E53351E1D1057001FCBD8 /* IAW_Constant.swift in Sources */,
 				4404BBFE1E852AD9004CFF9F /* LTMorphingEffect.swift in Sources */,
 				44AD44F11E1264C000E19542 /* IAW_SignMd5Tool.swift in Sources */,
+				444C2DA41EA5A34200E8AC51 /* IAW_SelectListVC.swift in Sources */,
 				442E535F1E1F384D001FCBD8 /* IAW_TextViewTool.swift in Sources */,
 				44732A8B1E372D33001F698D /* IAW_NavBarTool.swift in Sources */,
 				4404BBFB1E852AD9004CFF9F /* LTCharacterLimbo.swift in Sources */,
@@ -656,12 +672,15 @@
 				4404BBF81E852AD9004CFF9F /* CountdownLabel.swift in Sources */,
 				4404BBFF1E852AD9004CFF9F /* LTMorphingLabel+Anvil.swift in Sources */,
 				442E536D1E1F8C2D001FCBD8 /* IAW_NetTool.swift in Sources */,
+				44389CA21EA4D50D0082B5ED /* IAW_ResMsgModel.swift in Sources */,
 				44EC564B1DDE0F0C00DAAFF8 /* IAWString.swift in Sources */,
 				4404BC071E852AD9004CFF9F /* LTStringDiffResult.swift in Sources */,
+				44389CA11EA4D50D0082B5ED /* IAW_ResModels.swift in Sources */,
 				4404BC031E852AD9004CFF9F /* LTMorphingLabel+Pixelate.swift in Sources */,
 				4426C2C61E35F59B00E74B79 /* IAW_SlideMenuController.swift in Sources */,
 				4426C2C81E35F67400E74B79 /* IAW_SlideMenuTool.swift in Sources */,
 				442E53511E1DE575001FCBD8 /* IAW_ResponseModel.swift in Sources */,
+				44389C9F1EA4D50D0082B5ED /* IAW_BaseModel.swift in Sources */,
 				442E534D1E1DE575001FCBD8 /* IAW_TabBarController.swift in Sources */,
 				442E535D1E1F313C001FCBD8 /* IAW_MsgTip.swift in Sources */,
 				4404BC041E852AD9004CFF9F /* LTMorphingLabel+Sparkle.swift in Sources */,
@@ -690,6 +709,7 @@
 				442E534C1E1DE575001FCBD8 /* IAW_NavigationController.swift in Sources */,
 				4404BBD81E8517F3004CFF9F /* IAW_TaskTool.swift in Sources */,
 				442E53581E1E23C6001FCBD8 /* IAWUITableView+Extension.swift in Sources */,
+				44389CA01EA4D50D0082B5ED /* IAW_ResModel.swift in Sources */,
 				4404BBDE1E851EAA004CFF9F /* IAW_NoTokenWebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

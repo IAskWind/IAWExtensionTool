@@ -10,12 +10,7 @@
 import Foundation
 import ObjectMapper
 open class IAW_ResponseMsgModel: Mappable {
-    //    private boolean success; //请求是否成功标志
-    //    private String accessToken;//返回的token
-    //    private String msg;//请求返回的消息
-    //    private boolean tokenInvalid;
-    //    private int page;
-    //    private T data;  //服务端如果用map record 而不是当前的实体类的话，key必须是data 否则移动不能转换成实体
+    
     var success : Bool?
     var accessToken : String?
     var msg : String?

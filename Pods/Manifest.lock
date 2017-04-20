@@ -11,7 +11,7 @@ PODS:
   - RNCryptor (5.0.1)
   - SKPhotoBrowser (4.0.1)
   - SlideMenuControllerSwift (3.0.1)
-  - SnapKit (3.1.2)
+  - SnapKit (3.2.0)
   - SVProgressHUD (2.1.2)
   - SwiftMessages (3.3.1)
 
@@ -25,7 +25,7 @@ DEPENDENCIES:
   - RNCryptor
   - SKPhotoBrowser (~> 4.0.0)
   - SlideMenuControllerSwift
-  - SnapKit (~> 3.1.2)
+  - SnapKit (~> 3.2.0)
   - SVProgressHUD
   - SwiftMessages
 
@@ -56,10 +56,10 @@ SPEC CHECKSUMS:
   RNCryptor: 2e352a488779d1a9184ab629be22a7c5bc84acb5
   SKPhotoBrowser: 3a7c6fc02aa1620ab17253a47a49fafda46536e8
   SlideMenuControllerSwift: 9a163b16d54afab734add42858cba7ef7c307755
-  SnapKit: 12b24f569cb7c143acc9c22b9d91b23e7b1c84a2
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   SwiftMessages: 31e27e35c2f11b116ad7ec3232b56ca9bd242475
 
-PODFILE CHECKSUM: 273588d16d9883cd9d2df9d917f5ab21d8478bbf
+PODFILE CHECKSUM: 4f3d95d073f5e46cf9f1a5bfa56ab6d4d4854fd1
 
 COCOAPODS: 1.2.0.beta.3

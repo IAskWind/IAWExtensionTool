@@ -55,7 +55,6 @@ open class IAW_EditTextViewController: IAW_BaseViewController {
     }()
     
     func rightBarBtnClick(){
-        print(delegate)
         if (editTextfield.text?.isEmpty)! {
             IAW_ProgressHUDTool.showErrorInfo(msg: "\(navigationItem.title!)不能为空！")
             return

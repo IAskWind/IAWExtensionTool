@@ -34,4 +34,23 @@ open class IAW_MsgTool{
         view.configureIcon(withSize: CGSize(width: 22, height: 22), contentMode: .scaleAspectFill)
         SwiftMessages.show(config: config, view: view)
     }
+    
+    open class func showErrorInfo(msg:String){
+   
+        IAW_MsgTool.showMsg(msg: msg,icon: Theme.error)
+    }
+    
+    open class func showInfo(msg:String){
+    
+        IAW_MsgTool.showMsg(msg: msg,icon: Theme.info)
+    }
+    
+    open class func showWarningInfo(msg:String,seconds:TimeInterval = 1){
+        IAW_MsgTool.showMsg(msg: msg,icon: Theme.warning,seconds: seconds)
+    }
+    
+    open class func showSuccessInfo(msg:String){
+    
+        IAW_MsgTool.showMsg(msg: msg,icon: Theme.success)
+    }
 }

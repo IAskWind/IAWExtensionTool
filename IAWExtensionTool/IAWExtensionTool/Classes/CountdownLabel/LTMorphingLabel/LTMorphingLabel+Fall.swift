@@ -136,7 +136,7 @@ extension LTMorphingLabel {
                 let s = String(limbo.char)
                 s.draw(in: charRect, withAttributes: [
                     NSFontAttributeName: self.font.withSize(limbo.size),
-                    NSForegroundColorAttributeName: charColor
+                    NSForegroundColorAttributeName: charColor!
                     ])
                 context!.restoreGState()
                 

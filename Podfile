@@ -9,7 +9,7 @@ target 'IAWExtensionToolDemo' do
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
 
     # Pods for IAWExtensionToolDemo
-    pod 'SnapKit', '~> 3.1.2'
+    pod 'SnapKit', '~> 3.2.0'
     pod 'SVProgressHUD'
     pod 'RNCryptor'
     pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'master'
@@ -30,7 +30,7 @@ end
 target 'IAWExtensionTool' do
   platform :ios, ‘9.0’
   xcodeproj 'IAWExtensionTool/IAWExtensionTool.xcodeproj'
-  pod 'SnapKit', '~> 3.1.2'
+  pod 'SnapKit', '~> 3.2.0'
   pod 'SVProgressHUD'
   pod 'RNCryptor'
   pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'master'
