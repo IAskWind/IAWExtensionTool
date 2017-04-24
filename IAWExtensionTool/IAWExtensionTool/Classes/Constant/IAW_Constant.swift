@@ -66,7 +66,7 @@ public var IAW_GlobalBlueColor:UIColor {
 }
 
 // 颜色值如  #FFFFFF
-public func IAW_HEXColor(_ hexColor:String) -> UIColor {
+public func IAW_HEXColor(_ hexColor:String,alpha:CGFloat = 1) -> UIColor {
     
     var color = UIColor.red
     var cStr : String = hexColor.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
@@ -93,7 +93,7 @@ public func IAW_HEXColor(_ hexColor:String) -> UIColor {
     Scanner(string: gStr).scanHexInt32(&g)
     Scanner(string: bStr).scanHexInt32(&b)
     
-    color = UIColor(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: CGFloat(1))
+    color = UIColor(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: alpha)
     
     return color
 }
@@ -103,7 +103,10 @@ public func IAW_PX(px:CGFloat,labelMapWidth:CGFloat = 375)-> CGFloat{
     return  (IAW_ScreenW/labelMapWidth)*(px/2)
 }
 
-//view设置点击事件封装方法
+/**view设置点击事件封装方法
+ 例：iaw_SetViewClick(dealView: leftView, target: self, viewClick: #selector(showPsd(_:)))
+ 实现方法：func showPsd(_ sender:UITapGestureRecognizer){}
+ **/
 public func iaw_SetViewClick(dealView:UIView,target:Any?,viewClick:Selector){
     dealView.isUserInteractionEnabled = true
     let tapGR = UITapGestureRecognizer(target: target, action: viewClick)
