@@ -59,13 +59,28 @@ open class IAW_UITool{
         return label
     }
     
-    open class func IAW_TextField(_ placeholder:String,fontSize:CGFloat = 11,fontColor:UIColor = UIColor.black ,clearButton:UITextFieldViewMode = UITextFieldViewMode.never,keyboardType:UIKeyboardType=UIKeyboardType.default)->UITextField{
+//    open class func IAW_TextField(_ placeholder:String,fontSize:CGFloat = 11,fontColor:UIColor = UIColor.black ,clearButton:UITextFieldViewMode = UITextFieldViewMode.never,keyboardType:UIKeyboardType=UIKeyboardType.default)->UITextField{
+//        let textField = UITextField()
+//        textField.returnKeyType = .done
+//        textField.keyboardType = keyboardType
+//        textField.clearButtonMode = clearButton
+//        textField.backgroundColor = UIColor.white
+//        textField.placeholder = placeholder
+//        textField.font = UIFont.systemFont(ofSize: fontSize)
+//        textField.textColor = fontColor
+//        return textField
+//    }
+    
+    open class func IAW_TextField(_ placeholder:String,fontSize:CGFloat = IAW_PX(px: 24),fontColor:UIColor = IAW_HEXColor("#545454") ,placeholderColor:UIColor = IAW_HEXColor("#aaaaaa"),placeholderFontSize:CGFloat = IAW_PX(px: 22),clearButton:UITextFieldViewMode = UITextFieldViewMode.never,keyboardType:UIKeyboardType=UIKeyboardType.default,placeholderAlign:NSTextAlignment = NSTextAlignment.left)->UITextField{
         let textField = UITextField()
         textField.returnKeyType = .done
         textField.keyboardType = keyboardType
         textField.clearButtonMode = clearButton
         textField.backgroundColor = UIColor.white
-        textField.placeholder = placeholder
+        //处理placeholder
+        let style = NSMutableParagraphStyle()
+        style.alignment = placeholderAlign
+        textField.attributedPlaceholder = NSAttributedString(string:placeholder,attributes:[NSForegroundColorAttributeName: placeholderColor,NSFontAttributeName:placeholderFontSize,NSParagraphStyleAttributeName:style])
         textField.font = UIFont.systemFont(ofSize: fontSize)
         textField.textColor = fontColor
         return textField
