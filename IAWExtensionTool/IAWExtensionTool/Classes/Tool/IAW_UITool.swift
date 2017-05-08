@@ -77,12 +77,15 @@ open class IAW_UITool{
         textField.keyboardType = keyboardType
         textField.clearButtonMode = clearButton
         textField.backgroundColor = UIColor.white
+        textField.font = UIFont.systemFont(ofSize: fontSize)
+        textField.textColor = fontColor
         //处理placeholder
         let style = NSMutableParagraphStyle()
         style.alignment = placeholderAlign
+        //placeHolder过小不居中解决
+        style.minimumLineHeight = (textField.font?.lineHeight)! - ((textField.font?.lineHeight)! - UIFont.systemFont(ofSize: placeholderFontSize).lineHeight) / 2.0
         textField.attributedPlaceholder = NSAttributedString(string:placeholder,attributes:[NSForegroundColorAttributeName: placeholderColor,NSFontAttributeName:placeholderFontSize,NSParagraphStyleAttributeName:style])
-        textField.font = UIFont.systemFont(ofSize: fontSize)
-        textField.textColor = fontColor
+
         return textField
     }
     
