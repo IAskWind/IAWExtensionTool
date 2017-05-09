@@ -102,7 +102,7 @@ open class IAW_NetTool{
     
     
     //    data 返回msg
-   open class func loadData<M:IAW_BaseModel<Any>>(_ url:String,method: HTTPMethod = .post,params:[String:Any],loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (M)->(),dealTokenInvalid:@escaping (Bool)->(Bool)){
+   open class func loadData<M:IAW_BaseModel<Any>>(_ url:String,method: HTTPMethod = .post,params:[String:Any],loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (M)->(),failure:(()->())?,dealTokenInvalid:((Bool)->(Bool))?){
         if !checkNet(){
             return
         }
@@ -120,11 +120,12 @@ open class IAW_NetTool{
                 IAW_ProgressHUDTool.dimiss()
             }
             if let model = response.result.value{
-                if dealTokenInvalid(model.isTokenInvalid()){
+                if dealTokenInvalid?(model.isTokenInvalid()) != nil && (dealTokenInvalid?(model.isTokenInvalid()))!{
                     return
                 }
                 let success = model.isSuccess()
                 guard success else {
+                    failure?()
                     IAW_MsgTool.showErrorInfo(msg: model.getMsg())
                     return
                 }
@@ -139,7 +140,7 @@ open class IAW_NetTool{
     }
     
     //返回 T 带 failure
-    open class func loadData<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,params:[String:Any],loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (DataResponse<M>,T)->(),failure:@escaping ()->(),dealTokenInvalid:@escaping (Bool)->(Bool)){
+    open class func loadData<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,params:[String:Any],loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (DataResponse<M>,T)->(),failure:(()->())?,dealTokenInvalid:((Bool)->(Bool))?){
         if !checkNet(){
             return
         }
@@ -158,12 +159,12 @@ open class IAW_NetTool{
             }
             
             if let model = response.result.value{
-                if dealTokenInvalid(model.isTokenInvalid()){
+                if dealTokenInvalid?(model.isTokenInvalid()) != nil && (dealTokenInvalid?(model.isTokenInvalid()))!{
                     return
                 }
                 let success = model.isSuccess()
                 guard success else {
-                    failure()
+                    failure?()
                     IAW_MsgTool.showErrorInfo(msg: model.getMsg())
                     return
                 }
@@ -179,47 +180,48 @@ open class IAW_NetTool{
     }
     
     //返回 T 不带failure
-    open class func loadData<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,params:[String:Any],loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (DataResponse<M>,T)->(),dealTokenInvalid:@escaping (Bool)->(Bool)){
-        if !checkNet(){
-            return
-        }
-        var task:IAW_TaskTool.Task?
-        if !loadingTip.isEmpty{
-            task = IAW_TaskTool.delay(1) { //1秒后显示
-                IAW_ProgressHUDTool.show(msg:loadingTip)
-            }
-        }
-        
-        Alamofire.request(url, method: method, parameters: params).responseObject{
-            (response:DataResponse<M>) in
-            if !loadingTip.isEmpty{
-                IAW_TaskTool.cancel(task) //速度太快的不显示进度条
-                IAW_ProgressHUDTool.dimiss()
-            }
-            
-            if let model = response.result.value{
-                if dealTokenInvalid(model.isTokenInvalid()){
-                    return
-                }
-                let success = model.isSuccess()
-                guard success else {
-                    IAW_MsgTool.showErrorInfo(msg: model.getMsg())
-                    return
-                }
-                if !userDefinedTip{
-                    IAW_MsgTool.showSuccessInfo(msg: model.getMsg())
-                }
-                if let data = model.getData(){
-                    finished(response,data)
-                }
-            }
-        }
-        
-    }
+//    open class func loadData<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,params:[String:Any],loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (DataResponse<M>,T)->(),failure:(()->())?,dealTokenInvalid:((Bool)->(Bool))?){
+//        if !checkNet(){
+//            return
+//        }
+//        var task:IAW_TaskTool.Task?
+//        if !loadingTip.isEmpty{
+//            task = IAW_TaskTool.delay(1) { //1秒后显示
+//                IAW_ProgressHUDTool.show(msg:loadingTip)
+//            }
+//        }
+//        
+//        Alamofire.request(url, method: method, parameters: params).responseObject{
+//            (response:DataResponse<M>) in
+//            if !loadingTip.isEmpty{
+//                IAW_TaskTool.cancel(task) //速度太快的不显示进度条
+//                IAW_ProgressHUDTool.dimiss()
+//            }
+//            
+//            if let model = response.result.value{
+//                if dealTokenInvalid?(model.isTokenInvalid()) != nil && (dealTokenInvalid?(model.isTokenInvalid()))!{
+//                    return
+//                }
+//                let success = model.isSuccess()
+//                guard success else {
+//                    failure?()
+//                    IAW_MsgTool.showErrorInfo(msg: model.getMsg())
+//                    return
+//                }
+//                if !userDefinedTip{
+//                    IAW_MsgTool.showSuccessInfo(msg: model.getMsg())
+//                }
+//                if let data = model.getData(){
+//                    finished(response,data)
+//                }
+//            }
+//        }
+//        
+//    }
     
     
     //返回[T]
-    open class func loadDatas<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,params:[String:Any],loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (M,[T])->(),dealTokenInvalid:@escaping (Bool)->(Bool)){
+    open class func loadDatas<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,params:[String:Any],loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (M,[T])->(),failure:(()->())?,dealTokenInvalid: ((Bool)->(Bool))?){
         if !checkNet(){
             return
         }
@@ -237,11 +239,12 @@ open class IAW_NetTool{
                 IAW_ProgressHUDTool.dimiss()
             }
             if let model = response.result.value{
-                if dealTokenInvalid(model.isTokenInvalid()){
-                    return
-                }
+                if dealTokenInvalid?(model.isTokenInvalid()) != nil && (dealTokenInvalid?(model.isTokenInvalid()))!{
+                                        return
+                                    }
                 let success = model.isSuccess()
                 guard success else {
+                    failure?()
                     IAW_MsgTool.showErrorInfo(msg: model.getMsg())
                     return
                 }
@@ -258,7 +261,7 @@ open class IAW_NetTool{
     }
     
     //泛型分页请求
-    open class func loadDatasByPage<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,params:[String:Any],tableView:UITableView,_ finished:@escaping (_ pageNum:Int,_ datas:[T],M)->(),dealTokenInvalid:@escaping (Bool)->(Bool)){
+    open class func loadDatasByPage<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,params:[String:Any],tableView:UITableView,_ finished:@escaping (_ pageNum:Int,_ datas:[T],M)->(),failure:(()->())?,dealTokenInvalid: ((Bool)->(Bool))?){
         if !IAW_NetTool.checkNet(){
             return
         }
@@ -270,11 +273,12 @@ open class IAW_NetTool{
                 (response:DataResponse<M>) in
                 IAW_NetTool.endRefresh(tableView: tableView)
                 if let model = response.result.value{
-                    if dealTokenInvalid(model.isTokenInvalid()){
+                    if dealTokenInvalid?(model.isTokenInvalid()) != nil && (dealTokenInvalid?(model.isTokenInvalid()))!{
                         return
                     }
                     let success = model.isSuccess()
                     guard success else {
+                        failure?()
                         IAW_MsgTool.showErrorInfo(msg: model.getMsg())
                         return
                     }
@@ -287,6 +291,39 @@ open class IAW_NetTool{
             }
         }
         pageBlock(tableView: tableView, block: block)
+        
+    }
+
+    open class func loadDatasByPage<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,params:[String:Any],collectionView:UICollectionView,_ finished:@escaping (_ pageNum:Int,_ datas:[T],M)->(),failure:(()->())?,dealTokenInvalid: ((Bool)->(Bool))?){
+        if !IAW_NetTool.checkNet(){
+            return
+        }
+        let block:(Int,@escaping(Int)->())->() = {
+            (pageNum,pageReturn) in
+            var params_new = params
+            params_new.updateValue(pageNum, forKey: "page")
+            Alamofire.request(url, method:method,parameters: params_new,headers: self.headers).responseObject{
+                (response:DataResponse<M>) in
+                IAW_NetTool.endRefresh(collectionView: collectionView)
+                if let model = response.result.value{
+                    if dealTokenInvalid?(model.isTokenInvalid()) != nil && (dealTokenInvalid?(model.isTokenInvalid()))!{
+                        return
+                    }
+                    let success = model.isSuccess()
+                    guard success else {
+                        failure?()
+                        IAW_MsgTool.showErrorInfo(msg: model.getMsg())
+                        return
+                    }
+                    
+                    if let data = model.getDatas(){
+                        pageReturn(model.getPage()!)
+                        finished(model.getPage()!,data,model)
+                    }
+                }
+            }
+        }
+        pageBlock(collectionView: collectionView, block: block)
         
     }
 
@@ -306,37 +343,37 @@ extension IAW_NetTool{
         }
         
     }
+    open class func endRefresh(collectionView:UICollectionView){
+        if collectionView.mj_header.isRefreshing(){
+            collectionView.mj_header.endRefreshing()
+        }
+        if collectionView.mj_footer.isRefreshing(){
+            collectionView.mj_footer.endRefreshing()
+        }
+        
+    }
+    
+    
     //利用MJRefresh 分页
     open class func pageBlock(tableView:UITableView,block:@escaping (Int,@escaping(Int)->())->()){
         var page = 1
         let pageR = {
             (pageN:Int) in
             page = pageN
-            if let a = tableView.mj_footer as? MJRefreshAutoNormalFooter {
-                a.stateLabel.isHidden = true
-            }
         }
         let blockRefresh = {
-            if let a = tableView.mj_footer as? MJRefreshAutoNormalFooter {
-                a.stateLabel.isHidden = true
-            }
             block(1,pageR)
             print("blockRefresh**********************************\(page)")
         }
         let blockAdd = {
-            if let a = tableView.mj_footer as? MJRefreshAutoNormalFooter{
-                a.stateLabel.isHidden = false
-            }
             block(page,pageR)
             print("blockAdd**********************************\(page)")
-            //            if let a = tableView.mj_footer as? MJRefreshAutoNormalFooter{
-            //                a.stateLabel.isHidden = true
-            //            }
         }
         if tableView.mj_header == nil{
             let header = MJRefreshNormalHeader(refreshingBlock:blockRefresh)
             header!.lastUpdatedTimeLabel.isHidden = true
             header!.isAutomaticallyChangeAlpha = true //根据拖拽比例自动切换透
+            header?.stateLabel.isHidden = true
             tableView.mj_header = header!
         }else{
             tableView.mj_header.refreshingBlock = blockRefresh
@@ -344,20 +381,52 @@ extension IAW_NetTool{
         if tableView.mj_header.isRefreshing(){
             tableView.mj_header.endRefreshing()
         }
-        
-        
         tableView.mj_header.beginRefreshing()
-        
-        
         if tableView.mj_footer == nil{
             let footer = MJRefreshAutoNormalFooter(refreshingBlock: blockAdd)
             footer?.stateLabel.isHidden = true
+            footer?.isRefreshingTitleHidden = true
             tableView.mj_footer = footer
         }else{
             tableView.mj_footer.refreshingBlock = blockAdd
         }
-        
-        
+    }
+    
+    open class func pageBlock(collectionView:UICollectionView,block:@escaping (Int,@escaping(Int)->())->()){
+        var page = 1
+        let pageR = {
+            (pageN:Int) in
+            page = pageN
+        }
+        let blockRefresh = {
+            block(1,pageR)
+            print("blockRefresh**********************************\(page)")
+        }
+        let blockAdd = {
+            block(page,pageR)
+            print("blockAdd**********************************\(page)")
+        }
+        if collectionView.mj_header == nil{
+            let header = MJRefreshNormalHeader(refreshingBlock:blockRefresh)
+            header!.lastUpdatedTimeLabel.isHidden = true
+            header!.isAutomaticallyChangeAlpha = true //根据拖拽比例自动切换透
+            header?.stateLabel.isHidden = true
+            collectionView.mj_header = header!
+        }else{
+            collectionView.mj_header.refreshingBlock = blockRefresh
+        }
+        if collectionView.mj_header.isRefreshing(){
+            collectionView.mj_header.endRefreshing()
+        }
+        collectionView.mj_header.beginRefreshing()
+        if collectionView.mj_footer == nil{
+            let footer = MJRefreshAutoNormalFooter(refreshingBlock: blockAdd)
+            footer?.stateLabel.isHidden = true
+            footer?.isRefreshingTitleHidden = true
+            collectionView.mj_footer = footer
+        }else{
+            collectionView.mj_footer.refreshingBlock = blockAdd
+        }
     }
     
     //检测当前网络是否连接

@@ -20,4 +20,37 @@ public extension UITextField {
             }
         }
     }
+    //包含小数点
+    func addLimit(numLength: Int,decimalLength:Int = 0){
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.UITextFieldTextDidChange, object: nil, queue: OperationQueue.main) { (notification) in
+            let strs =  self.text!.components(separatedBy: ".")
+            if (strs.count > 2){ //防止输入多个小数点
+                self.text = (self.text! as NSString).substring(to: (self.text?.iawLength)! - 1)
+                return
+            }
+            var subStr = ""
+            if strs[0].iawLength > numLength && self.markedTextRange == nil {
+                subStr.append((strs[0] as NSString).substring(to: numLength))
+            }
+            if strs.count == 2  && self.markedTextRange == nil {
+                if strs[1].iawLength > decimalLength {
+                    subStr.append(strs[0])
+                    subStr.append(".")
+                    subStr.append((strs[1] as NSString).substring(to: decimalLength))
+                }
+                else {
+                    if !subStr.isEmpty {
+                        subStr.append(".")
+                        subStr.append(strs[1])
+                        
+                    }
+                }
+            }
+            if !subStr.isEmpty {
+                self.text = subStr
+            }
+            
+        }
+    }
 }
