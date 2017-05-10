@@ -24,85 +24,47 @@ open class IAW_NetTool{
         }
         
     }
-    //  调用
-    //        IAW_NetTool.loginAPP(url, params: params){
-    //            (userVo:UserVo) in
-    //                print("获得的登录用户名:\(userVo.name)")
-    //
-    //        }
-    
-    open class func loginAPP<T:Mappable>(_ url:String,params:[String:Any],finished:@escaping (T)->()){
-        IAW_ProgressHUDTool.show(msg: IAW_MsgTip.loginingTip)
-//        let url = "\(BASE_URL)api/auth/login"
-//        let params = ["userName": userName,
-//                      "passwd": pwd]
-        let start = Date()
-        Alamofire.request(url, method: .post, parameters: params).responseObject{
-            (response:DataResponse<IAW_ResponseModel <T>>) in
-            let finish = Date()
-            print("登录耗时loginAPP**************************************: \(finish.timeIntervalSince(start))")
-            IAW_ProgressHUDTool.dimiss()
-            print("loginAPP********* in   ")
-            if let model = response.result.value{
-                let success = model.success
-                
-                guard success == true else {
-                    IAW_ProgressHUDTool.showErrorInfo(msg: model.msg)
-                    return
-                }
-                
-                //设置token
-                if(success)!{
-                    print("登录token:\(model.accessToken!)")
-                    self.accesstoken = model.accessToken
-                }
-                if let data = model.data{
-                    finished(data)
-                }
-            }
-        }
-    }
-    
-    //处理下拉刷新 下拉加载 分页显示
-    open class func loadDatasByPage<T:Mappable>(_ url:String,params:[String:Any],tableView:UITableView,_ finished:@escaping (_ pageNum:Int,_ datas:[T])->()){
-        //        let login_name = "test"
-//        let url = "\(BASE_URL)api/question/list"
-        
-        let block:(Int,@escaping(Int)->())->() = {
-            (pageNum,pageReturn) in
-//            let params = ["pageNum": pageNum
-//                ,"name": queryName
-//                ,"typeName": queryType] as [String : Any]
-            
-            Alamofire.request(url, method: .post,parameters: params,headers: self.headers).responseObject{
-                (response:DataResponse<IAW_ResponseModels<T>>) in
-                self.endRefresh(tableView: tableView)
-                if let responseData = response.result.value{
-                    //token处理
-                    if IAW_TokenTool.tokenDeal(tokenInvalid: responseData.tokenInvalid){
-                        return
-                    }
-                    let success = responseData.success
-                    guard success == true else {
-                        IAW_ProgressHUDTool.showErrorInfo(msg: responseData.msg)
-                        return
-                    }
-                    
-                    if let data = responseData.data{
-                        pageReturn(responseData.page!)
-                        finished(responseData.page!,data)
-                    }
-                }
-            }
-        }
-        pageBlock(tableView: tableView, block: block)
-    }
+//       
+//    //处理下拉刷新 下拉加载 分页显示
+//    open class func loadDatasByPage<T:Mappable>(_ url:String,params:[String:Any],tableView:UITableView,_ finished:@escaping (_ pageNum:Int,_ datas:[T])->()){
+//        //        let login_name = "test"
+////        let url = "\(BASE_URL)api/question/list"
+//        
+//        let block:(Int,@escaping(Int)->())->() = {
+//            (pageNum,pageReturn) in
+////            let params = ["pageNum": pageNum
+////                ,"name": queryName
+////                ,"typeName": queryType] as [String : Any]
+//            
+//            Alamofire.request(url, method: .post,parameters: params,headers: self.headers).responseObject{
+//                (response:DataResponse<IAW_ResponseModels<T>>) in
+//                self.endRefresh(tableView: tableView)
+//                if let responseData = response.result.value{
+//                    //token处理
+//                    if IAW_TokenTool.tokenDeal(tokenInvalid: responseData.tokenInvalid){
+//                        return
+//                    }
+//                    let success = responseData.success
+//                    guard success == true else {
+//                        IAW_ProgressHUDTool.showErrorInfo(msg: responseData.msg)
+//                        return
+//                    }
+//                    
+//                    if let data = responseData.data{
+//                        pageReturn(responseData.page!)
+//                        finished(responseData.page!,data)
+//                    }
+//                }
+//            }
+//        }
+//        pageBlock(tableView: tableView, block: block)
+//    }
     
     //****************************泛型运用
     
     
     //    data 返回msg
-   open class func loadData<M:IAW_BaseModel<Any>>(_ url:String,method: HTTPMethod = .post,parameters: Parameters? = nil,headers: HTTPHeaders? = nil,loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (M)->(),failure:(()->())?,dealTokenInvalid:((Bool)->(Bool))?){
+   open class func loadDataStr<M:IAW_BaseModel<Any>>(_ url:String,method: HTTPMethod = .post,parameters: Parameters? = nil,headers: HTTPHeaders? = nil,loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (M)->(),failure:(()->())? = nil,dealTokenInvalid:((Bool)->(Bool))? = nil){
         if !checkNet(){
             return
         }
@@ -140,7 +102,7 @@ open class IAW_NetTool{
     }
     
     //返回 T 带 failure
-    open class func loadData<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,parameters: Parameters? = nil,headers: HTTPHeaders? = nil,loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (DataResponse<M>,T)->(),failure:(()->())?,dealTokenInvalid:((Bool)->(Bool))?){
+    open class func loadData<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,parameters: Parameters? = nil,headers: HTTPHeaders? = nil,loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (DataResponse<M>,T)->(),failure:(()->())? = nil,dealTokenInvalid:((Bool)->(Bool))? = nil){
         if !checkNet(){
             return
         }
@@ -221,7 +183,7 @@ open class IAW_NetTool{
     
     
     //返回[T]
-    open class func loadDatas<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,parameters: Parameters? = nil,headers: HTTPHeaders? = nil,loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (M,[T])->(),failure:(()->())?,dealTokenInvalid: ((Bool)->(Bool))?){
+    open class func loadDatas<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,parameters: Parameters? = nil,headers: HTTPHeaders? = nil,loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (M,[T])->(),failure:(()->())? = nil,dealTokenInvalid: ((Bool)->(Bool))? = nil){
         if !checkNet(){
             return
         }
@@ -261,7 +223,7 @@ open class IAW_NetTool{
     }
     
     //泛型分页请求
-    open class func loadDatasByPage<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,parameters: Parameters,headers: HTTPHeaders? = nil,tableView:UITableView,_ finished:@escaping (_ pageNum:Int,_ datas:[T],M)->(),failure:(()->())?,dealTokenInvalid: ((Bool)->(Bool))?){
+    open class func loadDatasByPage<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,parameters: Parameters,headers: HTTPHeaders? = nil,tableView:UITableView,_ finished:@escaping (_ pageNum:Int,_ datas:[T],M)->(),failure:(()->())? = nil,dealTokenInvalid: ((Bool)->(Bool))? = nil){
         if !IAW_NetTool.checkNet(){
             return
         }
@@ -294,7 +256,7 @@ open class IAW_NetTool{
         
     }
 
-    open class func loadDatasByPage<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,parameters: Parameters,headers: HTTPHeaders? = nil,collectionView:UICollectionView,_ finished:@escaping (_ pageNum:Int,_ datas:[T],M)->(),failure:(()->())?,dealTokenInvalid: ((Bool)->(Bool))?){
+    open class func loadDatasByPage<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,parameters: Parameters,headers: HTTPHeaders? = nil,collectionView:UICollectionView,_ finished:@escaping (_ pageNum:Int,_ datas:[T],M)->(),failure:(()->())? = nil,dealTokenInvalid: ((Bool)->(Bool))? = nil){
         if !IAW_NetTool.checkNet(){
             return
         }
