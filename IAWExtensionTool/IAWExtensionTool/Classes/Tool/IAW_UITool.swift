@@ -84,7 +84,7 @@ open class IAW_UITool{
         style.alignment = placeholderAlign
         //placeHolder过小不居中解决
         style.minimumLineHeight = (textField.font?.lineHeight)! - ((textField.font?.lineHeight)! - UIFont.systemFont(ofSize: placeholderFontSize).lineHeight) / 2.0
-        textField.attributedPlaceholder = NSAttributedString(string:placeholder,attributes:[NSForegroundColorAttributeName: placeholderColor,NSFontAttributeName:placeholderFontSize,NSParagraphStyleAttributeName:style])
+        textField.attributedPlaceholder = NSAttributedString(string:placeholder,attributes:[NSForegroundColorAttributeName: placeholderColor,NSFontAttributeName:UIFont.systemFont(ofSize: placeholderFontSize),NSParagraphStyleAttributeName:style])
 
         return textField
     }
