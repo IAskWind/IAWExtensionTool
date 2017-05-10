@@ -62,9 +62,13 @@ open class IAW_NetTool{
     
     //****************************泛型运用
     
+    public typealias Failure = ()->()
+    
+    /// Closure to be executed when progress changes.
+    public typealias DealTokenInvalid = (Bool)->Bool
     
     //    data 返回msg
-   open class func loadDataStr<M:IAW_BaseModel<Any>>(_ url:String,method: HTTPMethod = .post,params: Parameters? = nil,headers: HTTPHeaders? = nil,loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (M)->(),failure:(()->())? = nil,dealTokenInvalid:((Bool)->(Bool))? = nil){
+   open class func loadDataStr<M:IAW_BaseModel<Any>>(_ url:String,method: HTTPMethod = .post,params: Parameters? = nil,headers: HTTPHeaders? = nil,loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (M)->(),failure:Failure? = nil,dealTokenInvalid:DealTokenInvalid? = nil){
         if !checkNet(){
             return
         }
@@ -102,7 +106,7 @@ open class IAW_NetTool{
     }
     
     //返回 T 带 failure
-    open class func loadData<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,params: Parameters? = nil,headers: HTTPHeaders? = nil,loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (DataResponse<M>,T)->(),failure:(()->())? = nil,dealTokenInvalid:((Bool)->(Bool))? = nil){
+    open class func loadData<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,params: Parameters? = nil,headers: HTTPHeaders? = nil,loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (DataResponse<M>,T)->(),failure:Failure? = nil,dealTokenInvalid:DealTokenInvalid? = nil){
         if !checkNet(){
             return
         }
@@ -183,7 +187,7 @@ open class IAW_NetTool{
     
     
     //返回[T]
-    open class func loadDatas<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,params: Parameters? = nil,headers: HTTPHeaders? = nil,loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (M,[T])->(),failure:(()->())? = nil,dealTokenInvalid: ((Bool)->(Bool))? = nil){
+    open class func loadDatas<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,params: Parameters? = nil,headers: HTTPHeaders? = nil,loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (M,[T])->(),failure:Failure? = nil,dealTokenInvalid:DealTokenInvalid? = nil){
         if !checkNet(){
             return
         }
@@ -223,7 +227,7 @@ open class IAW_NetTool{
     }
     
     //泛型分页请求
-    open class func loadDatasByPage<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,params: Parameters,headers: HTTPHeaders? = nil,tableView:UITableView,_ finished:@escaping (_ pageNum:Int,_ datas:[T],M)->(),failure:(()->())? = nil,dealTokenInvalid: ((Bool)->(Bool))? = nil){
+    open class func loadDatasByPage<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,params: Parameters,headers: HTTPHeaders? = nil,tableView:UITableView,_ finished:@escaping (_ pageNum:Int,_ datas:[T],M)->(),failure:Failure? = nil,dealTokenInvalid:DealTokenInvalid? = nil){
         if !IAW_NetTool.checkNet(){
             return
         }
@@ -256,7 +260,7 @@ open class IAW_NetTool{
         
     }
 
-    open class func loadDatasByPage<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,params: Parameters,headers: HTTPHeaders? = nil,collectionView:UICollectionView,_ finished:@escaping (_ pageNum:Int,_ datas:[T],M)->(),failure:(()->())? = nil,dealTokenInvalid: ((Bool)->(Bool))? = nil){
+    open class func loadDatasByPage<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,params: Parameters,headers: HTTPHeaders? = nil,collectionView:UICollectionView,_ finished:@escaping (_ pageNum:Int,_ datas:[T],M)->(),failure:Failure? = nil,dealTokenInvalid:DealTokenInvalid? = nil){
         if !IAW_NetTool.checkNet(){
             return
         }
