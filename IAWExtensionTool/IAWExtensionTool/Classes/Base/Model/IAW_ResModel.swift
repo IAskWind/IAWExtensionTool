@@ -8,7 +8,7 @@
 
 import Foundation
 import ObjectMapper
-open class IAW_ResModel<T:Mappable> : IAW_BaseModel<T>{
+class IAW_ResModel<T:Mappable> : IAW_BaseModel<T>{
     var success : Bool = false
     var msg : String = ""
     var data : T?
@@ -16,7 +16,7 @@ open class IAW_ResModel<T:Mappable> : IAW_BaseModel<T>{
     required public init?(map: Map){
         super.init(map: map)
     }
-    public override func mapping(map: Map) {
+    override func mapping(map: Map) {
         success <- map["success"]
         msg <- map["msg"]
         tokenInvalid <- map["tokenInvalid"]

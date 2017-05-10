@@ -8,7 +8,7 @@
 
 import Foundation
 import ObjectMapper
-open class IAW_ResMsgModel<T> : IAW_BaseModel<T>{
+class IAW_ResMsgModel<T> : IAW_BaseModel<T>{
     var success : Bool = false
     var msg : String = ""
     var dataStr:String = ""

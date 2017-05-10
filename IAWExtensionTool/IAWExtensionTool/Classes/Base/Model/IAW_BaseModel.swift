@@ -21,38 +21,38 @@ open class IAW_BaseModel<T>:Mappable{
     required public init?(map: Map){
         
     }
-    public func mapping(map: Map) {
+    open func mapping(map: Map) {
         
     }
-    func isSuccess()->Bool{
+    open func isSuccess()->Bool{
         return self.success
     }
     
-    func getMsg()->String{
+    open func getMsg()->String{
         return self.msg
     }
     
-    func getPage()->Int?{
+    open func getPage()->Int?{
         return self.page
     }
     
-    func getDataStr()->String{
+    open func getDataStr()->String{
         return self.dataStr
     }
     
-    func getData()->T?{
+    open func getData()->T?{
         return self.data
     }
     
-    func getDatas()->[T]?{
+    open func getDatas()->[T]?{
         return self.datas
     }
     
-    func isTokenInvalid()->Bool{
+    open func isTokenInvalid()->Bool{
         return self.tokenInvalid
     }
     
-    func getAccessToken()->String{
+    open func getAccessToken()->String{
         return self.accessToken
     }
     

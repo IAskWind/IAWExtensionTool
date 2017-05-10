@@ -102,7 +102,7 @@ open class IAW_NetTool{
     
     
     //    data 返回msg
-   open class func loadData<M:IAW_BaseModel<Any>>(_ url:String,method: HTTPMethod = .post,params:[String:Any],loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (M)->(),failure:(()->())?,dealTokenInvalid:((Bool)->(Bool))?){
+   open class func loadData<M:IAW_BaseModel<Any>>(_ url:String,method: HTTPMethod = .post,parameters: Parameters? = nil,headers: HTTPHeaders? = nil,loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (M)->(),failure:(()->())?,dealTokenInvalid:((Bool)->(Bool))?){
         if !checkNet(){
             return
         }
@@ -113,7 +113,7 @@ open class IAW_NetTool{
             }
         }
         
-        Alamofire.request(url, method: method, parameters: params).responseObject{
+    Alamofire.request(url, method: method, parameters: parameters,headers:headers).responseObject{
             (response:DataResponse<M>) in
             if !loadingTip.isEmpty{
                 IAW_TaskTool.cancel(task) //速度太快的不显示进度条
@@ -140,7 +140,7 @@ open class IAW_NetTool{
     }
     
     //返回 T 带 failure
-    open class func loadData<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,params:[String:Any],loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (DataResponse<M>,T)->(),failure:(()->())?,dealTokenInvalid:((Bool)->(Bool))?){
+    open class func loadData<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,parameters: Parameters? = nil,headers: HTTPHeaders? = nil,loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (DataResponse<M>,T)->(),failure:(()->())?,dealTokenInvalid:((Bool)->(Bool))?){
         if !checkNet(){
             return
         }
@@ -151,7 +151,7 @@ open class IAW_NetTool{
             }
         }
         
-        Alamofire.request(url, method: method, parameters: params).responseObject{
+        Alamofire.request(url, method: method, parameters: parameters,headers: headers).responseObject{
             (response:DataResponse<M>) in
             if !loadingTip.isEmpty{
                 IAW_TaskTool.cancel(task) //速度太快的不显示进度条
@@ -221,7 +221,7 @@ open class IAW_NetTool{
     
     
     //返回[T]
-    open class func loadDatas<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,params:[String:Any],loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (M,[T])->(),failure:(()->())?,dealTokenInvalid: ((Bool)->(Bool))?){
+    open class func loadDatas<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,parameters: Parameters? = nil,headers: HTTPHeaders? = nil,loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (M,[T])->(),failure:(()->())?,dealTokenInvalid: ((Bool)->(Bool))?){
         if !checkNet(){
             return
         }
@@ -232,7 +232,7 @@ open class IAW_NetTool{
             }
         }
         
-        Alamofire.request(url, method: method, parameters: params).responseObject{
+        Alamofire.request(url, method: method, parameters: parameters,headers:headers).responseObject{
             (response:DataResponse<M>) in
             if !loadingTip.isEmpty{
                 IAW_TaskTool.cancel(task) //速度太快的不显示进度条
@@ -261,15 +261,15 @@ open class IAW_NetTool{
     }
     
     //泛型分页请求
-    open class func loadDatasByPage<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,params:[String:Any],tableView:UITableView,_ finished:@escaping (_ pageNum:Int,_ datas:[T],M)->(),failure:(()->())?,dealTokenInvalid: ((Bool)->(Bool))?){
+    open class func loadDatasByPage<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,parameters: Parameters,headers: HTTPHeaders? = nil,tableView:UITableView,_ finished:@escaping (_ pageNum:Int,_ datas:[T],M)->(),failure:(()->())?,dealTokenInvalid: ((Bool)->(Bool))?){
         if !IAW_NetTool.checkNet(){
             return
         }
         let block:(Int,@escaping(Int)->())->() = {
             (pageNum,pageReturn) in
-            var params_new = params
+            var params_new = parameters
             params_new.updateValue(pageNum, forKey: "page")
-            Alamofire.request(url, method:method,parameters: params_new,headers: self.headers).responseObject{
+            Alamofire.request(url, method:method,parameters: params_new,headers: headers).responseObject{
                 (response:DataResponse<M>) in
                 IAW_NetTool.endRefresh(tableView: tableView)
                 if let model = response.result.value{
@@ -294,15 +294,15 @@ open class IAW_NetTool{
         
     }
 
-    open class func loadDatasByPage<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,params:[String:Any],collectionView:UICollectionView,_ finished:@escaping (_ pageNum:Int,_ datas:[T],M)->(),failure:(()->())?,dealTokenInvalid: ((Bool)->(Bool))?){
+    open class func loadDatasByPage<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,parameters: Parameters,headers: HTTPHeaders? = nil,collectionView:UICollectionView,_ finished:@escaping (_ pageNum:Int,_ datas:[T],M)->(),failure:(()->())?,dealTokenInvalid: ((Bool)->(Bool))?){
         if !IAW_NetTool.checkNet(){
             return
         }
         let block:(Int,@escaping(Int)->())->() = {
             (pageNum,pageReturn) in
-            var params_new = params
+            var params_new = parameters
             params_new.updateValue(pageNum, forKey: "page")
-            Alamofire.request(url, method:method,parameters: params_new,headers: self.headers).responseObject{
+            Alamofire.request(url, method:method,parameters: params_new,headers: headers).responseObject{
                 (response:DataResponse<M>) in
                 IAW_NetTool.endRefresh(collectionView: collectionView)
                 if let model = response.result.value{
