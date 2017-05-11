@@ -227,14 +227,19 @@ open class IAW_NetTool{
     }
     
     //泛型分页请求
-    open class func loadDatasByPage<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,params: Parameters,headers: HTTPHeaders? = nil,tableView:UITableView,_ finished:@escaping (_ pageNum:Int,_ datas:[T],M)->(),failure:Failure? = nil,dealTokenInvalid:DealTokenInvalid? = nil){
+    open class func loadDatasByPage<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,params: Parameters? = nil,headers: HTTPHeaders? = nil,tableView:UITableView,finished:@escaping (_ pageNum:Int,_ datas:[T],M)->(),failure:Failure? = nil,dealTokenInvalid:DealTokenInvalid? = nil){
         if !IAW_NetTool.checkNet(){
             return
         }
         let block:(Int,@escaping(Int)->())->() = {
             (pageNum,pageReturn) in
-            var params_new = params
-            params_new.updateValue(pageNum, forKey: "page")
+            var params_new:Parameters?
+            if params != nil{
+                params_new = params
+                params_new!.updateValue(pageNum, forKey: "page")
+            }else{
+                params_new = ["page":pageNum]
+            }
             Alamofire.request(url, method:method,parameters: params_new,headers: headers).responseObject{
                 (response:DataResponse<M>) in
                 IAW_NetTool.endRefresh(tableView: tableView)
@@ -260,14 +265,20 @@ open class IAW_NetTool{
         
     }
 
-    open class func loadDatasByPage<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,params: Parameters,headers: HTTPHeaders? = nil,collectionView:UICollectionView,_ finished:@escaping (_ pageNum:Int,_ datas:[T],M)->(),failure:Failure? = nil,dealTokenInvalid:DealTokenInvalid? = nil){
+    open class func loadDatasByPage<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,params: Parameters? = nil,headers: HTTPHeaders? = nil,collectionView:UICollectionView,finished:@escaping (_ pageNum:Int,_ datas:[T],M)->(),failure:Failure? = nil,dealTokenInvalid:DealTokenInvalid? = nil){
         if !IAW_NetTool.checkNet(){
             return
         }
         let block:(Int,@escaping(Int)->())->() = {
             (pageNum,pageReturn) in
-            var params_new = params
-            params_new.updateValue(pageNum, forKey: "page")
+            var params_new:Parameters?
+            if params != nil{
+                params_new = params
+                params_new!.updateValue(pageNum, forKey: "page")
+            }else{
+                params_new = ["page":pageNum]
+            }
+
             Alamofire.request(url, method:method,parameters: params_new,headers: headers).responseObject{
                 (response:DataResponse<M>) in
                 IAW_NetTool.endRefresh(collectionView: collectionView)
