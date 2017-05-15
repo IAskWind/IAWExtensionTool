@@ -12,7 +12,7 @@ import AlamofireObjectMapper
 import MJRefresh
 import Alamofire
 open class IAW_NetTool{
-
+    
     open static var headers = [
         IAW_AccessToken: "\(UserDefaults.standard.string(forKey: IAW_AccessToken) != nil ? UserDefaults.standard.string(forKey: IAW_AccessToken)! : "")"]
     open static var accesstoken=UserDefaults.standard.string(forKey: IAW_AccessToken){
@@ -24,41 +24,41 @@ open class IAW_NetTool{
         }
         
     }
-//       
-//    //处理下拉刷新 下拉加载 分页显示
-//    open class func loadDatasByPage<T:Mappable>(_ url:String,params:[String:Any],tableView:UITableView,_ finished:@escaping (_ pageNum:Int,_ datas:[T])->()){
-//        //        let login_name = "test"
-////        let url = "\(BASE_URL)api/question/list"
-//        
-//        let block:(Int,@escaping(Int)->())->() = {
-//            (pageNum,pageReturn) in
-////            let params = ["pageNum": pageNum
-////                ,"name": queryName
-////                ,"typeName": queryType] as [String : Any]
-//            
-//            Alamofire.request(url, method: .post,parameters: params,headers: self.headers).responseObject{
-//                (response:DataResponse<IAW_ResponseModels<T>>) in
-//                self.endRefresh(tableView: tableView)
-//                if let responseData = response.result.value{
-//                    //token处理
-//                    if IAW_TokenTool.tokenDeal(tokenInvalid: responseData.tokenInvalid){
-//                        return
-//                    }
-//                    let success = responseData.success
-//                    guard success == true else {
-//                        IAW_ProgressHUDTool.showErrorInfo(msg: responseData.msg)
-//                        return
-//                    }
-//                    
-//                    if let data = responseData.data{
-//                        pageReturn(responseData.page!)
-//                        finished(responseData.page!,data)
-//                    }
-//                }
-//            }
-//        }
-//        pageBlock(tableView: tableView, block: block)
-//    }
+    //
+    //    //处理下拉刷新 下拉加载 分页显示
+    //    open class func loadDatasByPage<T:Mappable>(_ url:String,params:[String:Any],tableView:UITableView,_ finished:@escaping (_ pageNum:Int,_ datas:[T])->()){
+    //        //        let login_name = "test"
+    ////        let url = "\(BASE_URL)api/question/list"
+    //
+    //        let block:(Int,@escaping(Int)->())->() = {
+    //            (pageNum,pageReturn) in
+    ////            let params = ["pageNum": pageNum
+    ////                ,"name": queryName
+    ////                ,"typeName": queryType] as [String : Any]
+    //
+    //            Alamofire.request(url, method: .post,parameters: params,headers: self.headers).responseObject{
+    //                (response:DataResponse<IAW_ResponseModels<T>>) in
+    //                self.endRefresh(tableView: tableView)
+    //                if let responseData = response.result.value{
+    //                    //token处理
+    //                    if IAW_TokenTool.tokenDeal(tokenInvalid: responseData.tokenInvalid){
+    //                        return
+    //                    }
+    //                    let success = responseData.success
+    //                    guard success == true else {
+    //                        IAW_ProgressHUDTool.showErrorInfo(msg: responseData.msg)
+    //                        return
+    //                    }
+    //
+    //                    if let data = responseData.data{
+    //                        pageReturn(responseData.page!)
+    //                        finished(responseData.page!,data)
+    //                    }
+    //                }
+    //            }
+    //        }
+    //        pageBlock(tableView: tableView, block: block)
+    //    }
     
     //****************************泛型运用
     
@@ -67,8 +67,65 @@ open class IAW_NetTool{
     /// Closure to be executed when progress changes.
     public typealias DealTokenInvalid = (Bool)->Bool
     
+    //图片上传(多张)
+    open class func uploadImgs<M:IAW_BaseModel<Any>>(_ url:String,method: HTTPMethod = .post,uploadImages:[UIImage],headers: HTTPHeaders? = nil,loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (M)->(),failure:Failure? = nil,dealTokenInvalid:DealTokenInvalid? = nil){
+        if !checkNet(){
+            return
+        }
+        var task:IAW_TaskTool.Task?
+        if !loadingTip.isEmpty{
+            task = IAW_TaskTool.delay(1) { //1秒后显示
+                IAW_ProgressHUDTool.show(msg:loadingTip)
+            }
+        }
+        let scale:CGFloat = 0.8
+        
+        Alamofire.upload(
+            multipartFormData: { multipartFormData in
+                for uploadImg in uploadImages{
+                    let data = UIImageJPEGRepresentation(uploadImg, scale)
+                    multipartFormData.append(data!, withName:"file", fileName: "file.png", mimeType: "image/*")
+                }
+        },
+            to: url,
+            method:.post,
+            headers:headers,
+            encodingCompletion: { encodingResult in
+                switch encodingResult {
+                case .success(let upload, _, _):
+                    upload.responseObject{
+                        (response:DataResponse<M>) in
+                        if !loadingTip.isEmpty{
+                            IAW_TaskTool.cancel(task) //速度太快的不显示进度条
+                            IAW_ProgressHUDTool.dimiss()
+                        }
+                        if let model = response.result.value{
+                            if dealTokenInvalid?(model.isTokenInvalid()) != nil && (dealTokenInvalid?(model.isTokenInvalid()))!{
+                                return
+                            }
+                            let success = model.isSuccess()
+                            guard success else {
+                                failure?()
+                                IAW_MsgTool.showErrorInfo(msg: model.getMsg())
+                                return
+                            }
+                            if !userDefinedTip{
+                                IAW_MsgTool.showSuccessInfo(msg: model.getMsg())
+                            }
+                            finished(model)
+                        }
+                        
+                    }
+                case .failure(let encodingError):
+                    IAW_ProgressHUDTool.dimiss()
+                    print(encodingError)
+                }
+        }
+        )
+    }
+    
     //    data 返回msg
-   open class func loadDataStr<M:IAW_BaseModel<Any>>(_ url:String,method: HTTPMethod = .post,params: Parameters? = nil,headers: HTTPHeaders? = nil,loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (M)->(),failure:Failure? = nil,dealTokenInvalid:DealTokenInvalid? = nil){
+    open class func loadDataStr<M:IAW_BaseModel<Any>>(_ url:String,method: HTTPMethod = .post,params: Parameters? = nil,headers: HTTPHeaders? = nil,loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (M)->(),failure:Failure? = nil,dealTokenInvalid:DealTokenInvalid? = nil){
         if !checkNet(){
             return
         }
@@ -79,7 +136,7 @@ open class IAW_NetTool{
             }
         }
         
-    Alamofire.request(url, method: method, parameters: params,headers:headers).responseObject{
+        Alamofire.request(url, method: method, parameters: params,headers:headers).responseObject{
             (response:DataResponse<M>) in
             if !loadingTip.isEmpty{
                 IAW_TaskTool.cancel(task) //速度太快的不显示进度条
@@ -146,44 +203,45 @@ open class IAW_NetTool{
     }
     
     //返回 T 不带failure
-//    open class func loadData<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,params:[String:Any],loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (DataResponse<M>,T)->(),failure:(()->())?,dealTokenInvalid:((Bool)->(Bool))?){
-//        if !checkNet(){
-//            return
-//        }
-//        var task:IAW_TaskTool.Task?
-//        if !loadingTip.isEmpty{
-//            task = IAW_TaskTool.delay(1) { //1秒后显示
-//                IAW_ProgressHUDTool.show(msg:loadingTip)
-//            }
-//        }
-//        
-//        Alamofire.request(url, method: method, parameters: params).responseObject{
-//            (response:DataResponse<M>) in
-//            if !loadingTip.isEmpty{
-//                IAW_TaskTool.cancel(task) //速度太快的不显示进度条
-//                IAW_ProgressHUDTool.dimiss()
-//            }
-//            
-//            if let model = response.result.value{
-//                if dealTokenInvalid?(model.isTokenInvalid()) != nil && (dealTokenInvalid?(model.isTokenInvalid()))!{
-//                    return
-//                }
-//                let success = model.isSuccess()
-//                guard success else {
-//                    failure?()
-//                    IAW_MsgTool.showErrorInfo(msg: model.getMsg())
-//                    return
-//                }
-//                if !userDefinedTip{
-//                    IAW_MsgTool.showSuccessInfo(msg: model.getMsg())
-//                }
-//                if let data = model.getData(){
-//                    finished(response,data)
-//                }
-//            }
-//        }
-//        
-//    }
+    //    open class func loadData<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,params:[String:Any],loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (DataResponse<M>,T)->(),failure:(()->())?,dealTokenInvalid:((Bool)->(Bool))?){
+    //        if !checkNet(){
+    //            return
+    //        }
+    //        var task:IAW_TaskTool.Task?
+    //        if !loadingTip.isEmpty{
+    //            task = IAW_TaskTool.delay(1) { //1秒后显示
+    //                IAW_ProgressHUDTool.show(msg:loadingTip)
+    //            }
+    //        }
+    //
+    //        Alamofire.request(url, method: method, parameters: params).responseObject{
+    //            (response:DataResponse<M>) in
+    //            if !loadingTip.isEmpty{
+    //                IAW_TaskTool.cancel(task) //速度太快的不显示进度条
+    //                IAW_ProgressHUDTool.dimiss()
+    //            }
+    //
+    //            if let model = response.result.value{
+    //                if dealTokenInvalid?(model.isTokenInvalid()) != nil && (dealTokenInvalid?(model.isTokenInvalid()))!{
+    //                    return
+    //                }
+    //                let success = model.isSuccess()
+    //                guard success else {
+    //                    failure?()
+    //                    IAW_MsgTool.showErrorInfo(msg: model.getMsg())
+    //                    return
+    //                }
+    //                if !userDefinedTip{
+    //                    IAW_MsgTool.showSuccessInfo(msg: model.getMsg())
+    //                }
+    //                if let data = model.getData(){
+    //                    finished(response,data)
+    //                }
+    //            }
+    //        }
+    //
+    //    }
+    
     
     
     //返回[T]
@@ -206,8 +264,8 @@ open class IAW_NetTool{
             }
             if let model = response.result.value{
                 if dealTokenInvalid?(model.isTokenInvalid()) != nil && (dealTokenInvalid?(model.isTokenInvalid()))!{
-                                        return
-                                    }
+                    return
+                }
                 let success = model.isSuccess()
                 guard success else {
                     failure?()
@@ -264,7 +322,7 @@ open class IAW_NetTool{
         pageBlock(tableView: tableView, block: block)
         
     }
-
+    
     open class func loadDatasByPage<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,params: Parameters? = nil,headers: HTTPHeaders? = nil,collectionView:UICollectionView,finished:@escaping (_ pageNum:Int,_ datas:[T],M)->(),failure:Failure? = nil,dealTokenInvalid:DealTokenInvalid? = nil){
         if !IAW_NetTool.checkNet(){
             return
@@ -278,7 +336,7 @@ open class IAW_NetTool{
             }else{
                 params_new = ["page":pageNum]
             }
-
+            
             Alamofire.request(url, method:method,parameters: params_new,headers: headers).responseObject{
                 (response:DataResponse<M>) in
                 IAW_NetTool.endRefresh(collectionView: collectionView)
@@ -303,13 +361,13 @@ open class IAW_NetTool{
         pageBlock(collectionView: collectionView, block: block)
         
     }
-
     
-
+    
+    
 }
 //扩展 处理下拉刷新  上拉加载 分页
 extension IAW_NetTool{
-
+    
     //处理MJRefresh 终止刷新
     open class func endRefresh(tableView:UITableView){
         if tableView.mj_header.isRefreshing(){
