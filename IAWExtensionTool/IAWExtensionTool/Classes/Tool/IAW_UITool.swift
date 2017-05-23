@@ -48,6 +48,22 @@ open class IAW_UITool{
         label.font = UIFont.systemFont(ofSize: fontSize)
         return label
     }
+    //lineSpacing 多行之间的行间距
+    open class func IAW_LabelNumLine(text:String,textColor:UIColor = UIColor.black,fontSize:CGFloat = 11,num:Int,lineSpacing:CGFloat = IAW_PX(px: 10))->UILabel{
+        let label = UILabel()
+        label.text = text
+        label.textColor = textColor
+        label.lineBreakMode = NSLineBreakMode.byTruncatingTail
+        label.numberOfLines = num
+        label.font = UIFont.systemFont(ofSize: fontSize)
+        let attributedString = NSMutableAttributedString(string: label.text!)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = lineSpacing
+        //调整行间距
+        attributedString.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange(location: 0, length: (label.text?.iawLength)!))
+        label.attributedText = attributedString
+        return label
+    }
     
     open class func IAW_LabelMoreLine(text:String,textColor:UIColor = UIColor.black,fontSize:CGFloat = 11)->UILabel{
         let label = UILabel()
