@@ -313,6 +313,10 @@ open class IAW_NetTool{
                     }
                     
                     if let data = model.getDatas(){
+                        if data.count <= 0 {
+                            print("没新数据了")
+                            return
+                        }
                         pageReturn(model.getPage()!)
                         finished(model.getPage()!,data,model)
                     }
@@ -352,6 +356,10 @@ open class IAW_NetTool{
                     }
                     
                     if let data = model.getDatas(){
+                        if data.count <= 0 {
+                            print("没新数据了")
+                            return
+                        }
                         pageReturn(model.getPage()!)
                         finished(model.getPage()!,data,model)
                     }
