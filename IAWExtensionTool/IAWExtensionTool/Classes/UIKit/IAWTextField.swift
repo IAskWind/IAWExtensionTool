@@ -50,9 +50,8 @@ public extension UITextField {
             }
             if !subStr.isEmpty {
                 self.text = subStr
-                limitHandler?()
             }
-            
+            limitHandler?()
         }
     }
 }
