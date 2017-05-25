@@ -21,12 +21,13 @@ public extension UITextField {
         }
     }
     //包含小数点
-    func addLimit(numLength: Int,decimalLength:Int = 0){
+    func addLimit(numLength: Int,decimalLength:Int = 0,limitHandler: (() -> Void)? = nil){
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name.UITextFieldTextDidChange, object: nil, queue: OperationQueue.main) { (notification) in
             let strs =  self.text!.components(separatedBy: ".")
             if (strs.count > 2){ //防止输入多个小数点
                 self.text = (self.text! as NSString).substring(to: (self.text?.iawLength)! - 1)
+                limitHandler?()
                 return
             }
             var subStr = ""
@@ -49,6 +50,7 @@ public extension UITextField {
             }
             if !subStr.isEmpty {
                 self.text = subStr
+                limitHandler?()
             }
             
         }
