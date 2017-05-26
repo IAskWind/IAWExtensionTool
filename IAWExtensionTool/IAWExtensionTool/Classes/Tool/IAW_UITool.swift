@@ -74,7 +74,14 @@ open class IAW_UITool{
         label.font = UIFont.systemFont(ofSize: fontSize)
         return label
     }
-    
+    open class func IAW_Button(button:UIButton = UIButton(),text:String,textColor:UIColor = UIColor.white,fontSize:CGFloat = IAW_PX(px: 30),bgColor:UIColor = IAW_GlobalNavBarColor,cornerRadius:CGFloat = 0,controlState:UIControlState = UIControlState())->UIButton{
+        button.backgroundColor = bgColor
+        button.setTitleColor(textColor, for: controlState)
+        button.layer.cornerRadius = cornerRadius
+        button.titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
+        button.setTitle(text, for: controlState)
+        return button
+    }
 //    open class func IAW_TextField(_ placeholder:String,fontSize:CGFloat = 11,fontColor:UIColor = UIColor.black ,clearButton:UITextFieldViewMode = UITextFieldViewMode.never,keyboardType:UIKeyboardType=UIKeyboardType.default)->UITextField{
 //        let textField = UITextField()
 //        textField.returnKeyType = .done
