@@ -16,10 +16,10 @@ open class IAW_BaseViewController: UIViewController,UIGestureRecognizerDelegate,
     override open func viewDidLoad() {
         super.viewDidLoad()
         //tabbarcontroller 和 navigationcontroller 组合使用 self.view会被这两个挡住下面两句是处理代码
-        if (self.parent?.parent as? IAW_TabBarController) != nil {
-            self.navigationController?.navigationBar.isTranslucent = false;
-            self.tabBarController?.tabBar.isTranslucent = false
-        }
+//        if (self.parent?.parent as? IAW_TabBarController) != nil {
+//            self.navigationController?.navigationBar.isTranslucent = false;
+//            self.tabBarController?.tabBar.isTranslucent = false
+//        }
 
 //        if SVProgressHUD.isVisible() {
 //            SVProgressHUD.dismiss()
