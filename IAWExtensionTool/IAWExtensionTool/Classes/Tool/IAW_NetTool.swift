@@ -63,7 +63,7 @@ open class IAW_NetTool{
     //****************************泛型运用
     
     public typealias Failure = ()->()
-    
+    public typealias SuccessNoData = ()->()
     /// Closure to be executed when progress changes.
     public typealias DealTokenInvalid = (Bool)->Bool
     
@@ -82,10 +82,11 @@ open class IAW_NetTool{
         
         Alamofire.upload(
             multipartFormData: { multipartFormData in
-                for uploadImg in uploadImages{
+                for (index,uploadImg) in uploadImages.enumerated(){
                     let data = UIImageJPEGRepresentation(uploadImg, scale)
-                    multipartFormData.append(data!, withName:"file", fileName: "file.png", mimeType: "image/*")
+                    multipartFormData.append(data!, withName:"file", fileName: "file\(index).png", mimeType: "image/*")
                 }
+
         },
             to: url,
             method:.post,
@@ -163,7 +164,7 @@ open class IAW_NetTool{
     }
     
     //返回 T 带 failure
-    open class func loadData<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,params: Parameters? = nil,headers: HTTPHeaders? = nil,loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (DataResponse<M>,T)->(),failure:Failure? = nil,dealTokenInvalid:DealTokenInvalid? = nil){
+    open class func loadData<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,params: Parameters? = nil,headers: HTTPHeaders? = nil,loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (DataResponse<M>,T)->(),failure:Failure? = nil,successNoData:SuccessNoData? = nil,dealTokenInvalid:DealTokenInvalid? = nil){
         if !checkNet(){
             return
         }
@@ -196,6 +197,8 @@ open class IAW_NetTool{
                 }
                 if let data = model.getData(){
                     finished(response,data)
+                }else{
+                    successNoData?()
                 }
             }
         }
@@ -245,7 +248,7 @@ open class IAW_NetTool{
     
     
     //返回[T]
-    open class func loadDatas<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,params: Parameters? = nil,headers: HTTPHeaders? = nil,loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (M,[T])->(),failure:Failure? = nil,dealTokenInvalid:DealTokenInvalid? = nil){
+    open class func loadDatas<T:Mappable,M:IAW_BaseModel<T>>(_ url:String,method: HTTPMethod = .post,params: Parameters? = nil,headers: HTTPHeaders? = nil,loadingTip:String = "",userDefinedTip:Bool = false,finished:@escaping (M,[T])->(),failure:Failure? = nil,successNoData:SuccessNoData? = nil,dealTokenInvalid:DealTokenInvalid? = nil){
         if !checkNet(){
             return
         }
@@ -278,6 +281,8 @@ open class IAW_NetTool{
                 if let data = model.getDatas(){
                     
                     finished(model, data)
+                }else{
+                    successNoData?()
                 }
             }
         }
