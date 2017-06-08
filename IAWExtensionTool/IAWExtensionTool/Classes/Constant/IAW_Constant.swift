@@ -30,7 +30,7 @@ public let IAW_ScreenW = UIScreen.main.bounds.size.width
 // 屏幕的高
 public let IAW_ScreenH = UIScreen.main.bounds.size.height
 
-let IAW_Window = UIApplication.shared.keyWindow!
+public let IAW_Window = UIApplication.shared.keyWindow!
 ///公用线条
 //public  var IAW_CommonLine:UIView = {
 //    let line = UIView()

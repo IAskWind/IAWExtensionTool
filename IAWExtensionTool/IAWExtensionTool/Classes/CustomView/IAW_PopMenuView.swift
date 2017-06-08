@@ -20,13 +20,13 @@
 
 
 import UIKit
-class IAW_PopMenuView: UIView {
+open class IAW_PopMenuView: UIView {
     /**
      *  显示弹出菜单
      */
     // 内容视图
     weak var contentView: UIView?
-    class func show(in rect: CGRect, from view: UIView = IAW_Window) -> IAW_PopMenuView {
+    open class func show(in rect: CGRect, from view: UIView = IAW_Window) -> IAW_PopMenuView {
         let menu = IAW_PopMenuView(frame: rect)
         menu.isUserInteractionEnabled = true
         menu.backgroundColor = UIColor.white
@@ -36,7 +36,7 @@ class IAW_PopMenuView: UIView {
     /**
      *  隐藏弹出菜单
      */
-    class func hide(from view: UIView = IAW_Window) {
+    open class func hide(from view: UIView = IAW_Window) {
         for popMenu: UIView in view.subviews {
             if (popMenu .isKind(of: self)) {
                 popMenu.removeFromSuperview()
@@ -44,7 +44,7 @@ class IAW_PopMenuView: UIView {
         }
     }
     // 设置内容视图
-    func setContent(_ contentView: UIView) {
+    open func setContent(_ contentView: UIView) {
         // 先移除之前内容视图
         self.contentView?.removeFromSuperview()
         self.contentView = contentView

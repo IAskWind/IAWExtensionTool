@@ -7,11 +7,11 @@
 //
 //
 import UIKit
-protocol IAW_CoverViewDelegate: NSObjectProtocol {
+public protocol IAW_CoverViewDelegate: NSObjectProtocol {
     // 点击蒙板的时候调用
     func coverDidClickCover(_ cover: IAW_CoverView)
 }
-class  IAW_CoverView: UIView {
+open class  IAW_CoverView: UIView {
     /**
      *  显示蒙板
      */
@@ -28,20 +28,20 @@ class  IAW_CoverView: UIView {
             }
         }
     }
-    weak var delegate: IAW_CoverViewDelegate?
-    class func showAdd(_ view: UIView = IAW_Window,y:CGFloat = 0,height:CGFloat = IAW_ScreenH) -> IAW_CoverView {
+    public weak var delegate: IAW_CoverViewDelegate?
+    open class func showAdd(_ view: UIView = IAW_Window,y:CGFloat = 0,height:CGFloat = IAW_ScreenH) -> IAW_CoverView {
         let cover = IAW_CoverView(frame: CGRect(x: 0, y: y, width: IAW_ScreenW, height: height - y))
         cover.backgroundColor = UIColor.black
         cover.alpha = 0.5
         cover.isUserInteractionEnabled = true
         view.addSubview(cover)
         return cover
-
+        
     }
     /**
      *  隐藏蒙板
      */
-    class func hide(from view: UIView = IAW_Window) {
+    open class func hide(from view: UIView = IAW_Window) {
         for cover: UIView in view.subviews {
             if (cover.isKind(of: self)) {
                 cover.removeFromSuperview()
@@ -49,13 +49,13 @@ class  IAW_CoverView: UIView {
         }
     }
     // 点击蒙板的时候做事情
-   override func touchesBegan(_ touches:Set<UITouch>, with event: UIEvent?) {
+    override open func touchesBegan(_ touches:Set<UITouch>, with event: UIEvent?) {
         // 移除蒙板
-//        removeFromSuperview()
+        //        removeFromSuperview()
         // 通知代理移除菜单
-//        if (delegate?.responds(to: #selector("coverDidClickCover")))! {
-            delegate?.coverDidClickCover(self)
-//        }
+        //        if (delegate?.responds(to: #selector("coverDidClickCover")))! {
+        delegate?.coverDidClickCover(self)
+        //        }
     }
-
+    
 }
