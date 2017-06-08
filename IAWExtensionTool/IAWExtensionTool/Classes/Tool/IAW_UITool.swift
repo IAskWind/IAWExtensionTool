@@ -150,6 +150,44 @@ open class IAW_UITool{
         }
         
     }
+    
+    public typealias OkFunc = ()->()
+    public typealias CancelFunc = ()->()
+    
+    open class func IAW_Confirm(_ target: UIViewController = IAW_UITool.getCurrentVC(),title:String?,message:String?,okBtnTitle:String = "确定",cancelBtnTitle:String = "取消",okFunc:OkFunc? = nil,cancelFunc:CancelFunc? = nil){
+        weak var weakSelf = target
+        let alertController = UIAlertController(title: title,
+                                                message: message, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: cancelBtnTitle, style: .cancel, handler:{
+            action in
+            cancelFunc?()
+        })
+        let okAction = UIAlertAction(title: okBtnTitle, style: .default,
+                                     handler: {
+                                        action in
+                                        okFunc?()
+        })
+        alertController.addAction(cancelAction)
+        alertController.addAction(okAction)
+        weakSelf?.present(alertController, animated: true, completion: nil)
+        
+    }
+    
+    open class func IAW_Alert(_ target: UIViewController = IAW_UITool.getCurrentVC(),title:String?,message:String?,okBtnTitle:String = "确定",okFunc:OkFunc? = nil){
+        weak var weakSelf = target
+        let alertController = UIAlertController(title: title,
+                                                message: message, preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: okBtnTitle, style: .default,
+                                     handler: {
+                                        action in
+                                        okFunc?()
+        })
+        alertController.addAction(okAction)
+        weakSelf?.present(alertController, animated: true, completion: nil)
+        
+        
+    }
 
 
 
