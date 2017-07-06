@@ -25,4 +25,16 @@ open class IAW_AppTool{
         mWindow.makeKeyAndVisible()
         mWindow.rootViewController = vc
     }
+    
+    open class func getVersionName() -> String{
+        let infoDictionary = Bundle.main.infoDictionary
+        let versionName  = infoDictionary?["CFBundleShortVersionString"]as? String ?? ""//主程序版本号 versionName
+        return versionName
+    }
+    
+    open class func getVersionCode() -> Int{
+        let infoDictionary = Bundle.main.infoDictionary
+        let versionCode  = infoDictionary?["CFBundleVersion"]as? Int ?? 0//主程序版本号 versionCode
+        return versionCode
+    }
 }
