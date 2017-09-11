@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'IAWExtensionTool'
-  s.version          = '0.5.1'
+  s.version          = '0.5.2'
   s.summary          = 'A short description of IAWExtensionTool.'
 
 # This description is used to generate tags and improve search results.
@@ -37,7 +37,7 @@ TODO: Add long description of the pod here.
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  s.frameworks = 'UIKit', 'Foundation','QuartzCore'
+  s.frameworks = 'UIKit', 'Foundation','QuartzCore','JavaScriptCore','AVFoundation'
   # s.dependency 'AFNetworking', '~> 2.3'
    s.dependency 'SnapKit', '~> 3.2.0'
    s.dependency 'SVProgressHUD'

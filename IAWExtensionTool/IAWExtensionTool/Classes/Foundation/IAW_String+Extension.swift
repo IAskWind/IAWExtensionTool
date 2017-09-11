@@ -56,5 +56,27 @@ public extension String{
         }
         return arrays
     }
+    
+    //获取document目录
+    func docDir() -> String
+    {
+        let docPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).last! as NSString
+        let filePath = docPath.appendingPathComponent((self as NSString).lastPathComponent)
+        return filePath
+    }
+    //获取cache目录
+    func cacheDir() -> String
+    {
+        let cache = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).last! as NSString
+        let filePath = cache.appendingPathComponent((self as NSString).lastPathComponent)
+        return filePath
+    }
+    //获取临时目录
+    func tempDir() -> String
+    {
+        let temp = NSTemporaryDirectory() as NSString
+        let filePath = temp.appendingPathComponent((self as NSString).lastPathComponent)
+        return filePath
+    }
 
 }

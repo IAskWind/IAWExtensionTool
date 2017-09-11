@@ -102,6 +102,10 @@
 		44EC56571DDE0F0C00DAAFF8 /* IAW_WebView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC56481DDE0F0C00DAAFF8 /* IAW_WebView+Extension.swift */; };
 		44EC565C1DDE0F1800DAAFF8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44EC565A1DDE0F1800DAAFF8 /* Images.xcassets */; };
 		44EC565E1DDE18B500DAAFF8 /* IAW_ImgXcassetsTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC565D1DDE18B500DAAFF8 /* IAW_ImgXcassetsTool.swift */; };
+		6F04EC201F66D4D400B4569B /* IAW_LocalStorageTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F04EC1F1F66D4D400B4569B /* IAW_LocalStorageTool.swift */; };
+		6F04EC241F66D67F00B4569B /* IAW_Sample_T.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F04EC231F66D67F00B4569B /* IAW_Sample_T.swift */; };
+		6F04EC261F66D70400B4569B /* IAW_JSTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F04EC251F66D70400B4569B /* IAW_JSTool.swift */; };
+		6F04EC281F66D72F00B4569B /* IAW_PlayTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F04EC271F66D72F00B4569B /* IAW_PlayTool.swift */; };
 		AD8E5370726069281113256F /* Pods_IAWExtensionTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD248E7BAF6A2C34F8CA11D9 /* Pods_IAWExtensionTool.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
@@ -205,6 +209,10 @@
 		44EC565A1DDE0F1800DAAFF8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		44EC565D1DDE18B500DAAFF8 /* IAW_ImgXcassetsTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IAW_ImgXcassetsTool.swift; path = Classes/Tool/IAW_ImgXcassetsTool.swift; sourceTree = "<group>"; };
 		5A11D36588B35B00253E8477 /* Pods-IAWExtensionTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IAWExtensionTool.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-IAWExtensionTool/Pods-IAWExtensionTool.debug.xcconfig"; sourceTree = "<group>"; };
+		6F04EC1F1F66D4D400B4569B /* IAW_LocalStorageTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_LocalStorageTool.swift; sourceTree = "<group>"; };
+		6F04EC231F66D67F00B4569B /* IAW_Sample_T.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_Sample_T.swift; sourceTree = "<group>"; };
+		6F04EC251F66D70400B4569B /* IAW_JSTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_JSTool.swift; sourceTree = "<group>"; };
+		6F04EC271F66D72F00B4569B /* IAW_PlayTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_PlayTool.swift; sourceTree = "<group>"; };
 		FD248E7BAF6A2C34F8CA11D9 /* Pods_IAWExtensionTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IAWExtensionTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -418,6 +426,7 @@
 		44EC56361DDE0F0C00DAAFF8 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6F04EC211F66D64400B4569B /* Sample */,
 				4404BBDF1E852AD9004CFF9F /* CountdownLabel */,
 				4426C2C41E35F57500E74B79 /* LeftSlideMenu */,
 				4492FD691E2632A3006D69CB /* Effect */,
@@ -466,6 +475,9 @@
 				44732A8A1E372D33001F698D /* IAW_NavBarTool.swift */,
 				4404BBD91E851BB1004CFF9F /* IAW_MsgTool.swift */,
 				4404BBDB1E851E2B004CFF9F /* IAW_CountDownTool.swift */,
+				6F04EC1F1F66D4D400B4569B /* IAW_LocalStorageTool.swift */,
+				6F04EC251F66D70400B4569B /* IAW_JSTool.swift */,
+				6F04EC271F66D72F00B4569B /* IAW_PlayTool.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -491,6 +503,22 @@
 				44EC565A1DDE0F1800DAAFF8 /* Images.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		6F04EC211F66D64400B4569B /* Sample */ = {
+			isa = PBXGroup;
+			children = (
+				6F04EC221F66D66300B4569B /* M */,
+			);
+			path = Sample;
+			sourceTree = "<group>";
+		};
+		6F04EC221F66D66300B4569B /* M */ = {
+			isa = PBXGroup;
+			children = (
+				6F04EC231F66D67F00B4569B /* IAW_Sample_T.swift */,
+			);
+			path = M;
 			sourceTree = "<group>";
 		};
 		A552F5485607FC0684A64631 /* Pods */ = {
@@ -673,12 +701,14 @@
 				442E53591E1E23C6001FCBD8 /* IAW_UIView+Extension.swift in Sources */,
 				442E53671E1F75F5001FCBD8 /* IAW_TabelViewTool.swift in Sources */,
 				448D9B321EE94DA300BD3BBB /* IAW_PopMenuView.swift in Sources */,
+				6F04EC261F66D70400B4569B /* IAW_JSTool.swift in Sources */,
 				4404BBFA1E852AD9004CFF9F /* LTCharacterDiffResult.swift in Sources */,
 				4404BBDC1E851E2B004CFF9F /* IAW_CountDownTool.swift in Sources */,
 				4404BC021E852AD9004CFF9F /* LTMorphingLabel+Fall.swift in Sources */,
 				4404BBF81E852AD9004CFF9F /* CountdownLabel.swift in Sources */,
 				4404BBFF1E852AD9004CFF9F /* LTMorphingLabel+Anvil.swift in Sources */,
 				442E536D1E1F8C2D001FCBD8 /* IAW_NetTool.swift in Sources */,
+				6F04EC281F66D72F00B4569B /* IAW_PlayTool.swift in Sources */,
 				44389CA21EA4D50D0082B5ED /* IAW_ResMsgModel.swift in Sources */,
 				44EC564B1DDE0F0C00DAAFF8 /* IAW_String+Extension.swift in Sources */,
 				4404BC071E852AD9004CFF9F /* LTStringDiffResult.swift in Sources */,
@@ -707,6 +737,8 @@
 				44A43A731E1CF66A005BB1FE /* WHC_AutoCellHeight.swift in Sources */,
 				44EC56541DDE0F0C00DAAFF8 /* IAW_ImageView+Extension.swift in Sources */,
 				44EC564D1DDE0F0C00DAAFF8 /* IAW_JsonTool.swift in Sources */,
+				6F04EC241F66D67F00B4569B /* IAW_Sample_T.swift in Sources */,
+				6F04EC201F66D4D400B4569B /* IAW_LocalStorageTool.swift in Sources */,
 				442E53521E1DE575001FCBD8 /* IAW_ResponseModels.swift in Sources */,
 				44EC565E1DDE18B500DAAFF8 /* IAW_ImgXcassetsTool.swift in Sources */,
 				44A43A761E1CF66A005BB1FE /* WHC_StackView.swift in Sources */,
