@@ -32,6 +32,13 @@ open class IAW_LocalStorageTool<T>{
         return NSKeyedUnarchiver.unarchiveObject(withFile: key.docDir()) as? T
     }
     
+    //清除归档文件
+    open class func cleanLSByKey(key:String){
+        let fileManager = FileManager.default
+        try! fileManager.removeItem(atPath:  key.docDir())
+        
+    }
+
     
     
 }
