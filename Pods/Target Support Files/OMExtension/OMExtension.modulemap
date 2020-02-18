@@ -1,6 +1,0 @@
-framework module OMExtension {
-  umbrella header "OMExtension-umbrella.h"
-
-  export *
-  module * { export * }
-}

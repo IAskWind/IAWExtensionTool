@@ -8,33 +8,44 @@
 
 import UIKit
 
-class WindowViewController: UIViewController
+open class WindowViewController: UIViewController
 {
     fileprivate var window: UIWindow?
     
-    let windowLevel: UIWindowLevel
+    let windowLevel: UIWindow.Level
     let config: SwiftMessages.Config
     
-    override var shouldAutorotate: Bool {
+    override open var shouldAutorotate: Bool {
         return config.shouldAutorotate
     }
     
-    init(windowLevel: UIWindowLevel = UIWindowLevelNormal, config: SwiftMessages.Config)
+    public init(windowLevel: UIWindow.Level?, config: SwiftMessages.Config)
     {
-        self.windowLevel = windowLevel
+        self.windowLevel = windowLevel ?? UIWindow.Level.normal
         self.config = config
         let window = PassthroughWindow(frame: UIScreen.main.bounds)
         self.window = window
         super.init(nibName: nil, bundle: nil)
         self.view = PassthroughView()
         window.rootViewController = self
-        window.windowLevel = windowLevel
+        window.windowLevel = windowLevel ?? UIWindow.Level.normal
     }
     
     func install(becomeKey: Bool) {
         guard let window = window else { return }
         if becomeKey {
-            window.makeKeyAndVisible()            
+            window.makeKeyAndVisible()
+        } else {
+            window.isHidden = false
+        }
+    }
+
+    @available(iOS 13, *)
+    func install(becomeKey: Bool, scene: UIWindowScene?) {
+        guard let window = window else { return }
+        window.windowScene = scene
+        if becomeKey {
+            window.makeKeyAndVisible()
         } else {
             window.isHidden = false
         }
@@ -45,15 +56,21 @@ class WindowViewController: UIViewController
         window = nil
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override public var preferredStatusBarStyle: UIStatusBarStyle {
-        return config.preferredStatusBarStyle ?? UIApplication.shared.statusBarStyle
+    override open var preferredStatusBarStyle: UIStatusBarStyle {
+        return config.preferredStatusBarStyle ?? super.preferredStatusBarStyle
     }
-    
-    override var prefersStatusBarHidden: Bool {
-        return UIApplication.shared.isStatusBarHidden
+
+    open override var prefersStatusBarHidden: Bool {
+        return config.prefersStatusBarHidden ?? super.prefersStatusBarHidden
+    }
+}
+
+extension WindowViewController {
+    static func newInstance(windowLevel: UIWindow.Level?, config: SwiftMessages.Config) -> WindowViewController {
+        return config.windowViewController?(windowLevel, config) ?? WindowViewController(windowLevel: windowLevel, config: config)
     }
 }
