@@ -3,6 +3,7 @@ PODS:
   - AlamofireObjectMapper (5.2.1):
     - Alamofire (~> 4.7)
     - ObjectMapper (~> 3.4)
+  - CryptoSwift (1.3.0)
   - Easy (2.7):
     - Easy/Core (= 2.7)
     - Easy/Session (= 2.7)
@@ -11,8 +12,12 @@ PODS:
   - Easy/Session (2.7):
     - Alamofire (~> 4.8.2)
     - Easy/Core
+  - Kingfisher (5.13.1):
+    - Kingfisher/Core (= 5.13.1)
+  - Kingfisher/Core (5.13.1)
   - MJRefresh (3.3.1)
   - ObjectMapper (3.5.1)
+  - RNCryptor (5.1.0)
   - SKPhotoBrowser (6.1.0)
   - SlideMenuControllerSwift (5.0.0)
   - SnapKit (4.2.0)
@@ -22,11 +27,16 @@ PODS:
   - SwiftMessages/App (7.0.1)
 
 DEPENDENCIES:
+  - Alamofire
   - AlamofireObjectMapper (~> 5.2)
+  - CryptoSwift
   - Easy
+  - Kingfisher
   - MJRefresh
+  - RNCryptor
   - SKPhotoBrowser
   - SlideMenuControllerSwift (from `https://github.com/AtomicSLLC/SlideMenuControllerSwift.git`, branch `swift5`)
+  - SnapKit
   - SVProgressHUD
   - SwiftMessages
 
@@ -34,9 +44,12 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - AlamofireObjectMapper
+    - CryptoSwift
     - Easy
+    - Kingfisher
     - MJRefresh
     - ObjectMapper
+    - RNCryptor
     - SKPhotoBrowser
     - SnapKit
     - SVProgressHUD
@@ -55,15 +68,18 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   AlamofireObjectMapper: 1989f690e982b71921b9253f53a4f33a9bc00d88
+  CryptoSwift: 1283821600233bdbeb96d7b389c3288c3bf77211
   Easy: 4ca2eaee3f66b99fb4197daed7342e394c044316
+  Kingfisher: f33a848445e33c543620812158dc5d47f6bf90df
   MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
   ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
+  RNCryptor: a369134686cd2ad391323cc856b62e591193ba79
   SKPhotoBrowser: 343de95d89dc7913763c5dda243cc6e606e4a168
   SlideMenuControllerSwift: d740ea24105a658fe6a8c256f2bf5832fee7c047
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftMessages: b577dc7043be8b299857ab35bb663dbff6483bd0
 
-PODFILE CHECKSUM: 7a0121f4529c4874f6175d120b235ada000f5a4d
+PODFILE CHECKSUM: 33f04e4abd9249f9ba0d918f5c00de0988ef668e
 
 COCOAPODS: 1.8.4

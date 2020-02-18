@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import OMExtension
+//import OMExtension
 public protocol EditTextViewDelegate: NSObjectProtocol {
     func editClick(editKey: String,editValue:String)
 }

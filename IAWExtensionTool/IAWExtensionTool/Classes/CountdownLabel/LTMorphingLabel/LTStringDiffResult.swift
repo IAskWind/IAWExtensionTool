@@ -37,11 +37,10 @@ public extension String {
         
         guard let anotherString = anotherString else {
             let diffResults: [LTCharacterDiffResult] =
-                Array(repeating: .delete, count: characters.count) 
+                Array(repeating: .delete, count: .count)
             let skipDrawingResults: [Bool] = Array(repeating: false, count: characters.count)
             return (diffResults, skipDrawingResults)
         }
-        
         let newChars = anotherString.characters.enumerated()
         let lhsLength = characters.count
         let rhsLength = anotherString.characters.count

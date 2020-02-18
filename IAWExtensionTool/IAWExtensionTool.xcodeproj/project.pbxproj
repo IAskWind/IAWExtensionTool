@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29204AD17655588201BA85D0 /* Pods_IAWExtensionTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E77EA182DC15FFD01CDB7564 /* Pods_IAWExtensionTool.framework */; };
 		4404BBD81E8517F3004CFF9F /* IAW_TaskTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404BBD71E8517F3004CFF9F /* IAW_TaskTool.swift */; };
 		4404BBDA1E851BB1004CFF9F /* IAW_MsgTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404BBD91E851BB1004CFF9F /* IAW_MsgTool.swift */; };
 		4404BBDC1E851E2B004CFF9F /* IAW_CountDownTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404BBDB1E851E2B004CFF9F /* IAW_CountDownTool.swift */; };
@@ -106,14 +107,20 @@
 		6F04EC241F66D67F00B4569B /* IAW_Sample_T.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F04EC231F66D67F00B4569B /* IAW_Sample_T.swift */; };
 		6F04EC261F66D70400B4569B /* IAW_JSTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F04EC251F66D70400B4569B /* IAW_JSTool.swift */; };
 		6F04EC281F66D72F00B4569B /* IAW_PlayTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F04EC271F66D72F00B4569B /* IAW_PlayTool.swift */; };
-		6F4CF08523FC3EFB0061C9D0 /* RNCryptor in Frameworks */ = {isa = PBXBuildFile; productRef = 6F4CF08423FC3EFB0061C9D0 /* RNCryptor */; };
-		6F4CF08823FC3F530061C9D0 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 6F4CF08723FC3F530061C9D0 /* Kingfisher */; };
-		6F4CF08A23FC3F530061C9D0 /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 6F4CF08923FC3F530061C9D0 /* KingfisherSwiftUI */; };
-		6F4CF08D23FC3F8E0061C9D0 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6F4CF08C23FC3F8E0061C9D0 /* SnapKit */; };
-		6F4CF09023FC3FBC0061C9D0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 6F4CF08F23FC3FBC0061C9D0 /* Alamofire */; };
-		6F4CF09323FC40580061C9D0 /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6F4CF09223FC40580061C9D0 /* CryptoSwift */; };
-		AD8E5370726069281113256F /* Pods_IAWExtensionTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD248E7BAF6A2C34F8CA11D9 /* Pods_IAWExtensionTool.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6F4CF09623FC47900061C9D0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		38CAE004563470CD1EE8E6A6 /* Pods-IAWExtensionTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IAWExtensionTool.release.xcconfig"; path = "../Pods/Target Support Files/Pods-IAWExtensionTool/Pods-IAWExtensionTool.release.xcconfig"; sourceTree = "<group>"; };
@@ -219,7 +226,7 @@
 		6F04EC231F66D67F00B4569B /* IAW_Sample_T.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_Sample_T.swift; sourceTree = "<group>"; };
 		6F04EC251F66D70400B4569B /* IAW_JSTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_JSTool.swift; sourceTree = "<group>"; };
 		6F04EC271F66D72F00B4569B /* IAW_PlayTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAW_PlayTool.swift; sourceTree = "<group>"; };
-		FD248E7BAF6A2C34F8CA11D9 /* Pods_IAWExtensionTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IAWExtensionTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E77EA182DC15FFD01CDB7564 /* Pods_IAWExtensionTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IAWExtensionTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,13 +234,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F4CF08823FC3F530061C9D0 /* Kingfisher in Frameworks */,
-				6F4CF08523FC3EFB0061C9D0 /* RNCryptor in Frameworks */,
-				6F4CF08A23FC3F530061C9D0 /* KingfisherSwiftUI in Frameworks */,
-				6F4CF09023FC3FBC0061C9D0 /* Alamofire in Frameworks */,
-				AD8E5370726069281113256F /* Pods_IAWExtensionTool.framework in Frameworks */,
-				6F4CF08D23FC3F8E0061C9D0 /* SnapKit in Frameworks */,
-				6F4CF09323FC40580061C9D0 /* CryptoSwift in Frameworks */,
+				29204AD17655588201BA85D0 /* Pods_IAWExtensionTool.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,7 +546,7 @@
 		E5033D61F9E9745C3E03E517 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FD248E7BAF6A2C34F8CA11D9 /* Pods_IAWExtensionTool.framework */,
+				E77EA182DC15FFD01CDB7564 /* Pods_IAWExtensionTool.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -576,20 +577,13 @@
 				441C6EBB1DDE0BEC0080D0F0 /* Frameworks */,
 				441C6EBC1DDE0BEC0080D0F0 /* Headers */,
 				441C6EBD1DDE0BEC0080D0F0 /* Resources */,
+				6F4CF09623FC47900061C9D0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = IAWExtensionTool;
-			packageProductDependencies = (
-				6F4CF08423FC3EFB0061C9D0 /* RNCryptor */,
-				6F4CF08723FC3F530061C9D0 /* Kingfisher */,
-				6F4CF08923FC3F530061C9D0 /* KingfisherSwiftUI */,
-				6F4CF08C23FC3F8E0061C9D0 /* SnapKit */,
-				6F4CF08F23FC3FBC0061C9D0 /* Alamofire */,
-				6F4CF09223FC40580061C9D0 /* CryptoSwift */,
-			);
 			productName = IAWExtensionTool;
 			productReference = 441C6EBF1DDE0BEC0080D0F0 /* IAWExtensionTool.framework */;
 			productType = "com.apple.product-type.framework";
@@ -619,13 +613,6 @@
 				en,
 			);
 			mainGroup = 441C6EB51DDE0BEC0080D0F0;
-			packageReferences = (
-				6F4CF08323FC3EFB0061C9D0 /* XCRemoteSwiftPackageReference "RNCryptor" */,
-				6F4CF08623FC3F530061C9D0 /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				6F4CF08B23FC3F8E0061C9D0 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				6F4CF08E23FC3FBC0061C9D0 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				6F4CF09123FC40570061C9D0 /* XCRemoteSwiftPackageReference "CryptoSwift" */,
-			);
 			productRefGroup = 441C6EC01DDE0BEC0080D0F0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -865,8 +852,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -878,7 +864,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5A11D36588B35B00253E8477 /* Pods-IAWExtensionTool.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = AA5ZGF9A6N;
@@ -888,11 +873,7 @@
 				INFOPLIST_FILE = IAWExtensionTool/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iaskwind.IAWExtensionTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -904,7 +885,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 38CAE004563470CD1EE8E6A6 /* Pods-IAWExtensionTool.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = AA5ZGF9A6N;
@@ -914,11 +894,7 @@
 				INFOPLIST_FILE = IAWExtensionTool/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iaskwind.IAWExtensionTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -948,82 +924,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		6F4CF08323FC3EFB0061C9D0 /* XCRemoteSwiftPackageReference "RNCryptor" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/RNCryptor/RNCryptor.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.1.0;
-			};
-		};
-		6F4CF08623FC3F530061C9D0 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.13.1;
-			};
-		};
-		6F4CF08B23FC3F8E0061C9D0 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.1;
-			};
-		};
-		6F4CF08E23FC3FBC0061C9D0 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-		6F4CF09123FC40570061C9D0 /* XCRemoteSwiftPackageReference "CryptoSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/krzyzanowskim/CryptoSwift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.3.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		6F4CF08423FC3EFB0061C9D0 /* RNCryptor */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6F4CF08323FC3EFB0061C9D0 /* XCRemoteSwiftPackageReference "RNCryptor" */;
-			productName = RNCryptor;
-		};
-		6F4CF08723FC3F530061C9D0 /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6F4CF08623FC3F530061C9D0 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
-		6F4CF08923FC3F530061C9D0 /* KingfisherSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6F4CF08623FC3F530061C9D0 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = KingfisherSwiftUI;
-		};
-		6F4CF08C23FC3F8E0061C9D0 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6F4CF08B23FC3F8E0061C9D0 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-		6F4CF08F23FC3FBC0061C9D0 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6F4CF08E23FC3FBC0061C9D0 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-		6F4CF09223FC40580061C9D0 /* CryptoSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6F4CF09123FC40570061C9D0 /* XCRemoteSwiftPackageReference "CryptoSwift" */;
-			productName = CryptoSwift;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 441C6EB61DDE0BEC0080D0F0 /* Project object */;
 }

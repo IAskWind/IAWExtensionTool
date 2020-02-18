@@ -9,13 +9,15 @@ target 'IAWExtensionToolDemo' do
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
 
     # Pods for IAWExtensionToolDemo
-#    pod 'SnapKit', '~> 5.0.0'
+    pod 'Alamofire'
+    pod 'SnapKit'
     pod 'SVProgressHUD'
-#    pod 'RNCryptor'
+    pod 'RNCryptor'
     pod 'AlamofireObjectMapper', '~> 5.2'
-#    pod 'Kingfisher', '~> 3.2.4'
+    pod 'Kingfisher'
 #    pod 'CryptoSwift', :git => 'https://github.com/krzyzanowskim/CryptoSwift', :branch => 'master'
 #    pod 'CryptoSwift', '~> 0.6.9'
+    pod 'CryptoSwift'
     pod 'MJRefresh'
     pod 'SKPhotoBrowser'
     pod 'Easy'
@@ -32,13 +34,15 @@ end
 target 'IAWExtensionTool' do
   platform :ios, ‘12.0’
   xcodeproj 'IAWExtensionTool/IAWExtensionTool.xcodeproj'
-#  pod 'SnapKit', '~> 5.0.0'
+  pod 'Alamofire'
+  pod 'SnapKit'
   pod 'SVProgressHUD'
-#  pod 'RNCryptor'
+  pod 'RNCryptor'
   pod 'AlamofireObjectMapper', '~> 5.2'
-#  pod 'Kingfisher', '~> 3.2.4'
+  pod 'Kingfisher'
 #  pod 'CryptoSwift', :git => 'https://github.com/krzyzanowskim/CryptoSwift', :branch => 'master'
 #  pod 'CryptoSwift', '~> 0.6.9'
+  pod 'CryptoSwift'
   pod 'MJRefresh'
   pod 'SKPhotoBrowser'
   pod 'Easy'
