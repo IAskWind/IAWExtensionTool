@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'IAWExtensionTool'
-  s.version          = '0.5.4'
+  s.version          = '0.5.9'
   s.summary          = 'A short description of IAWExtensionTool.'
 
 # This description is used to generate tags and improve search results.
@@ -28,7 +28,7 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/IAskWind/IAWExtensionTool.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '12.0'
 
   s.source_files = 'IAWExtensionTool/IAWExtensionTool/Classes/**/*'
   s.requires_arc     = true
@@ -39,17 +39,17 @@ TODO: Add long description of the pod here.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit', 'Foundation','QuartzCore','JavaScriptCore','AVFoundation'
   # s.dependency 'AFNetworking', '~> 2.3'
-   s.dependency 'SnapKit', '~> 3.2.0'
+   s.dependency 'SnapKit'
    s.dependency 'SVProgressHUD'
    s.dependency 'RNCryptor'
-   s.dependency 'Alamofire', '~> 4.0'
-   s.dependency 'AlamofireObjectMapper', '~> 4.0'
-   s.dependency 'Kingfisher', '~> 3.2.4'
-   s.dependency 'CryptoSwift','~> 0.6.9'
+   s.dependency 'Alamofire'
+   s.dependency 'AlamofireObjectMapper', '~> 5.2'
+   s.dependency 'Kingfisher'
+   s.dependency 'CryptoSwift'
    s.dependency 'MJRefresh'
    s.dependency 'SKPhotoBrowser', '~> 4.0.0'
-   s.dependency 'OMExtension'
-   s.dependency 'SlideMenuControllerSwift'
+   s.dependency 'Easy'
+   s.dependency 'SlideMenuControllerSwift', :git => 'https://github.com/AtomicSLLC/SlideMenuControllerSwift.git', :branch => 'swift5'
    s.dependency 'SwiftMessages'
 
 end
