@@ -15,7 +15,7 @@ open class IAW_CountDownTool{
         let fromDate = formatter.date(from: fromDate)!
         let targetDate = formatter.date(from: targetDate)!
         let diffSeconds = targetDate.timeIntervalSince(fromDate) //targetDate - formdate
-        countdownLabel.setCountDownTime(diffSeconds)
+        countdownLabel.setCountDownTime(minutes: diffSeconds)
         countdownLabel.timeFormat = "mm:ss"
         
     }
@@ -26,7 +26,7 @@ open class IAW_CountDownTool{
         let fromDate = fromDate
         let targetDate = formatter.date(from: targetDate)!
         let diffSeconds = targetDate.timeIntervalSince(fromDate) //targetDate - formdate
-        countdownLabel.setCountDownTime(diffSeconds)
+        countdownLabel.setCountDownTime(minutes: diffSeconds)
         countdownLabel.timeFormat = "mm:ss"
         
     }

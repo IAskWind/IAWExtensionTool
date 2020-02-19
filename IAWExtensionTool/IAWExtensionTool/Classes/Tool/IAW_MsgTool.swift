@@ -27,7 +27,7 @@ open class IAW_MsgTool{
         view.titleLabel?.isHidden = true
         var config = SwiftMessages.defaultConfig
         config.duration = .seconds(seconds:seconds)
-        config.presentationContext = .window(windowLevel: UIWindowLevelNormal)
+        config.presentationContext = .window(windowLevel: UIWindow.Level.normal)
         view.configureContent(body: msg)
         blockTheme(view) //设置view
         //处理icon的尺寸

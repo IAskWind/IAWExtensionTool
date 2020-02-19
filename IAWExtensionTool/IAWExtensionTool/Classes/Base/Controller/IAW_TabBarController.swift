@@ -69,8 +69,8 @@ open class IAW_TabBarController: UITabBarController {
         if isLeftBarBtn {
             IAW_SlideMenuTool.addLeftBarItem(target: vc)
         }
-        nav.addChildViewController(vc)
-        addChildViewController(nav)
+        nav.addChild(vc)
+        addChild(nav)
     }
     
 //    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {

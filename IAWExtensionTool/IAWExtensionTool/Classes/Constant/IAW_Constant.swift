@@ -76,7 +76,7 @@ public func IAW_HEXColor(_ hexColor:String,alpha:CGFloat = 1) -> UIColor {
         let index = cStr.index(after: cStr.startIndex)
         cStr = cStr.substring(from: index)
     }
-    if cStr.characters.count != 6 {
+    if cStr.count != 6 {
         return UIColor.black
     }
     

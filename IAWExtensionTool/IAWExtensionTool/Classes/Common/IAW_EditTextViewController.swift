@@ -8,6 +8,7 @@
 
 import UIKit
 //import OMExtension
+import Easy
 public protocol EditTextViewDelegate: NSObjectProtocol {
     func editClick(editKey: String,editValue:String)
 }
@@ -50,11 +51,11 @@ open class IAW_EditTextViewController: IAW_BaseViewController {
         editTextfield.backgroundColor = UIColor.white
         editTextfield.textColor = UIColor.iaw_Color(0, g: 0, b: 0, a: 0.6)
         editTextfield.font = UIFont.systemFont(ofSize: 16)
-        editTextfield.om.addTextLimit(length: 20)
+        editTextfield.setLimit(20)
         return editTextfield
     }()
     
-    func rightBarBtnClick(){
+    @objc func rightBarBtnClick(){
         if (editTextfield.text?.isEmpty)! {
             IAW_ProgressHUDTool.showErrorInfo(msg: "\(navigationItem.title!)不能为空！")
             return

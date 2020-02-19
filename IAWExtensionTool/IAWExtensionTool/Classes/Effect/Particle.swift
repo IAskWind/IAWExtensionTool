@@ -19,7 +19,7 @@ extension Particle where Self: UIView {
         let emitter = layer as! CAEmitterLayer
         emitter.emitterPosition = CGPoint(x: bounds.size.width / 2, y: 0)
         emitter.emitterSize = bounds.size
-        emitter.emitterShape = kCAEmitterLayerRectangle
+        emitter.emitterShape = CAEmitterLayerEmitterShape.rectangle
         
         let emitterCell = CAEmitterCell()
         emitterCell.contents = imgEffect.cgImage

@@ -11,9 +11,9 @@ public extension UITextField {
     
     func iawSetLimit(_ length: Int) {
         
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.UITextFieldTextDidChange, object: nil, queue: OperationQueue.main) { (notification) in
+        NotificationCenter.default.addObserver(forName: UITextField.textDidChangeNotification, object: nil, queue: OperationQueue.main) { (notification) in
             
-            if (((self.text?.characters.count)! > length) && self.markedTextRange == nil) {
+            if (((self.text?.count)! > length) && self.markedTextRange == nil) {
                 
                 self.text = (self.text! as NSString).substring(to: length)
                 
@@ -23,7 +23,7 @@ public extension UITextField {
     //包含小数点
     func addLimit(numLength: Int,decimalLength:Int = 0,limitHandler: (() -> Void)? = nil){
         
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.UITextFieldTextDidChange, object: nil, queue: OperationQueue.main) { (notification) in
+        NotificationCenter.default.addObserver(forName: UITextField.textDidChangeNotification, object: nil, queue: OperationQueue.main) { (notification) in
             let strs =  self.text!.components(separatedBy: ".")
             if (strs.count > 2){ //防止输入多个小数点
                 self.text = (self.text! as NSString).substring(to: (self.text?.iawLength)! - 1)

@@ -30,7 +30,7 @@ open class IAW_SelectListVC: IAW_BaseViewController {
     
     func initUI(){
         self.automaticallyAdjustsScrollViewInsets = false
-        tableView = UITableView(frame: CGRect(x:0,y:0, width:IAW_ScreenW, height:IAW_ScreenH), style: UITableViewStyle.grouped)
+        tableView = UITableView(frame: CGRect(x:0,y:0, width:IAW_ScreenW, height:IAW_ScreenH), style: UITableView.Style.grouped)
         tableView.backgroundColor = UIColor(red:245/255, green: 245/255, blue: 245/255, alpha: 1)
         //                tableView.backgroundColor = UIColor.red
         tableView.allowsMultipleSelectionDuringEditing=true
@@ -42,7 +42,7 @@ open class IAW_SelectListVC: IAW_BaseViewController {
         tableView.sectionFooterHeight = 0.1
         tableView.showsHorizontalScrollIndicator = false
         tableView.showsVerticalScrollIndicator = false
-        tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+        tableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
         view.addSubview(tableView)
         let count = commonDict.count
         
@@ -66,10 +66,10 @@ open class IAW_SelectListVC: IAW_BaseViewController {
         
         let enterOrderBtn_Main = UIButton()
         enterOrderBtn_Main.backgroundColor = self.navigationController?.navigationBar.barTintColor
-        enterOrderBtn_Main.setTitleColor(UIColor.white, for: UIControlState())
+        enterOrderBtn_Main.setTitleColor(UIColor.white, for: UIControl.State())
         enterOrderBtn_Main.layer.cornerRadius = 10
         enterOrderBtn_Main.titleLabel?.font = UIFont.systemFont(ofSize: IAW_PX(px: 30))
-        enterOrderBtn_Main.setTitle("确定", for: UIControlState())
+        enterOrderBtn_Main.setTitle("确定", for: UIControl.State())
         enterOrderBtn_Main.addTarget(self, action: #selector(enterSubmit), for: .touchUpInside)
         self.view.addSubview(enterOrderBtn_Main)
         enterOrderBtn_Main.snp.makeConstraints{
@@ -82,7 +82,7 @@ open class IAW_SelectListVC: IAW_BaseViewController {
         
         
     }
-    func enterSubmit(){
+    @objc func enterSubmit(){
         
         if selectedIndex == nil{
             _ = self.navigationController?.popViewController(animated: true)

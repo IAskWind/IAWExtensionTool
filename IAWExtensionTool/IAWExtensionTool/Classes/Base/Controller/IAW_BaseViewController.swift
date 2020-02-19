@@ -58,7 +58,7 @@ open class IAW_BaseViewController: UIViewController,UIGestureRecognizerDelegate,
         return true
     }
     //点击界面 隐藏键盘
-    open func backViewTap(){
+    @objc open func backViewTap(){
         view.endEditing(true)
     }
     // textField点击完成关闭软键盘

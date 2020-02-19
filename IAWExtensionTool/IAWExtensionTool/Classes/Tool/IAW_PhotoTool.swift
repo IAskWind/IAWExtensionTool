@@ -38,7 +38,7 @@ open class IAW_PhotoTool{
             print("传入类型错误")
         }
         // 2. create PhotoBrowser Instance, and present from your viewController.
-        SKPhotoBrowserOptions.displayToolbar = false
+        SKPhotoBrowserOptions.displayStatusbar = false
         let browser = SKPhotoBrowser(photos: images)
         browser.initializePageIndex(0)
         weakSelf?.present(browser, animated: true, completion: {})

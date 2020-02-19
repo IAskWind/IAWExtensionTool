@@ -42,11 +42,11 @@ public extension String{
     }
     
     func iawSubstring(_ from: Int) -> String {
-        return self.substring(from: self.characters.index(self.startIndex, offsetBy: from))
+        return self.substring(from: self.index(self.startIndex, offsetBy: from))
     }
     
     var iawLength: Int {
-        return self.characters.count
+        return self.count
     }
     //数组转String 符号分隔 ，比如逗号
     func iawToArray(symbol:String)->[String]{

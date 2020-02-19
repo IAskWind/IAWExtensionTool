@@ -60,7 +60,7 @@ open class IAW_UITool{
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = lineSpacing
         //调整行间距
-        attributedString.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange(location: 0, length: (label.text?.iawLength)!))
+        attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: (label.text?.iawLength)!))
         label.attributedText = attributedString
         return label
     }
@@ -74,7 +74,7 @@ open class IAW_UITool{
         label.font = UIFont.systemFont(ofSize: fontSize)
         return label
     }
-    open class func IAW_Button(button:UIButton = UIButton(),text:String,textColor:UIColor = UIColor.white,fontSize:CGFloat = IAW_PX(px: 30),bgColor:UIColor = IAW_GlobalNavBarColor,cornerRadius:CGFloat = 0,controlState:UIControlState = UIControlState())->UIButton{
+    open class func IAW_Button(button:UIButton = UIButton(),text:String,textColor:UIColor = UIColor.white,fontSize:CGFloat = IAW_PX(px: 30),bgColor:UIColor = IAW_GlobalNavBarColor,cornerRadius:CGFloat = 0,controlState:UIControl.State = UIControl.State())->UIButton{
         button.backgroundColor = bgColor
         button.setTitleColor(textColor, for: controlState)
         button.layer.cornerRadius = cornerRadius
@@ -94,7 +94,7 @@ open class IAW_UITool{
 //        return textField
 //    }
     
-    open class func IAW_TextField(_ placeholder:String,fontSize:CGFloat = IAW_PX(px: 24),fontColor:UIColor = IAW_HEXColor("#545454") ,placeholderColor:UIColor = IAW_HEXColor("#aaaaaa"),placeholderFontSize:CGFloat = IAW_PX(px: 22),clearButton:UITextFieldViewMode = UITextFieldViewMode.never,keyboardType:UIKeyboardType=UIKeyboardType.default,placeholderAlign:NSTextAlignment = NSTextAlignment.left)->UITextField{
+    open class func IAW_TextField(_ placeholder:String,fontSize:CGFloat = IAW_PX(px: 24),fontColor:UIColor = IAW_HEXColor("#545454") ,placeholderColor:UIColor = IAW_HEXColor("#aaaaaa"),placeholderFontSize:CGFloat = IAW_PX(px: 22),clearButton:UITextField.ViewMode = UITextField.ViewMode.never,keyboardType:UIKeyboardType=UIKeyboardType.default,placeholderAlign:NSTextAlignment = NSTextAlignment.left)->UITextField{
         let textField = UITextField()
         textField.returnKeyType = .done
         textField.keyboardType = keyboardType
@@ -107,7 +107,7 @@ open class IAW_UITool{
         style.alignment = placeholderAlign
         //placeHolder过小不居中解决
         style.minimumLineHeight = (textField.font?.lineHeight)! - ((textField.font?.lineHeight)! - UIFont.systemFont(ofSize: placeholderFontSize).lineHeight) / 2.0
-        textField.attributedPlaceholder = NSAttributedString(string:placeholder,attributes:[NSForegroundColorAttributeName: placeholderColor,NSFontAttributeName:UIFont.systemFont(ofSize: placeholderFontSize),NSParagraphStyleAttributeName:style])
+        textField.attributedPlaceholder = NSAttributedString(string:placeholder,attributes:[NSAttributedString.Key.foregroundColor: placeholderColor,NSAttributedString.Key.font:UIFont.systemFont(ofSize: placeholderFontSize),NSAttributedString.Key.paragraphStyle:style])
 
         return textField
     }
@@ -115,10 +115,10 @@ open class IAW_UITool{
     open class func getCurrentVC()->UIViewController{
         
         var window = UIApplication.shared.keyWindow
-        if window?.windowLevel != UIWindowLevelNormal{
+        if window?.windowLevel != UIWindow.Level.normal{
             let windows = UIApplication.shared.windows
             for  tempwin in windows{
-                if tempwin.windowLevel == UIWindowLevelNormal{
+                if tempwin.windowLevel == UIWindow.Level.normal{
                     window = tempwin
                     break
                 }

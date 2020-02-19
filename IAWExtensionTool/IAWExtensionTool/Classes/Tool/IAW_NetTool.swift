@@ -13,9 +13,9 @@ import MJRefresh
 import Alamofire
 open class IAW_NetTool{
     
-    open static var headers = [
+    public static var headers = [
         IAW_AccessToken: "\(UserDefaults.standard.string(forKey: IAW_AccessToken) != nil ? UserDefaults.standard.string(forKey: IAW_AccessToken)! : "")"]
-    open static var accesstoken=UserDefaults.standard.string(forKey: IAW_AccessToken){
+    public static var accesstoken=UserDefaults.standard.string(forKey: IAW_AccessToken){
         didSet{
             UserDefaults.standard.setValue(accesstoken, forKey: IAW_AccessToken)
             IAW_NetTool.headers = [
@@ -83,7 +83,7 @@ open class IAW_NetTool{
         Alamofire.upload(
             multipartFormData: { multipartFormData in
                 for (index,uploadImg) in uploadImages.enumerated(){
-                    let data = UIImageJPEGRepresentation(uploadImg, scale)
+                    let data = uploadImg.jpegData(compressionQuality: scale)
                     multipartFormData.append(data!, withName:"file", fileName: "file\(index).png", mimeType: "image/*")
                 }
 
@@ -383,22 +383,24 @@ extension IAW_NetTool{
     
     //处理MJRefresh 终止刷新
     open class func endRefresh(tableView:UITableView){
-        if tableView.mj_header.isRefreshing(){
-            tableView.mj_header.endRefreshing()
+        if tableView.mj_header?.isRefreshing ?? true{
+            tableView.mj_header?.endRefreshing();
         }
-        if tableView.mj_footer.isRefreshing(){
-            tableView.mj_footer.endRefreshing()
+  
+        if tableView.mj_footer?.isRefreshing ?? true{
+            tableView.mj_footer?.endRefreshing()
         }
         
     }
     open class func endRefresh(collectionView:UICollectionView){
-        if collectionView.mj_header.isRefreshing(){
-            collectionView.mj_header.endRefreshing()
-        }
-        if collectionView.mj_footer.isRefreshing(){
-            collectionView.mj_footer.endRefreshing()
+        
+        if collectionView.mj_header?.isRefreshing ?? false{
+            collectionView.mj_header?.endRefreshing();
         }
         
+        if collectionView.mj_footer?.isRefreshing ?? false{
+            collectionView.mj_footer?.endRefreshing()
+        }
     }
     
     
@@ -419,24 +421,24 @@ extension IAW_NetTool{
         }
         if tableView.mj_header == nil{
             let header = MJRefreshNormalHeader(refreshingBlock:blockRefresh)
-            header!.lastUpdatedTimeLabel.isHidden = true
-            header!.isAutomaticallyChangeAlpha = true //根据拖拽比例自动切换透
-            header?.stateLabel.isHidden = true
-            tableView.mj_header = header!
+            header.lastUpdatedTimeLabel?.isHidden = true
+            header.isAutomaticallyChangeAlpha = true //根据拖拽比例自动切换透
+            header.stateLabel?.isHidden = true
+            tableView.mj_header = header
         }else{
-            tableView.mj_header.refreshingBlock = blockRefresh
+            tableView.mj_header?.refreshingBlock = blockRefresh
         }
-        if tableView.mj_header.isRefreshing(){
-            tableView.mj_header.endRefreshing()
+        if tableView.mj_header?.isRefreshing ?? false{
+            tableView.mj_header?.endRefreshing()
         }
-        tableView.mj_header.beginRefreshing()
+        tableView.mj_header?.beginRefreshing()
         if tableView.mj_footer == nil{
             let footer = MJRefreshAutoNormalFooter(refreshingBlock: blockAdd)
-            footer?.stateLabel.isHidden = true
-            footer?.isRefreshingTitleHidden = true
+            footer.stateLabel?.isHidden = true
+            footer.isRefreshingTitleHidden = true
             tableView.mj_footer = footer
         }else{
-            tableView.mj_footer.refreshingBlock = blockAdd
+            tableView.mj_footer?.refreshingBlock = blockAdd
         }
     }
     
@@ -456,24 +458,24 @@ extension IAW_NetTool{
         }
         if collectionView.mj_header == nil{
             let header = MJRefreshNormalHeader(refreshingBlock:blockRefresh)
-            header!.lastUpdatedTimeLabel.isHidden = true
-            header!.isAutomaticallyChangeAlpha = true //根据拖拽比例自动切换透
-            header?.stateLabel.isHidden = true
-            collectionView.mj_header = header!
+            header.lastUpdatedTimeLabel?.isHidden = true
+            header.isAutomaticallyChangeAlpha = true //根据拖拽比例自动切换透
+            header.stateLabel?.isHidden = true
+            collectionView.mj_header = header
         }else{
-            collectionView.mj_header.refreshingBlock = blockRefresh
+            collectionView.mj_header?.refreshingBlock = blockRefresh
         }
-        if collectionView.mj_header.isRefreshing(){
-            collectionView.mj_header.endRefreshing()
+        if collectionView.mj_header?.isRefreshing ?? false{
+            collectionView.mj_header?.endRefreshing()
         }
-        collectionView.mj_header.beginRefreshing()
+        collectionView.mj_header?.beginRefreshing()
         if collectionView.mj_footer == nil{
             let footer = MJRefreshAutoNormalFooter(refreshingBlock: blockAdd)
-            footer?.stateLabel.isHidden = true
-            footer?.isRefreshingTitleHidden = true
+            footer.stateLabel?.isHidden = true
+            footer.isRefreshingTitleHidden = true
             collectionView.mj_footer = footer
         }else{
-            collectionView.mj_footer.refreshingBlock = blockAdd
+            collectionView.mj_footer?.refreshingBlock = blockAdd
         }
     }
     

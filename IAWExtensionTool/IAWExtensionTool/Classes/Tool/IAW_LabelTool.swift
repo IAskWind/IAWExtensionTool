@@ -9,7 +9,7 @@
 import Foundation
 open class IAW_LabelTool{
     
-     open static var labelHeight = CGFloat(40)
+    public static var labelHeight = CGFloat(40)
     
     //设置顶部标题label
     open class func setUpLabel(_ title: String) -> UILabel {

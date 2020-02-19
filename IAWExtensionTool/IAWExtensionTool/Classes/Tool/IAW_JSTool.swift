@@ -31,7 +31,7 @@ open class IAW_JSTool:NSObject{
         weak var weakSelf = target
         let jsContext = webView.value(forKeyPath: "documentView.webView.mainFrame.javaScriptContext") as! JSContext
         
-        jsContext.setObject(weakSelf, forKeyedSubscript: keyedSubscript as (NSCopying & NSObjectProtocol)!)
+        jsContext.setObject(weakSelf, forKeyedSubscript: keyedSubscript as (NSCopying & NSObjectProtocol)?)
         jsContext.exceptionHandler = { (context,exceptionValue) in
             print("异常信息：\(exceptionValue!)");
         }
