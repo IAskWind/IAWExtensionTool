@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'IAWExtensionTool'
-  s.version          = '0.6.2'
+  s.version          = '0.6.3'
   s.summary          = 'A short description of IAWExtensionTool.'
 
 # This description is used to generate tags and improve search results.
@@ -32,6 +32,7 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'IAWExtensionTool/IAWExtensionTool/Classes/**/*'
   s.requires_arc     = true
+  s.exclude_files = "IAWExtensionTool/IAWExtensionTool/*.plist"
   s.resource_bundles = {
      'IAWExtensionTool' => ['IAWExtensionTool/IAWExtensionTool/Resources/**/*']
   }
