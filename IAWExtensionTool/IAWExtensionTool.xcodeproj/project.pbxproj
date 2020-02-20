@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		29204AD17655588201BA85D0 /* Pods_IAWExtensionTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E77EA182DC15FFD01CDB7564 /* Pods_IAWExtensionTool.framework */; };
 		4404BBD81E8517F3004CFF9F /* IAW_TaskTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404BBD71E8517F3004CFF9F /* IAW_TaskTool.swift */; };
 		4404BBDA1E851BB1004CFF9F /* IAW_MsgTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404BBD91E851BB1004CFF9F /* IAW_MsgTool.swift */; };
 		4404BBDC1E851E2B004CFF9F /* IAW_CountDownTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404BBDB1E851E2B004CFF9F /* IAW_CountDownTool.swift */; };
@@ -111,6 +110,8 @@
 		6F4CF0D223FD85E80061C9D0 /* WHC_Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4CF0CE23FD85E80061C9D0 /* WHC_Frame.swift */; };
 		6F4CF0D523FD87B00061C9D0 /* WHC_LayerFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4CF0D323FD87B00061C9D0 /* WHC_LayerFrame.swift */; };
 		6F4CF0D623FD87B00061C9D0 /* WHC_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4CF0D423FD87B00061C9D0 /* WHC_Util.swift */; };
+		6F4CF0D723FE281C0061C9D0 /* Pods_IAWExtensionTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E77EA182DC15FFD01CDB7564 /* Pods_IAWExtensionTool.framework */; };
+		6F4CF0D823FE281C0061C9D0 /* Pods_IAWExtensionTool.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E77EA182DC15FFD01CDB7564 /* Pods_IAWExtensionTool.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -120,6 +121,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				6F4CF0D823FE281C0061C9D0 /* Pods_IAWExtensionTool.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,7 +244,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29204AD17655588201BA85D0 /* Pods_IAWExtensionTool.framework in Frameworks */,
+				6F4CF0D723FE281C0061C9D0 /* Pods_IAWExtensionTool.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

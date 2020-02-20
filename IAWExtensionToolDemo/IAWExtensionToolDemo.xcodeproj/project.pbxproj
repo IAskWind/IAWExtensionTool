@@ -11,8 +11,23 @@
 		441C6ED91DDE0C090080D0F0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441C6ED81DDE0C090080D0F0 /* MainViewController.swift */; };
 		441C6EDE1DDE0C090080D0F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 441C6EDD1DDE0C090080D0F0 /* Assets.xcassets */; };
 		442E536F1E1F9CCC001FCBD8 /* UserVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E536E1E1F9CCC001FCBD8 /* UserVo.swift */; };
-		B3D834EB5114AD2B2BF760E0 /* Pods_IAWExtensionToolDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7491EFE7F29DDB7F5CA35563 /* Pods_IAWExtensionToolDemo.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		6F4CF0D923FE28270061C9D0 /* Pods_IAWExtensionToolDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7491EFE7F29DDB7F5CA35563 /* Pods_IAWExtensionToolDemo.framework */; };
+		6F4CF0DA23FE28270061C9D0 /* Pods_IAWExtensionToolDemo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7491EFE7F29DDB7F5CA35563 /* Pods_IAWExtensionToolDemo.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6F4CF0DB23FE28270061C9D0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6F4CF0DA23FE28270061C9D0 /* Pods_IAWExtensionToolDemo.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		441C6ED31DDE0C090080D0F0 /* IAWExtensionToolDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IAWExtensionToolDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -31,7 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3D834EB5114AD2B2BF760E0 /* Pods_IAWExtensionToolDemo.framework in Frameworks */,
+				6F4CF0D923FE28270061C9D0 /* Pods_IAWExtensionToolDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +112,7 @@
 				441C6ED01DDE0C090080D0F0 /* Frameworks */,
 				441C6ED11DDE0C090080D0F0 /* Resources */,
 				7E32CA0C93F17F4C5943069E /* [CP] Embed Pods Frameworks */,
+				6F4CF0DB23FE28270061C9D0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -331,7 +347,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AA5ZGF9A6N;
 				INFOPLIST_FILE = IAWExtensionToolDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iaskwind.IAWExtensionToolDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -346,7 +362,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AA5ZGF9A6N;
 				INFOPLIST_FILE = IAWExtensionToolDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iaskwind.IAWExtensionToolDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
