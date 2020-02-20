@@ -23,7 +23,7 @@ target 'IAWExtensionToolDemo' do
     pod 'Easy'
 #    pod 'OMExtension'
 #    pod 'SlideMenuControllerSwift'
-    pod 'SlideMenuControllerSwift', :git => 'https://github.com/AtomicSLLC/SlideMenuControllerSwift.git', :branch => 'swift5'
+#    pod 'SlideMenuControllerSwift', :git => 'https://github.com/AtomicSLLC/SlideMenuControllerSwift.git', :branch => 'swift5'
     pod 'SwiftMessages'
     #倒计时处理
     #pod 'CountdownLabel', :git => 'https://github.com/IAskWind/CountdownLabel.git', :branch => 'swift3'
@@ -47,7 +47,7 @@ target 'IAWExtensionTool' do
   pod 'SKPhotoBrowser'
   pod 'Easy'
 #  pod 'OMExtension'
-  pod 'SlideMenuControllerSwift', :git => 'https://github.com/AtomicSLLC/SlideMenuControllerSwift.git', :branch => 'swift5'
+#  pod 'SlideMenuControllerSwift', :git => 'https://github.com/AtomicSLLC/SlideMenuControllerSwift.git', :branch => 'swift5'
 #  pod 'SlideMenuControllerSwift'
   pod 'SwiftMessages'
   #倒计时处理

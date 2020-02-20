@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SlideMenuControllerSwift
+//import SlideMenuControllerSwift
 open class IAW_TabBarController: UITabBarController {
     //第一个参数chindviewcontroller，第二个参数title,第三个imageName,第4个是否有侧边栏
     var childVcArray:[(String,String,String,Bool)]?
@@ -66,9 +66,9 @@ open class IAW_TabBarController: UITabBarController {
         vc.title = title
         // 给每个控制器包装一个导航控制器
         let nav = IAW_NavigationController(navBarTintColor: navBarTintColor!,navBarTitleFontSize: navBarTitleFontSize!,navBarTitleColor: navBarTitleColor!)
-        if isLeftBarBtn {
-            IAW_SlideMenuTool.addLeftBarItem(target: vc)
-        }
+//        if isLeftBarBtn {
+//            IAW_SlideMenuTool.addLeftBarItem(target: vc)
+//        }
         nav.addChild(vc)
         addChild(nav)
     }
@@ -86,38 +86,38 @@ open class IAW_TabBarController: UITabBarController {
     
 }
 
-extension IAW_TabBarController : SlideMenuControllerDelegate {
-    
-    public func leftWillOpen() {
-        print("SlideMenuControllerDelegate: leftWillOpen")
-        
-    }
-    
-    public func leftDidOpen() {
-        print("SlideMenuControllerDelegate: leftDidOpen")
-    }
-    
-    public func leftWillClose() {
-        print("SlideMenuControllerDelegate: leftWillClose")
-    }
-    
-    public func leftDidClose() {
-        print("SlideMenuControllerDelegate: leftDidClose")
-    }
-    
-    public func rightWillOpen() {
-        print("SlideMenuControllerDelegate: rightWillOpen")
-    }
-    
-    public func rightDidOpen() {
-        print("SlideMenuControllerDelegate: rightDidOpen")
-    }
-    
-    public func rightWillClose() {
-        print("SlideMenuControllerDelegate: rightWillClose")
-    }
-    
-    public func rightDidClose() {
-        print("SlideMenuControllerDelegate: rightDidClose")
-    }
-}
+//extension IAW_TabBarController : SlideMenuControllerDelegate {
+//    
+//    public func leftWillOpen() {
+//        print("SlideMenuControllerDelegate: leftWillOpen")
+//        
+//    }
+//    
+//    public func leftDidOpen() {
+//        print("SlideMenuControllerDelegate: leftDidOpen")
+//    }
+//    
+//    public func leftWillClose() {
+//        print("SlideMenuControllerDelegate: leftWillClose")
+//    }
+//    
+//    public func leftDidClose() {
+//        print("SlideMenuControllerDelegate: leftDidClose")
+//    }
+//    
+//    public func rightWillOpen() {
+//        print("SlideMenuControllerDelegate: rightWillOpen")
+//    }
+//    
+//    public func rightDidOpen() {
+//        print("SlideMenuControllerDelegate: rightDidOpen")
+//    }
+//    
+//    public func rightWillClose() {
+//        print("SlideMenuControllerDelegate: rightWillClose")
+//    }
+//    
+//    public func rightDidClose() {
+//        print("SlideMenuControllerDelegate: rightDidClose")
+//    }
+//}

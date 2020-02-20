@@ -8,7 +8,7 @@
 //
 
 import Foundation
-import SlideMenuControllerSwift
+//import SlideMenuControllerSwift
 open class IAW_UITool{
     ///childVcArray  第一个参数chindviewcontroller，第二个参数title,第三个imageName
     open class func toTabBar(_ target: UIViewController,transitionStyle:UIModalTransitionStyle,childVcArray:[(String,String,String,Bool)]){
@@ -24,20 +24,20 @@ open class IAW_UITool{
         UserDefaults.standard.set("", forKey: IAW_AccessToken)
         weakSelf?.dismiss(animated: true, completion: nil)
     }
-    // 带侧边栏 带底部tabbar
-    //注意：用在AppDelegate的调用 //并且返回的UIWindow要赋值给AppDelegate声明的
-    open class func rootToTabBarAndSlideMenu(window:UIWindow,leftVC: UIViewController,transitionStyle:UIModalTransitionStyle,childVcArray:[(String,String,String,Bool)],tabBarTintColor:UIColor,navBarTintColor:UIColor,navBarTitleFontSize:CGFloat = 15){   
-//        weak var weakSelf = target
-        let tabBar = IAW_TabBarController(childVcArray:childVcArray,tabBarTintColor:tabBarTintColor,navBarTintColor:navBarTintColor,navBarTitleFontSize:navBarTitleFontSize)
-        SlideMenuOptions.contentViewScale = 1
-//                SlideMenuOptions.contentViewOpacity = 0.5 //背景通明度
-        let slideMenuController = IAW_SlideMenuController(mainViewController: tabBar, leftMenuViewController: leftVC)
-        slideMenuController.automaticallyAdjustsScrollViewInsets = true
-        slideMenuController.delegate = tabBar
-        slideMenuController.modalTransitionStyle = transitionStyle
-        IAW_AppTool.rootVC(mWindow: window,vc: slideMenuController)
-        
-    }
+//    // 带侧边栏 带底部tabbar
+//    //注意：用在AppDelegate的调用 //并且返回的UIWindow要赋值给AppDelegate声明的
+//    open class func rootToTabBarAndSlideMenu(window:UIWindow,leftVC: UIViewController,transitionStyle:UIModalTransitionStyle,childVcArray:[(String,String,String,Bool)],tabBarTintColor:UIColor,navBarTintColor:UIColor,navBarTitleFontSize:CGFloat = 15){   
+////        weak var weakSelf = target
+//        let tabBar = IAW_TabBarController(childVcArray:childVcArray,tabBarTintColor:tabBarTintColor,navBarTintColor:navBarTintColor,navBarTitleFontSize:navBarTitleFontSize)
+//        SlideMenuOptions.contentViewScale = 1
+////                SlideMenuOptions.contentViewOpacity = 0.5 //背景通明度
+//        let slideMenuController = IAW_SlideMenuController(mainViewController: tabBar, leftMenuViewController: leftVC)
+//        slideMenuController.automaticallyAdjustsScrollViewInsets = true
+//        slideMenuController.delegate = tabBar
+//        slideMenuController.modalTransitionStyle = transitionStyle
+//        IAW_AppTool.rootVC(mWindow: window,vc: slideMenuController)
+//        
+//    }
     
     open class func IAW_Label(text:String,textColor:UIColor = UIColor.black,fontSize:CGFloat = 11)->UILabel{
         let label = UILabel()
