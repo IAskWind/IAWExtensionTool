@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'IAWExtensionTool'
-  s.version          = '0.6.3'
+  s.version          = '0.6.4'
   s.summary          = 'A short description of IAWExtensionTool.'
 
 # This description is used to generate tags and improve search results.
@@ -30,7 +30,7 @@ TODO: Add long description of the pod here.
   s.swift_version = '5.0'
   s.ios.deployment_target = '12.0'
 
-  s.source_files = 'IAWExtensionTool/IAWExtensionTool/Classes/**/*'
+  s.source_files = 'IAWExtensionTool/IAWExtensionTool/Classes/**/*{h,m,swift}'
   s.requires_arc     = true
   s.exclude_files = "IAWExtensionTool/IAWExtensionTool/*.plist"
   s.resource_bundles = {
