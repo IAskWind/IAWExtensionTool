@@ -18,8 +18,8 @@ open class IAW_RNCryptorTool{
     //解密
     open class func Decrypt(data:String,key:String)throws ->String{
         let decodedData = NSData(base64Encoded:data, options: NSData.Base64DecodingOptions(rawValue: 0))
-        let decryptData = try RNCryptor.decrypt(data: decodedData as! Data, withPassword: key)
-        let strDecrypt = NSString(data: decryptData, encoding: String.Encoding.utf8.rawValue) as! String
+        let decryptData = try RNCryptor.decrypt(data: decodedData! as Data, withPassword: key)
+        let strDecrypt = NSString(data: decryptData, encoding: String.Encoding.utf8.rawValue)! as String
         return strDecrypt
     }
 

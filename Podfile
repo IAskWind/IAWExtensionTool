@@ -47,7 +47,7 @@ target 'IAWExtensionTool' do
   pod 'SKPhotoBrowser'
   pod 'Easy'
 #  pod 'OMExtension'
-#  pod 'SlideMenuControllerSwift', :git => 'https://github.com/AtomicSLLC/SlideMenuControllerSwift.git', :branch => 'swift5'
+  pod 'SlideMenuControllerSwift', :git => 'https://github.com/AtomicSLLC/SlideMenuControllerSwift.git', :branch => 'swift5'
 #  pod 'SlideMenuControllerSwift'
   pod 'SwiftMessages'
   #倒计时处理

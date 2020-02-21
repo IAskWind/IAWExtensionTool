@@ -18,7 +18,7 @@ import Foundation
 //        let diffSeconds = targetDate.timeIntervalSince(fromDate) //targetDate - formdate
 //        countdownLabel.setCountDownTime(minutes: diffSeconds)
 //        countdownLabel.timeFormat = "mm:ss"
-//        
+//
 //    }
 //    //倒计时处理
 //    open class func countDown(countdownLabel:CountdownLabel,fromDate:Date,targetDate:String){
@@ -29,7 +29,7 @@ import Foundation
 //        let diffSeconds = targetDate.timeIntervalSince(fromDate) //targetDate - formdate
 //        countdownLabel.setCountDownTime(minutes: diffSeconds)
 //        countdownLabel.timeFormat = "mm:ss"
-//        
+//
 //    }
 //
 //}
