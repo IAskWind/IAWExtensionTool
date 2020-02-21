@@ -19,7 +19,6 @@ PODS:
   - ObjectMapper (3.5.1)
   - RNCryptor (5.1.0)
   - SKPhotoBrowser (6.1.0)
-  - SlideMenuControllerSwift (5.0.0)
   - SnapKit (4.2.0)
   - SVProgressHUD (2.2.5)
   - SwiftMessages (7.0.1):
@@ -35,7 +34,6 @@ DEPENDENCIES:
   - MJRefresh
   - RNCryptor
   - SKPhotoBrowser
-  - SlideMenuControllerSwift (from `https://github.com/AtomicSLLC/SlideMenuControllerSwift.git`, branch `swift5`)
   - SnapKit
   - SVProgressHUD
   - SwiftMessages
@@ -55,16 +53,6 @@ SPEC REPOS:
     - SVProgressHUD
     - SwiftMessages
 
-EXTERNAL SOURCES:
-  SlideMenuControllerSwift:
-    :branch: swift5
-    :git: https://github.com/AtomicSLLC/SlideMenuControllerSwift.git
-
-CHECKOUT OPTIONS:
-  SlideMenuControllerSwift:
-    :commit: 21240fd221adc2e50adb366d45bc19185bb62e3c
-    :git: https://github.com/AtomicSLLC/SlideMenuControllerSwift.git
-
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   AlamofireObjectMapper: 1989f690e982b71921b9253f53a4f33a9bc00d88
@@ -75,11 +63,10 @@ SPEC CHECKSUMS:
   ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
   RNCryptor: a369134686cd2ad391323cc856b62e591193ba79
   SKPhotoBrowser: 343de95d89dc7913763c5dda243cc6e606e4a168
-  SlideMenuControllerSwift: d740ea24105a658fe6a8c256f2bf5832fee7c047
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftMessages: b577dc7043be8b299857ab35bb663dbff6483bd0
 
-PODFILE CHECKSUM: 60398970df7a7adef009425ce728cdc1d5cc2a99
+PODFILE CHECKSUM: 2a9ba1a41d7a80fc33d20cef309efe01949b0361
 
 COCOAPODS: 1.8.4

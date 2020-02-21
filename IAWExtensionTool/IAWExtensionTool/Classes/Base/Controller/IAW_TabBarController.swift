@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SlideMenuControllerSwift
+//import SlideMenuControllerSwift
 open class IAW_TabBarController: UITabBarController {
     //第一个参数chindviewcontroller，第二个参数title,第三个imageName,第4个是否有侧边栏
     var childVcArray:[(String,String,String,Bool)]?

@@ -8,7 +8,7 @@
 //
 
 import Foundation
-import SlideMenuControllerSwift
+//import SlideMenuControllerSwift
 open class IAW_UITool{
     ///childVcArray  第一个参数chindviewcontroller，第二个参数title,第三个imageName
     open class func toTabBar(_ target: UIViewController,transitionStyle:UIModalTransitionStyle,childVcArray:[(String,String,String,Bool)]){

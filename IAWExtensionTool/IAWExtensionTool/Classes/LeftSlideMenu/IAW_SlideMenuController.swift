@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SlideMenuControllerSwift
+//import SlideMenuControllerSwift
 open class IAW_SlideMenuController : SlideMenuController {
     
     override open func isTagetViewController() -> Bool {

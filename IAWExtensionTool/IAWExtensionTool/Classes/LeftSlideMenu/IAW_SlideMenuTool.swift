@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import SlideMenuControllerSwift
+//import SlideMenuControllerSwift
 open class IAW_SlideMenuTool{
     
     /**
