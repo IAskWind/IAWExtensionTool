@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'IAWExtensionTool'
-  s.version          = '0.7.0'
+  s.version          = '0.7.1'
   s.summary          = 'A short description of IAWExtensionTool.'
 
 # This description is used to generate tags and improve search results.
@@ -50,7 +50,7 @@ TODO: Add long description of the pod here.
    s.dependency 'MJRefresh'
    s.dependency 'SKPhotoBrowser'
    s.dependency 'Easy'
-   s.dependency 'SlideMenuControllerSwift'
+  #  s.dependency 'SlideMenuControllerSwift'
    s.dependency 'SwiftMessages'
 
 end
