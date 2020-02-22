@@ -39,7 +39,7 @@ extension UIImageView {
     }
     
     // 停止旋转
-    func stopRotate() {
+    open func stopRotate() {
         layer.removeAllAnimations()
     }
 
