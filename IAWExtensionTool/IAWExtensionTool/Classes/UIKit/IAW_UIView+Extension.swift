@@ -8,10 +8,10 @@
 
 import UIKit
 
-public extension UIView {
+extension UIView {
     
     /// 裁剪 view 的圆角
-    func clipRectCorner(_ direction: UIRectCorner, cornerRadius: CGFloat) {
+    open func clipRectCorner(_ direction: UIRectCorner, cornerRadius: CGFloat) {
         let cornerSize = CGSize(width: cornerRadius, height: cornerRadius)
         let maskPath = UIBezierPath(roundedRect: bounds, byRoundingCorners: direction, cornerRadii: cornerSize)
         let maskLayer = CAShapeLayer()
@@ -22,7 +22,7 @@ public extension UIView {
     }
     
     /// x
-    var x: CGFloat {
+    open var x: CGFloat {
         get {
             return frame.origin.x
         }
@@ -34,7 +34,7 @@ public extension UIView {
     }
     
     /// y
-    var y: CGFloat {
+    open var y: CGFloat {
         get {
             return frame.origin.y
         }
@@ -46,7 +46,7 @@ public extension UIView {
     }
     
     /// height
-    var height: CGFloat {
+    open var height: CGFloat {
         get {
             return frame.size.height
         }
@@ -58,7 +58,7 @@ public extension UIView {
     }
     
     /// width
-    var width: CGFloat {
+     open var width: CGFloat {
         get {
             return frame.size.width
         }
@@ -70,7 +70,7 @@ public extension UIView {
     }
     
     /// size
-    var size: CGSize {
+    open var size: CGSize {
         get {
             return frame.size
         }
@@ -82,7 +82,7 @@ public extension UIView {
     }
     
     /// centerX
-    var centerX: CGFloat {
+    open var centerX: CGFloat {
         get {
             return center.x
         }
@@ -94,7 +94,7 @@ public extension UIView {
     }
     
     /// centerY
-    var centerY: CGFloat {
+    open var centerY: CGFloat {
         get {
             return center.y
         }

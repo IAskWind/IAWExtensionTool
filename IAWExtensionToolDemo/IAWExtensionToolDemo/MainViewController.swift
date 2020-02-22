@@ -15,6 +15,7 @@ class MainViewController: IAW_BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.brown
+//        self.view
 //        let line = UIView()
 //        line.alpha = 0.2
 //        line.backgroundColor = UIColor.gray
