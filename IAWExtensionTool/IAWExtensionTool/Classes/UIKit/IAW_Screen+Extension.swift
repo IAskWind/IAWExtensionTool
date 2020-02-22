@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 public extension UIScreen {
     
-    static var iawWidth:CGFloat {
+    public static var iawWidth:CGFloat {
         return UIScreen.main.bounds.size.width
     }
-    static var iawHeight:CGFloat {
+    public static var iawHeight:CGFloat {
         return UIScreen.main.bounds.size.height
     }
-    static var iawIsPortrait: Bool {
+    public static var iawIsPortrait: Bool {
         return UIDevice.current.orientation.isPortrait
     }
 }
