@@ -21,7 +21,6 @@ open class IAW_AppTool{
     }
     
     open class func rootVC(mWindow:UIWindow,vc:UIViewController){
-//        let window = UIWindow(frame: UIScreen.main.bounds)
         mWindow.makeKeyAndVisible()
         mWindow.rootViewController = vc
     }
