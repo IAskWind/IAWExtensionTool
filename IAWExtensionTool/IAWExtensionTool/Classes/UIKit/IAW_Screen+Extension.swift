@@ -8,15 +8,15 @@
 
 import Foundation
 import UIKit
-public extension UIScreen {
+extension UIScreen {
     
-    static var iawWidth:CGFloat {
+    open var iawWidth:CGFloat {
         return UIScreen.main.bounds.size.width
     }
-    static var iawHeight:CGFloat {
+    open var iawHeight:CGFloat {
         return UIScreen.main.bounds.size.height
     }
-    static var iawIsPortrait: Bool {
+    open var iawIsPortrait: Bool {
         return UIDevice.current.orientation.isPortrait
     }
 }

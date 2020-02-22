@@ -8,9 +8,9 @@
 
 import UIKit
 import SnapKit
-public extension UITableView {
+extension UITableView {
     /// 当数据为 0 或加载数据失败的时候显示
-    func tableViewNoDataOrNewworkFail(_ rowCount: Int) {
+    open func tableViewNoDataOrNewworkFail(_ rowCount: Int) {
         if rowCount == 0 {
             let bgView = UIView()
             bgView.frame = self.frame

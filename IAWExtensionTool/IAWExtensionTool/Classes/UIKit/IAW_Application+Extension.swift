@@ -8,10 +8,10 @@
 
 import Foundation
 import UIKit
-public extension UIApplication{
+extension UIApplication{
     
     //window存在的情况下，不能用在AppDelegate
-    class func iawRootVC(vc:UIViewController) {
+    open func iawRootVC(vc:UIViewController) {
         UIApplication.shared.keyWindow?.rootViewController = vc
     }
 

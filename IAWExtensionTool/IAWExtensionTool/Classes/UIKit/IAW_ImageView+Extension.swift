@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 import Kingfisher
 
-public extension UIImageView {
+extension UIImageView {
 
-    func iawCircleHeader(_ url: String,radius:Int){
+   open func iawCircleHeader(_ url: String,radius:Int){
         if url != "" {
             self.kf.setImage(with: URL(string:url)!, placeholder: IAW_ImgXcassetsTool.headerPhoto.image)
         }else{
@@ -23,13 +23,13 @@ public extension UIImageView {
         self.layer.borderWidth = 2
         self.layer.masksToBounds = true
     }
-    func showView(){
+    open func showView(){
     
     
     }
     
     // 360度旋转图片
-    func rotate360Degree() {
+    open func rotate360Degree() {
         let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z") // 让其在z轴旋转
         rotationAnimation.toValue = NSNumber(value: .pi * 2.0) // 旋转角度
         rotationAnimation.duration = 0.6 // 旋转周期

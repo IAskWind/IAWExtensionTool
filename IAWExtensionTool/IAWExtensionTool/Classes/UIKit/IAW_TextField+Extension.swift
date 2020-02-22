@@ -7,9 +7,9 @@
 //
 import Foundation
 import UIKit
-public extension UITextField {
+extension UITextField {
     
-    func iawSetLimit(_ length: Int) {
+    open func iawSetLimit(_ length: Int) {
         
         NotificationCenter.default.addObserver(forName: UITextField.textDidChangeNotification, object: nil, queue: OperationQueue.main) { (notification) in
             
@@ -21,7 +21,7 @@ public extension UITextField {
         }
     }
     //包含小数点
-    func addLimit(numLength: Int,decimalLength:Int = 0,limitHandler: (() -> Void)? = nil){
+    open func addLimit(numLength: Int,decimalLength:Int = 0,limitHandler: (() -> Void)? = nil){
         
         NotificationCenter.default.addObserver(forName: UITextField.textDidChangeNotification, object: nil, queue: OperationQueue.main) { (notification) in
             let strs =  self.text!.components(separatedBy: ".")
